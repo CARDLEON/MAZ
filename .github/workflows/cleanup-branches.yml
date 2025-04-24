@@ -1,0 +1,83 @@
+name: Notify & clean branches on merge to develop or main
+
+on:
+  pull_request:
+    types: [closed] # se activa al cerrar el PR
+
+jobs:
+  clean_and_notify:
+    # --------------------------------------------------------------
+    # Corre solo si:
+    #   1) El PR quedó MERGED
+    #   2) El destino es develop O main
+    #   3) La rama origen tiene uno de los prefijos permitidos
+    # --------------------------------------------------------------
+    if: |
+      github.event.pull_request.merged &&
+      (
+        github.event.pull_request.base.ref == 'develop' ||
+        github.event.pull_request.base.ref == 'main'
+      ) &&
+      (
+        startsWith(github.event.pull_request.head.ref, 'feature-')  ||
+        startsWith(github.event.pull_request.head.ref, 'hotfix-')   ||
+        startsWith(github.event.pull_request.head.ref, 'bugfix-')   ||
+        startsWith(github.event.pull_request.head.ref, 'refactor-')
+      )
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write           # borrar ramas
+      pull-requests: read
+
+    steps:
+      # 1) Elimina la rama origen en remoto
+      - name: Delete merged branch
+        uses: peter-evans/delete-branch@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branches: ${{ github.event.pull_request.head.ref }}
+
+      # 2) Genera la lista de commits (primera línea + SHA corto)
+      - name: Collect commit list
+        id: commits
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { data } = await github.rest.pulls.listCommits({
+              owner: context.repo.owner,
+              repo:  context.repo.repo,
+              pull_number: context.payload.pull_request.number,
+            });
+            const list = data
+              .map(c => `• ${c.commit.message.split('\n')[0]} (${c.sha.slice(0,7)})`)
+              .join('\n');
+            core.setOutput('list', list);
+
+      # 3) Notificación a Slack (incoming-webhook)
+      - name: Notify Slack
+        uses: slackapi/slack-github-action@v2.0.0
+        with:
+          webhook: ${{ secrets.SLACK_WEBHOOK_URL }}      # URL guardada como secret
+          webhook-type: incoming-webhook
+          payload: |
+            {
+              "text": ":rocket: *${{ github.event.pull_request.head.ref }}* mergeada en *${{ github.event.pull_request.base.ref }}* por _${{ github.actor }}_.",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "*Cambios incluidos:*\n${{ steps.commits.outputs.list }}"
+                  }
+                },
+                {
+                  "type": "context",
+                  "elements": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "<${{ github.event.pull_request.html_url }}|Ver Pull Request>"
+                    }
+                  ]
+                }
+              ]
+            }
