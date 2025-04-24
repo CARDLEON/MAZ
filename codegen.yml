@@ -1,0 +1,11 @@
+schema: ${WP_GRAPHQL_ENDPOINT}
+documents: "src/**/*.{graphql,astro,tsx,ts}"
+generates:
+  src/lib/graphql/generated.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-graphql-request
+    config:
+      fetcher:
+        func: "@lib/graphql/wp#graphQLClient"
