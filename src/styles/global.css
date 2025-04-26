@@ -1,1 +1,26 @@
 @import "tailwindcss";
+@import "@fortawesome/fontawesome-free/css/all.min.css"
+
+@theme {
+  --font-poppins: Poppins, sans-serif;
+  --font-oliviar: Oliviar, sans-serif;
+}
+
+@font-face {
+  font-family: Oliviar;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("/fonts/OliviarSans-Black.woff2") format("woff2");
+}
+
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
