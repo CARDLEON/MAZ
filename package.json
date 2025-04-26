@@ -11,6 +11,7 @@
     "codegen:watch": "graphql-codegen --watch --config codegen.yml"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.2",
     "@tailwindcss/vite": "^4.1.4",
     "astro": "^5.7.4",
     "graphql": "^16.10.0",
@@ -20,7 +21,7 @@
   "devDependencies": {
     "@graphql-codegen/cli": "^5.0.5",
     "@graphql-codegen/typescript": "^4.1.6",
-    "@graphql-codegen/typescript-operations": "^4.6.0",
-    "@graphql-codegen/typescript-graphql-request": "^6.2.0"
+    "@graphql-codegen/typescript-graphql-request": "^6.2.0",
+    "@graphql-codegen/typescript-operations": "^4.6.0"
   }
 }
