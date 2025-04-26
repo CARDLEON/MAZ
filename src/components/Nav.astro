@@ -1,18 +1,26 @@
 ---
-
+const links = [
+  { link: "Servicios", href: "" },
+  { link: "Productos", href: "" },
+  { link: "Nosotros", href: "" },
+  { link: "Proyectos", href: "" },
+  { link: "Contacto", href: "" },
+];
 ---
 
 <nav
   id="main-nav"
-  class="absolute w-full z-40 flex items-center justify-between px-[12rem] py-2 bg-transparent text-white"
+  class="absolute w-full h-[15dvh] z-40 flex items-center justify-between px-[12rem] bg-transparent text-white transition-colors duration-200 ease-in-out"
 >
-  <img id="nav-img" class="w-55" src="/Logo-MAZ-Blanco.png" />
+  <img id="nav-img" class="w-50" src="/Logo-MAZ-Blanco.png" />
   <ul class="flex gap-6 text-[14pt]">
-    <li>Servicios</li>
-    <li>Productos</li>
-    <li>Nosotros</li>
-    <li>Proyectos</li>
-    <li>Contacto</li>
+    {
+      links.map(({ link, href }) => (
+        <li>
+          <a href={href}>{link}</a>
+        </li>
+      ))
+    }
   </ul>
   <button id="nav-btn" class="bg-[#24408d] px-[15px] py-[8px] rounded-md">
     Cotiza ahora

@@ -1,3 +1,12 @@
+---
+import LinkedIn from "@/public/linkedin.svg";
+import Facebook from "@/public/facebook.svg";
+import Phone from "@/public/phone.svg";
+import Mail from "@/public/mail.svg";
+import Location from "@/public/facebook.svg";
+import Whatsapp from "@/public/whatsapp.svg";
+---
+
 <footer class="bg-[#0e3e96] text-white px-[8rem] py-12">
   <div class="grid grid-cols-3 gap-15">
     <!-- Columna Izquierda -->
@@ -14,10 +23,10 @@
 
       <div class="flex gap-4">
         <a href="https://facebook.com" target="_blank">
-          <img src="/facebook.png" alt="Facebook" class="w-6" />
+          <Facebook width={34} />
         </a>
         <a href="https://linkedin.com" target="_blank">
-          <img src="/linkedin.png" alt="LinkedIn" class="w-6" />
+          <LinkedIn width={34} />
         </a>
       </div>
     </div>
@@ -34,12 +43,12 @@
     <!-- Columna Derecha -->
     <div class="grid grid-cols-1 gap-4 text-sm pt-8">
       <div class="flex items-center gap-4">
-        <img src="/mail.png" alt="Email" class="w-6 mt-1" />
+        <Mail width={34} />
         <span>ventas@mazaguahelada.com.mx</span>
       </div>
 
       <div class="flex items-center gap-4">
-        <img src="/location.png" alt="Ubicación" class="w-6 mt-1" />
+        <Location width={34} />
         <span>
           Idelfonso Vázquez No. 121, Col. Jardines de Escobedo,<br />
           Gral. Escobedo, N.L, C.P. 66050
@@ -47,12 +56,12 @@
       </div>
 
       <div class="flex items-center gap-4">
-        <img src="/phone.png" alt="Teléfono" class="w-6 mt-1" />
+        <Phone width={34} />
         <span>+52 (81) 1771 4793</span>
       </div>
 
       <div class="flex items-center gap-4">
-        <img src="/whatsapp.png" alt="WhatsApp" class="w-6 mt-1" />
+        <Whatsapp width={34} />
         <span>+52 (81) 1312 4900</span>
       </div>
     </div>
