@@ -1,0 +1,90 @@
+---
+import LeftArrow from "@/public/left-arrow.svg";
+import RightArrow from "@/public/right-arrow.svg";
+
+const slides = [
+  {
+    img: "/bg-home-hero-1.jpg",
+    title: "Soluciones de Climatización Inteligente",
+    subtitle:
+      "Mejoramos la eficiencia energética y prolongando la vida útil de tus equipos",
+  },
+  {
+    img: "/bg-home-hero-2.jpg",
+    title: "Servicios HVAC",
+    subtitle:
+      "Brindamos suministro, instalación, mantenimiento, diagnóstico, reparación, selección de equipos y suministro de refacciones.",
+  },
+  {
+    img: "/bg-home-hero-3.jpg",
+    title: "Optimización Energética",
+    subtitle:
+      "Transformamos tu infraestructura con soluciones personalizadas en sistemas HVAC, Chillers y más, garantizando eficiencia enérgetica y máximo rendimiento.",
+  },
+];
+---
+
+<section class="relative w-full h-screen overflow-hidden">
+  <!-- Slides -->
+  <div id="carousel-slides" class="h-full w-full relative">
+    {
+      slides.map(({ title, img, subtitle }, index) => (
+        <div
+          class="carousel-slide absolute inset-0 transition-opacity duration-700 ease-in-out"
+          style={`opacity: ${index === 0 ? "1" : "0"}`}
+        >
+          <img
+            src={img}
+            alt={`Slide ${index + 1}`}
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center bg-black/30">
+            <h2 class="text-4xl md:text-5xl font-bold">{title}</h2>
+            <p class="text-lg md:text-xl mt-4">{subtitle}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <!-- Flechas -->
+  <button
+    id="prev-slide"
+    class="absolute top-1/2 left-8 transform -translate-y-1/2 bg-white/30 hover:bg-white/50 p-3 rounded-full"
+  >
+    <LeftArrow />
+  </button>
+  <button
+    id="next-slide"
+    class="absolute top-1/2 right-8 transform -translate-y-1/2 bg-white/30 hover:bg-white/50 p-3 rounded-full"
+  >
+    <RightArrow />
+  </button>
+</section>
+
+<script type="module">
+  const slides = document.querySelectorAll(".carousel-slide");
+  const prevButton = document.querySelector("#prev-slide");
+  const nextButton = document.querySelector("#next-slide");
+
+  let currentSlide = 0;
+  const totalSlides = slides.length;
+
+  function showSlide(index) {
+    slides.forEach((slide, idx) => {
+      slide.style.opacity = idx === index ? "1" : "0";
+    });
+  }
+
+  prevButton.addEventListener("click", () => {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    showSlide(currentSlide);
+  });
+
+  nextButton.addEventListener("click", () => {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    showSlide(currentSlide);
+  });
+
+  showSlide(currentSlide);
+</script>
