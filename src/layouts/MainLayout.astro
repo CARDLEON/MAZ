@@ -23,16 +23,21 @@ const { title } = Astro.props;
 
   <script>
     const nav = document.querySelector("#main-nav");
+    const btn = document.querySelector("#nav-btn");
 
     window.addEventListener("scroll", () => {
-      if (!nav) return;
+      if (!nav || !btn) return;
 
       const scrolleable = window.scrollY > 115;
 
       // Toggle fixed or absolute position based on vertical scroll position
       nav.classList.toggle("fixed", scrolleable);
       nav.classList.toggle("top-0", scrolleable);
+      nav.classList.toggle("text-black", scrolleable);
+      nav.classList.toggle("bg-white", scrolleable);
+      btn.classList.toggle("text-white", scrolleable);
       nav.classList.toggle("absolute", !scrolleable);
+      nav.classList.toggle("text-white", !scrolleable);
     });
   </script>
 </html>
