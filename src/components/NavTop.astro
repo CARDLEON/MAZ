@@ -1,22 +1,26 @@
 ---
-
+import LinkedIn from "@/public/linkedin.svg";
+import Facebook from "@/public/facebook.svg";
+import Phone from "@/public/phone.svg";
+import Mail from "@/public/mail.svg";
+import Clock from "@/public/clock.svg";
 ---
 
 <nav
-  class="w-full bg-[#24408d] text-white h-[6dvh] flex items-center justify-between px-[12rem] z-50 "
+  class="w-full bg-[#24408d] text-white h-[6dvh] flex items-center justify-between px-[12rem] z-50"
 >
   <section>
     <ul class="flex gap-4">
       <li class="flex gap-2">
-        <img class="w-6" src="/phone.png" alt="" />
+        <Phone width={34} />
         +52 (81) 1771 4793
       </li>
       <li class="flex gap-2">
-        <img class="w-6" src="/mail.png" alt="" />
+        <Mail width={34} />
         ventas@mazaguahelada.com.mx
       </li>
       <li class="flex gap-2">
-        <img class="w-6" src="/clock.png" alt="" />
+        <Clock width={34} />
         Lun - Vie 8:00 - 18:00
       </li>
     </ul>
@@ -26,12 +30,12 @@
     <ul class="flex gap-2">
       <li>
         <a href="https://facebook.com" target="_blank">
-          <img class="w-6" src="/facebook.png" alt="" />
+          <Facebook width={34} />
         </a>
       </li>
       <li>
         <a href="https://linkedin.com" target="_blank">
-          <img class="w-6" src="/linkedin.png" alt="" />
+          <LinkedIn width={34} />
         </a>
       </li>
     </ul>
