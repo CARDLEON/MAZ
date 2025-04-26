@@ -1,5 +1,8 @@
-schema: ${WP_GRAPHQL_ENDPOINT}
+overwrite: true
+# schema: '${WP_GRAPHQL_ENDPOINT}' # Not available at the moment
+schema: "http://127.0.0.1:8881/graphql" # Solucion temporal.
 documents: "src/**/*.{graphql,astro,tsx,ts}"
+
 generates:
   src/lib/graphql/generated.ts:
     plugins:
@@ -9,3 +12,6 @@ generates:
     config:
       fetcher:
         func: "@lib/graphql/wp#graphQLClient"
+
+require:
+  - dotenv/config

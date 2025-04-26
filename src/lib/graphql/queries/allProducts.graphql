@@ -3,6 +3,7 @@ query AllProducts {
     nodes {
       id
       title
+      uri
     }
   }
 }
