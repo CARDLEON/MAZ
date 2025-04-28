@@ -30,8 +30,8 @@ const slides = [
     {
       slides.map(({ title, img, subtitle }, index) => (
         <div
-          class="carousel-slide absolute inset-0 transition-opacity duration-700 ease-in-out"
-          style={`opacity: ${index === 0 ? "1" : "0"}`}
+          class="carousel-slide absolute top-0 inset-0 w-full h-full transition-transform duration-700 ease-in-out"
+          style={`transform: translateX(${index === 0 ? "0%" : "100%"})`}
         >
           <img
             src={img}
@@ -70,10 +70,17 @@ const slides = [
 
   let currentSlide = 0;
   const totalSlides = slides.length;
+  const autoSlideDelay = 5000;
 
   function showSlide(index) {
     slides.forEach((slide, idx) => {
-      slide.style.opacity = idx === index ? "1" : "0";
+      if (idx === index) {
+        slide.style.transform = "translateX(0%)";
+      } else if (idx < index) {
+        slide.style.transform = "translateX(-100%)";
+      } else {
+        slide.style.transform = "translateX(100%)";
+      }
     });
   }
 
@@ -86,6 +93,11 @@ const slides = [
     currentSlide = (currentSlide + 1) % totalSlides;
     showSlide(currentSlide);
   });
+
+  setInterval(() => {
+    currentSlide = (currentSlide + 1) % totalSlides
+    showSlide(currentSlide);
+  }, autoSlideDelay)
 
   showSlide(currentSlide);
 </script>
