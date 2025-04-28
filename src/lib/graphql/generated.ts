@@ -12397,7 +12397,7 @@ export type WritingSettings = {
 export type AllProductsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type AllProductsQuery = { __typename?: 'RootQuery', products?: { __typename?: 'RootQueryToProductConnection', nodes: Array<{ __typename?: 'Product', id: string, title?: string | null }> } | null };
+export type AllProductsQuery = { __typename?: 'RootQuery', products?: { __typename?: 'RootQueryToProductConnection', nodes: Array<{ __typename?: 'Product', id: string, title?: string | null, uri?: string | null }> } | null };
 
 
 export const AllProductsDocument = gql`
@@ -12406,6 +12406,7 @@ export const AllProductsDocument = gql`
     nodes {
       id
       title
+      uri
     }
   }
 }
