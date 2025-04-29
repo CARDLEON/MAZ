@@ -1,6 +1,6 @@
 overwrite: true
 # schema: '${WP_GRAPHQL_ENDPOINT}' # Not available at the moment
-schema: "http://127.0.0.1:8881/graphql" # Solucion temporal.
+schema: "http://cms.sandboxcardleon.com/graphql" # Solucion temporal.
 documents: "src/**/*.{graphql,astro,tsx,ts}"
 
 generates:
