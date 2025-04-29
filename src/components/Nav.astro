@@ -36,9 +36,9 @@ const links = [
 
 <nav
   id="main-nav"
-  class="absolute w-full h-[15dvh] z-40 flex items-center justify-between px-[12rem] bg-transparent text-white transition-colors duration-200 ease-in-out"
+  class="absolute w-full h-[15dvh] z-40 flex items-center justify-between text-[12px] px-4 2xl:px-[12rem] lg:px-[4rem] bg-transparent text-white transition-colors duration-200 ease-in-out"
 >
-  <img id="nav-img" class="w-50" src="/Logo-MAZ-Blanco.png" />
+  <img id="nav-img" class="w-40 md:w-28 lg:w-40" src="/Logo-MAZ-Blanco.png" />
 
   <!-- Botón hamburguesa (solo visible en mobile) -->
   <button id="menu-toggle" class="md:hidden focus:outline-none">
@@ -60,7 +60,7 @@ const links = [
   </button>
 
   <!-- Menú Desktop -->
-  <ul class="hidden md:flex gap-6 text-[14pt]">
+  <ul class="hidden md:flex md:gap-6 text-[12pt]">
     {
       links.map(({ link, href, submenu }) => (
         <li class="relative group">
@@ -114,7 +114,7 @@ const links = [
 <!-- Menú Mobile desplegable -->
 <div
   id="mobile-menu"
-  class="hidden flex-col md:hidden w-full bg-white text-[#24408d] shadow-md"
+  class="hidden flex-col md:hidden w-full bg-white text-[#24408d] shadow-md px-4"
 >
   <ul class="flex flex-col text-lg">
     {
