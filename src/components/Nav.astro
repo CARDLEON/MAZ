@@ -1,10 +1,36 @@
 ---
 const links = [
-  { link: "Servicios", href: "#" },
-  { link: "Productos", href: "#" },
-  { link: "Nosotros", href: "#" },
-  { link: "Proyectos", href: "#" },
-  { link: "Contacto", href: "#" },
+  {
+    link: "Servicios",
+    href: "#",
+    submenu: [
+      { name: "HVAC", href: "/servicios/hvac" },
+      {
+        name: "Instalaciones eléctricas",
+        href: "/servicios/instalaciones-electricas",
+      },
+      { name: "Servicios de Ingeniería", href: "/servicios/ingenieria" },
+    ],
+  },
+  {
+    link: "Productos",
+    href: "#",
+    submenu: [
+      { name: "Todos los Productos", href: "/productos" },
+      { name: "Chillers", href: "/productos/chillers" },
+      { name: "Equipos TVR y Tableros", href: "/productos/tvr-tableros" },
+      {
+        name: "Torres de Enfriamiento",
+        href: "/productos/torres-enfriamiento",
+      },
+      { name: "Equipos Paquete y Div", href: "/productos/paquete-dividido" },
+      { name: "Bombas Centrífugas", href: "/productos/bombas-centrifugas" },
+      { name: "Tubería Hidráulica", href: "/productos/tuberia-hidraulica" },
+    ],
+  },
+  { link: "Nosotros", href: "/nosotros" },
+  { link: "Proyectos", href: "/proyectos" },
+  { link: "Contacto", href: "/contacto" },
 ];
 ---
 
@@ -13,21 +39,143 @@ const links = [
   class="absolute w-full h-[15dvh] z-40 flex items-center justify-between px-[12rem] bg-transparent text-white transition-colors duration-200 ease-in-out"
 >
   <img id="nav-img" class="w-50" src="/Logo-MAZ-Blanco.png" />
-  <ul class="flex gap-6 text-[14pt]">
+
+  <!-- Botón hamburguesa (solo visible en mobile) -->
+  <button id="menu-toggle" class="md:hidden focus:outline-none">
+    <svg
+      id="menu-icon"
+      class="w-8 h-8"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        id="menu-icon-path"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M4 8h16M4 16h16"></path>
+    </svg>
+  </button>
+
+  <!-- Menú Desktop -->
+  <ul class="hidden md:flex gap-6 text-[14pt]">
     {
-      links.map(({ link, href }) => (
-        <li>
-          <a href={href}>{link}</a>
+      links.map(({ link, href, submenu }) => (
+        <li class="relative group">
+          <a href={href} class="flex items-center gap-1">
+            {link}
+            {submenu && (
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            )}
+          </a>
+          {submenu && (
+            <ul class="absolute left-0 mt-2 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-in-out bg-white text-[#24408d] rounded-md shadow-lg min-w-[240px] border border-gray-200 z-50">
+              {submenu.map(({ name, href }, i) => (
+                <li>
+                  <a
+                    href={href}
+                    class={`block px-4 py-2 ${i === 0 ? "border-b border-gray-300 font-semibold" : ""} hover:bg-[#24408d] hover:text-white transition-colors duration-200`}
+                  >
+                    {name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
         </li>
       ))
     }
   </ul>
-  <button id="nav-btn" class="bg-[#24408d] px-[15px] py-[8px] rounded-md">
+
+  <!-- Botón Cotizar (Desktop y Mobile) -->
+  <button
+    id="nav-btn"
+    class="hidden md:block bg-[#24408d] px-[15px] py-[8px] rounded-md"
+  >
     <a href="#">Cotiza ahora!</a>
   </button>
 </nav>
 
+<!-- Menú Mobile desplegable -->
+<div
+  id="mobile-menu"
+  class="hidden flex-col md:hidden w-full bg-white text-[#24408d] shadow-md"
+>
+  <ul class="flex flex-col text-lg">
+    {
+      links.map(({ link, href, submenu }) => (
+        <li class="border-b border-gray-200">
+          <div class="flex flex-col">
+            <a
+              href={href}
+              class="flex justify-between items-center px-6 py-4 submenu-link"
+              data-has-submenu={submenu ? "true" : "false"}
+            >
+              {link}
+              {submenu && (
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              )}
+            </a>
+            {submenu && (
+              <ul class="hidden flex-col bg-gray-100 submenu-items">
+                {submenu.map(({ name, href }) => (
+                  <li>
+                    <a
+                      href={href}
+                      class="block px-8 py-2 hover:bg-[#24408d] hover:text-white"
+                    >
+                      {name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+  <div class="p-4">
+    <a
+      href="#"
+      class="block text-center bg-[#24408d] text-white py-2 rounded-md"
+    >
+      Cotiza ahora!
+    </a>
+  </div>
+</div>
+
+<!-- Scripts -->
 <script>
+  // Script original para animación del nav en scroll
   const nav = document.querySelector("#main-nav");
   const btn = document.querySelector("#nav-btn");
   const img = document.querySelector("#nav-img");
@@ -37,18 +185,49 @@ const links = [
 
     const scrolleable = window.scrollY > 115;
 
-    // Toggle fixed or absolute position based on vertical scroll position
     nav.classList.toggle("fixed", scrolleable);
     nav.classList.toggle("top-0", scrolleable);
     nav.classList.toggle("text-[#24408d]", scrolleable);
     nav.classList.toggle("bg-white", scrolleable);
     nav.classList.toggle("py-0", scrolleable);
-    btn.classList.toggle("text-white", scrolleable);
+    btn?.classList.toggle("text-white", scrolleable);
     scrolleable
       ? img.setAttribute("src", "/Logo-MAZ-Azul.png")
       : img.setAttribute("src", "/Logo-MAZ-Blanco.png");
 
     nav.classList.toggle("absolute", !scrolleable);
     nav.classList.toggle("text-white", !scrolleable);
+  });
+
+  // Script nuevo para menú hamburguesa
+  const toggleButton = document.getElementById("menu-toggle");
+  const menuIconPath = document.getElementById("menu-icon-path");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  if (!toggleButton || !mobileMenu || !menuIconPath) {
+    return;
+  }
+
+  toggleButton.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+    if (mobileMenu.classList.contains("hidden")) {
+      menuIconPath.setAttribute("d", "M4 8h16M4 16h16"); // Icono hamburguesa
+    } else {
+      menuIconPath.setAttribute("d", "M6 18L18 6M6 6l12 12"); // Icono "X"
+    }
+  });
+
+  // Script para abrir/cerrar submenús en mobile
+  const submenuLinks = document.querySelectorAll(".submenu-link");
+
+  submenuLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const hasSubmenu = link.getAttribute("data-has-submenu") === "true";
+      if (hasSubmenu) {
+        e.preventDefault();
+        const submenu = link.parentElement?.querySelector(".submenu-items");
+        submenu?.classList.toggle("hidden");
+      }
+    });
   });
 </script>
