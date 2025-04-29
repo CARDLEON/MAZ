@@ -204,16 +204,12 @@ const links = [
   const menuIconPath = document.getElementById("menu-icon-path");
   const mobileMenu = document.getElementById("mobile-menu");
 
-  if (!toggleButton || !mobileMenu || !menuIconPath) {
-    return;
-  }
-
-  toggleButton.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-    if (mobileMenu.classList.contains("hidden")) {
-      menuIconPath.setAttribute("d", "M4 8h16M4 16h16"); // Icono hamburguesa
+  toggleButton?.addEventListener("click", () => {
+    mobileMenu?.classList.toggle("hidden");
+    if (mobileMenu?.classList.contains("hidden")) {
+      menuIconPath?.setAttribute("d", "M4 8h16M4 16h16"); // Icono hamburguesa
     } else {
-      menuIconPath.setAttribute("d", "M6 18L18 6M6 6l12 12"); // Icono "X"
+      menuIconPath?.setAttribute("d", "M6 18L18 6M6 6l12 12"); // Icono "X"
     }
   });
 
