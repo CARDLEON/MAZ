@@ -4,6 +4,8 @@ import Facebook from "@/public/facebook.svg";
 import Phone from "@/public/phone.svg";
 import Mail from "@/public/mail.svg";
 import Clock from "@/public/clock.svg";
+
+// const { phone, email, schedule, fbLink, inLink } = Astro.props;
 ---
 
 <section
@@ -13,14 +15,17 @@ import Clock from "@/public/clock.svg";
     <ul class="flex gap-4">
       <li class="flex gap-2 items-center">
         <Phone width={34} />
+        <!-- {phone} -->
         +52 (81) 1771 4793
       </li>
       <li class="flex gap-2 items-center">
         <Mail width={34} />
+        <!-- {email} -->
         ventas@mazaguahelada.com.mx
       </li>
       <li class="flex gap-2 items-center">
         <Clock width={34} />
+        <!-- {schedule} -->
         Lun - Vie 8:00 - 18:00
       </li>
     </ul>
@@ -29,12 +34,17 @@ import Clock from "@/public/clock.svg";
   <section>
     <ul class="flex gap-2">
       <li>
-        <a href="https://facebook.com" target="_blank">
+        <!-- <a href={fbLink} target="_blank"> -->
+        <a href="https://www.facebook.com/Mazaguahelada/" target="_blank">
           <Facebook width={34} />
         </a>
       </li>
       <li>
-        <a href="https://linkedin.com" target="_blank">
+        <!-- <a href={inLink} target="_blank"> -->
+        <a
+          href="https://www.linkedin.com/company/mazaguahelada"
+          target="_blank"
+        >
           <LinkedIn width={34} />
         </a>
       </li>
