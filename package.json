@@ -6,9 +6,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "codegen": "graphql-codegen --config codegen.yml",
-    "codegen:watch": "graphql-codegen --watch --config codegen.yml"
+    "astro": "astro"
   },
   "dependencies": {
     "@parcel/watcher": "^2.5.1",
@@ -19,11 +17,9 @@
     "tailwindcss": "^4.1.4"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "^5.0.5",
-    "@graphql-codegen/typescript": "^4.1.6",
-    "@graphql-codegen/typescript-graphql-request": "^6.2.0",
-    "@graphql-codegen/typescript-operations": "^4.6.0",
     "dotenv": "^16.5.0",
-    "graphql-tag": "^2.12.6"
+    "graphql-tag": "^2.12.6",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   }
 }
