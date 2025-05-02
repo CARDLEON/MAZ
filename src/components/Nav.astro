@@ -84,7 +84,7 @@ const links = [
             )}
           </a>
           {submenu && (
-            <ul class="absolute left-0 mt-2 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transform translate-y-2 group-hover:translate-y-0 transition-all duration-500 ease-in-out bg-white text-[#24408d] rounded-md shadow-lg min-w-[240px] border border-gray-200 z-50">
+            <ul class="opacity-0 translate-y-4 pointer-events-none transition-all duration-500 ease-in-out absolute left-0 mt-1 bg-white text-[#24408d] rounded-md shadow-lg min-w-[240px] border border-gray-200 z-50">
               {submenu.map(({ name, href }, i) => (
                 <li>
                   <a
@@ -226,6 +226,43 @@ const links = [
         const submenu = link.parentElement?.querySelector(".submenu-items");
         submenu?.classList.toggle("hidden");
       }
+    });
+  });
+
+  // NUEVO: Manejo con animación suave en submenús desktop
+  const desktopSubmenus = document.querySelectorAll(
+    "ul.md\\:flex > li.relative"
+  );
+
+  desktopSubmenus.forEach((li) => {
+    const submenu = li.querySelector("ul");
+
+    if (!submenu) return;
+
+    li.addEventListener("mouseenter", () => {
+      submenu.classList.remove(
+        "opacity-0",
+        "translate-y-4",
+        "pointer-events-none"
+      );
+      submenu.classList.add(
+        "opacity-100",
+        "translate-y-0",
+        "pointer-events-auto"
+      );
+    });
+
+    li.addEventListener("mouseleave", () => {
+      submenu.classList.remove(
+        "opacity-100",
+        "translate-y-0",
+        "pointer-events-auto"
+      );
+      submenu.classList.add(
+        "opacity-0",
+        "translate-y-4",
+        "pointer-events-none"
+      );
     });
   });
 </script>
