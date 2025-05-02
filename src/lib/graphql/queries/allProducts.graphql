@@ -1,9 +1,0 @@
-query AllProducts {
-  products(first: 10) {
-    nodes {
-      id
-      title
-      uri
-    }
-  }
-}
