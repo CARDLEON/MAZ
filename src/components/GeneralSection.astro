@@ -4,11 +4,6 @@ interface Category {
   href: string;
 }
 
-interface Brand {
-  name: string;
-  logo: string;
-}
-
 interface Highlights {
   title: string;
   text: string;
@@ -65,7 +60,7 @@ const {
     <!-- Marcas -->
     {
       brands.length > 0 && (
-        <div class="overflow-hidden mt-10 bg-gray-100 rounded-md">
+        <div class="overflow-hidden mt-10 rounded-md">
           <div class="animate-marquee whitespace-nowrap flex gap-10 py-4 px-4">
             {[...brands, ...brands].map(({ name, logo }) => (
               <div class="flex-shrink-0 flex items-center justify-center w-40">

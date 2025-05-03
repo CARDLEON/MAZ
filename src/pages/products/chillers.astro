@@ -1,0 +1,68 @@
+---
+import HeroSection from "@/src/components/HeroSection.astro";
+import ProductGrid from "@/src/components/ProductGrid.astro";
+import MainLayout from "@/src/layouts/MainLayout.astro";
+---
+
+<MainLayout title="MAZ - Servicios para Chillers">
+  <HeroSection
+    title="Chillers"
+    ,
+    subtitle="Equipos de enfriamiento diseñados para diversas aplicaciones industriales."
+    ,
+    background="/bg-hero-section-2.jpg"
+    ,
+    breadcrumb="Inicio > Productos > Chillers"
+    ,
+    sectionLabel="Chillers"
+    ,
+  />
+  <ProductGrid
+    products={[
+      {
+        img: "https://placehold.co/300x300?text=AeroChill",
+        title: "AeroChill",
+        description:
+          "Ofrece un rendimiento excepcional con tecnología avanzada para un enfriamiento más eficiente y sostenible.",
+        link: "#",
+        isFeatured: true,
+        badgeText: "Más vendido",
+      },
+      {
+        img: "https://placehold.co/300x300?text=Clima+Comfort",
+        title: "Clima Comfort",
+        description:
+          "Sistema compacto ideal para climatizar espacios reducidos de manera eficiente.",
+        link: "#",
+        isFeatured: true,
+        badgeText: "20% de descuento",
+      },
+      {
+        img: "https://placehold.co/300x300?text=AeroChill",
+        title: "AeroChill",
+        description: "Tecnología de vanguardia para máxima eficiencia.",
+        link: "#",
+      },
+      {
+        img: "https://placehold.co/300x300?text=FrostWave",
+        title: "FrostWave",
+        description:
+          "Excelente desempeño en condiciones industriales exigentes.",
+        link: "#",
+      },
+      {
+        img: "https://placehold.co/300x300?text=ZephyrCool",
+        title: "ZephyrCool",
+        description: "Alta capacidad de enfriamiento y ahorro energético.",
+        link: "#",
+      },
+      {
+        img: "https://placehold.co/300x300?text=PolarAir",
+        title: "PolarAir",
+        description:
+          "Solución compacta para climatización eficiente y sostenible.",
+        link: "#",
+      },
+    ]}
+  />
+</MainLayout>
