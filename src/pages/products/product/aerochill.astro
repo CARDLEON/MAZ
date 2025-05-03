@@ -1,0 +1,18 @@
+---
+import OnlyNav from "@/src/layouts/OnlyNav.astro";
+import ProduductDetail from "@/src/components/ProductDetail.astro";
+---
+
+<OnlyNav title="MAZ - Producto Frost Wave">
+  <ProduductDetail
+    category="Chillers"
+    title="FrostWave"
+    description="Su avanzada tecnología permite optimizar el rendimiento energético mientras proporciona un enfriamiento confiable y constante."
+    highlights="Es la solución ideal para empresas que buscan maximizar la eficiencia de sus procesos de refrigeración con tecnología de vanguardia."
+    capacities={[
+      { label: "1 Unidad", value: "1" },
+      { label: "2 Unidades", value: "2" },
+      { label: "3 Unidades", value: "3" },
+    ]}
+  />
+</OnlyNav>

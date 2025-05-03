@@ -5,10 +5,7 @@ const links = [
     href: "#",
     submenu: [
       { name: "HVAC", href: "/services/hvac" },
-      {
-        name: "Instalaciones eléctricas",
-        href: "/services/electric",
-      },
+      { name: "Instalaciones eléctricas", href: "/services/electric" },
       { name: "Servicios de Ingeniería", href: "/services/engineering" },
     ],
   },
@@ -19,10 +16,7 @@ const links = [
       { name: "Todos los Productos", href: "/products" },
       { name: "Chillers", href: "/products/chillers" },
       { name: "Equipos TVR y Tableros", href: "/products/tvr" },
-      {
-        name: "Torres de Enfriamiento",
-        href: "/products/cooling",
-      },
+      { name: "Torres de Enfriamiento", href: "/products/cooling" },
       { name: "Equipos Paquete y Div", href: "/products/divpackage" },
       { name: "Bombas Centrífugas", href: "/products/pumps" },
       { name: "Tubería Hidráulica", href: "/products/hidraulic" },
@@ -36,13 +30,13 @@ const links = [
 
 <nav
   id="main-nav"
-  class="absolute w-full h-[15dvh] z-40 flex items-center justify-between text-[12px] px-4 2xl:px-[12rem] lg:px-[4rem] bg-transparent text-white transition-colors duration-200 ease-in-out"
+  class="w-full h-[15dvh] z-40 flex items-center justify-between text-[12px] px-4 2xl:px-[12rem] lg:px-[4rem] bg-transparent text-[#22408d] transition-colors duration-200 ease-in-out border-b-1 border-b-[#24408d]"
 >
   <a href="/">
-    <img id="nav-img" class="w-40 md:w-28 lg:w-40" src="/Logo-MAZ-Blanco.png" />
+    <img id="nav-img" class="w-40 md:w-28 lg:w-40" src="/Logo-MAZ-Azul.png" />
   </a>
 
-  <!-- Botón hamburguesa (solo visible en mobile) -->
+  <!-- Botón hamburguesa -->
   <button id="menu-toggle" class="md:hidden focus:outline-none">
     <svg
       id="menu-icon"
@@ -86,12 +80,14 @@ const links = [
             )}
           </a>
           {submenu && (
-            <ul class="opacity-0 translate-y-4 pointer-events-none transition-all duration-300 ease-in-out absolute left-0 mt-2 bg-white text-[#24408d] rounded-md shadow-lg min-w-[240px] border border-gray-200 z-50">
+            <ul class="opacity-0 translate-y-4 pointer-events-none transition-all duration-300 ease-in-out absolute left-0 mt-2 bg-white text-[#24408d] rounded-md shadow-lg min-w-[240px] border border-gray-200 z-50 group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto">
               {submenu.map(({ name, href }, i) => (
                 <li>
                   <a
                     href={href}
-                    class={`block px-4 py-2 ${i === 0 ? "border-b border-gray-300 font-semibold" : ""} hover:bg-[#24408d] hover:rounded-md hover:text-white transition-colors duration-500`}
+                    class={`block px-4 py-2 ${
+                      i === 0 ? "border-b border-gray-300 font-semibold" : ""
+                    } hover:bg-[#24408d] hover:rounded-md hover:text-white transition-colors duration-500`}
                   >
                     {name}
                   </a>
@@ -104,16 +100,16 @@ const links = [
     }
   </ul>
 
-  <!-- Botón Cotizar (Desktop y Mobile) -->
+  <!-- Botón CTA -->
   <button
     id="nav-btn"
-    class="hidden md:block bg-[#24408d] px-[15px] py-[8px] rounded-md"
+    class="hidden md:block bg-[#24408d] px-[15px] py-[8px] rounded-md text-white"
   >
     <a href="#">Cotiza ahora!</a>
   </button>
 </nav>
 
-<!-- Menú Mobile desplegable -->
+<!-- Menú Mobile -->
 <div
   id="mobile-menu"
   class="hidden flex-col md:hidden w-full bg-white text-[#24408d] shadow-md px-4"
@@ -175,35 +171,7 @@ const links = [
   </div>
 </div>
 
-<!-- Scripts -->
 <script>
-  // Script original para animación del nav en scroll
-  const nav = document.querySelector("#main-nav");
-  const btn = document.querySelector("#nav-btn");
-  const img = document.querySelector("#nav-img");
-
-  window.addEventListener("scroll", () => {
-    if (!nav || !btn || !img) return;
-
-    const scrolleable = window.scrollY > 115;
-
-    nav.classList.toggle("fixed", scrolleable);
-    nav.classList.toggle("top-0", scrolleable);
-    nav.classList.toggle("text-[#24408d]", scrolleable);
-    nav.classList.toggle("bg-white", scrolleable);
-    nav.classList.toggle("py-0", scrolleable);
-    nav.classList.toggle("border-b-1", scrolleable);
-    nav.classList.toggle("border-b-[#24408d]", scrolleable);
-    btn?.classList.toggle("text-white", scrolleable);
-    scrolleable
-      ? img.setAttribute("src", "/Logo-MAZ-Azul.png")
-      : img.setAttribute("src", "/Logo-MAZ-Blanco.png");
-
-    nav.classList.toggle("absolute", !scrolleable);
-    nav.classList.toggle("text-white", !scrolleable);
-  });
-
-  // Script nuevo para menú hamburguesa
   const toggleButton = document.getElementById("menu-toggle");
   const menuIconPath = document.getElementById("menu-icon-path");
   const mobileMenu = document.getElementById("mobile-menu");
@@ -211,15 +179,13 @@ const links = [
   toggleButton?.addEventListener("click", () => {
     mobileMenu?.classList.toggle("hidden");
     if (mobileMenu?.classList.contains("hidden")) {
-      menuIconPath?.setAttribute("d", "M4 8h16M4 16h16"); // Icono hamburguesa
+      menuIconPath?.setAttribute("d", "M4 8h16M4 16h16");
     } else {
-      menuIconPath?.setAttribute("d", "M6 18L18 6M6 6l12 12"); // Icono "X"
+      menuIconPath?.setAttribute("d", "M6 18L18 6M6 6l12 12");
     }
   });
 
-  // Script para abrir/cerrar submenús en mobile
   const submenuLinks = document.querySelectorAll(".submenu-link");
-
   submenuLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
       const hasSubmenu = link.getAttribute("data-has-submenu") === "true";

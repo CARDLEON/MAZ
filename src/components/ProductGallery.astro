@@ -1,0 +1,118 @@
+---
+import RArrow from "@/public/right-arrow.svg";
+import LArrow from "@/public/left-arrow.svg";
+
+interface ImageItem {
+  src: string;
+  alt: string;
+}
+
+const { images = [] } = Astro.props;
+---
+
+<div class="bg-[#e9f1fb] rounded-2xl p-6 shadow-md">
+  <!-- Imagen principal -->
+  <div class="relative">
+    <img
+      id="main-image"
+      src={images[0]?.src}
+      alt={images[0]?.alt}
+      class="rounded-xl object-cover max-h-[400px] w-full transition-opacity duration-300"
+    />
+  </div>
+
+  <!-- Miniaturas + Flechas -->
+  <div class="relative mt-6">
+    <div class="flex items-center justify-center gap-4 overflow-x-auto relative">
+      <!-- Flecha izquierda -->
+      <button
+        id="prev-btn"
+        class="hidden md:flex absolute left-0 -translate-x-[0%] top-1/2 -translate-y-1/2 bg-[#24408D] text-white rounded-full w-10 h-10 items-center justify-center hover:bg-[#1b3270] transition z-10"
+        aria-label="Imagen anterior"
+      >
+        <LArrow />
+      </button>
+
+      <!-- Miniaturas -->
+      <div class="flex items-center justify-center gap-4 px-12">
+        {
+          images.map(({ src, alt }: ImageItem, index: number) => (
+            <button
+              type="button"
+              class="w-20 h-20 flex-shrink-0 border-2 border-transparent rounded-lg hover:border-[#24408D] transition main-thumb"
+              data-src={src}
+              data-alt={alt}
+              data-index={index}
+              aria-label={`Vista previa ${alt}`}
+            >
+              <img
+                src={src}
+                alt={alt}
+                class="w-full h-full object-cover rounded-md"
+              />
+            </button>
+          ))
+        }
+      </div>
+
+      <!-- Flecha derecha -->
+      <button
+        id="next-btn"
+        class="hidden md:flex absolute right-0 translate-x-[0%] top-1/2 -translate-y-1/2 bg-[#24408D] text-white rounded-full w-10 h-10 items-center justify-center hover:bg-[#1b3270] transition z-10"
+        aria-label="Imagen siguiente"
+      >
+        <RArrow />
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const thumbs = document.querySelectorAll(".main-thumb");
+    const mainImage = document.getElementById("main-image");
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+
+    let currentIndex = 0;
+
+    function updateImage(index: number) {
+      const thumb = thumbs[index];
+      if (!thumb || !mainImage) return;
+
+      const newSrc = thumb.getAttribute("data-src") ?? "";
+      const newAlt = thumb.getAttribute("data-alt") ?? "";
+
+      mainImage.setAttribute("src", newSrc);
+      mainImage.setAttribute("alt", newAlt);
+
+      thumbs.forEach((t) => t.classList.remove("border-[#24408D]"));
+      thumb.classList.add("border-[#24408D]");
+
+      currentIndex = index;
+      updateArrowState();
+    }
+
+    function updateArrowState() {
+      prevBtn?.classList.toggle("pointer-events-none", currentIndex === 0);
+      prevBtn?.classList.toggle("opacity-50", currentIndex === 0);
+
+      nextBtn?.classList.toggle("pointer-events-none", currentIndex === thumbs.length - 1);
+      nextBtn?.classList.toggle("opacity-50", currentIndex === thumbs.length - 1);
+    }
+
+    thumbs.forEach((thumb, index) => {
+      thumb.addEventListener("click", () => updateImage(index));
+    });
+
+    prevBtn?.addEventListener("click", () => {
+      if (currentIndex > 0) updateImage(currentIndex - 1);
+    });
+
+    nextBtn?.addEventListener("click", () => {
+      if (currentIndex < thumbs.length - 1) updateImage(currentIndex + 1);
+    });
+
+    updateImage(0);
+  });
+</script>
