@@ -1,0 +1,33 @@
+---
+interface Props {
+  image?: string;
+  alt?: string;
+  text?: string;
+}
+
+const {
+  image = "https://placehold.co/600x400", // Placeholder por defecto
+  alt = "Imagen ilustrativa",
+  text = "Manténgase fresco y cómodo todo el año con chillers inteligentes y de bajo consumo energético, diseñada para brindar máximo rendimiento, confiabilidad y control del clima sin esfuerzo.",
+}: Props = Astro.props;
+---
+
+<section class="px-4 py-16 lg:px-24 bg-white">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <!-- Imagen -->
+    <div>
+      <img
+        src={image}
+        alt={alt}
+        class="w-full rounded-lg shadow-md object-cover"
+      />
+    </div>
+
+    <!-- Texto -->
+    <div>
+      <p class="text-base lg:text-lg text-[#111] font-semibold leading-relaxed">
+        {text}
+      </p>
+    </div>
+  </div>
+</section>

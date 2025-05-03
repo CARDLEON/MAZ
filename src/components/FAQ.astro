@@ -1,37 +1,32 @@
 ---
 import AccordionItem from "@/src/components/AccordionItem.astro";
 
-const faqs = [
-  {
-    question: "¿Cuándo debo programar el mantenimiento?",
-    answer:
-      "Recomendamos programarlo mínimo una vez al año antes de cada temporada.",
-  },
-  {
-    question: "¿Con qué frecuencia debo cambiar filtros HVAC?",
-    answer: "Cada 1 a 3 meses.",
-  },
-  {
-    question: "¿Tienen garantía las reparaciones?",
-    answer: "Sí, ofrecemos garantía en nuestras reparaciones.",
-  },
-  {
-    question: "¿Cómo obtener presupuesto?",
-    answer: "Contáctanos por nuestro formulario o correo.",
-  },
-];
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  faqs?: FaqItem[];
+  image?: string;
+  alt?: string;
+}
+
+const {
+  faqs = [],
+  image = "https://placehold.co/600x400?text=FAQ+Image",
+  alt = "FAQ",
+}: Props = Astro.props;
 ---
 
 <section class="px-[12rem] py-20">
   <div class="flex flex-col md:flex-row gap-12 items-center">
+    <!-- Imagen -->
     <div class="flex-1">
-      <img
-        src="https://placehold.co/600x400?text=FAQ+Image"
-        alt="FAQ"
-        class="rounded-lg w-full"
-      />
+      <img src={image} alt={alt} class="rounded-lg w-full" />
     </div>
 
+    <!-- Acordeón -->
     <div class="flex-1 space-y-4">
       {
         faqs.map(({ question, answer }) => (
@@ -41,7 +36,7 @@ const faqs = [
     </div>
   </div>
 
-  <!-- Script global para el manejo del abrir la pregunta para cada pregunta -->
+  <!-- Script para acordeones -->
   <script type="module" is:inline>
     const accordions = document.querySelectorAll(".accordion-item");
 
