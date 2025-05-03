@@ -4,33 +4,33 @@ const links = [
     link: "Servicios",
     href: "#",
     submenu: [
-      { name: "HVAC", href: "/servicios/hvac" },
+      { name: "HVAC", href: "/services/hvac" },
       {
         name: "Instalaciones eléctricas",
-        href: "/servicios/instalaciones-electricas",
+        href: "/services/electric",
       },
-      { name: "Servicios de Ingeniería", href: "/servicios/ingenieria" },
+      { name: "Servicios de Ingeniería", href: "/services/engineering" },
     ],
   },
   {
     link: "Productos",
     href: "#",
     submenu: [
-      { name: "Todos los Productos", href: "/productos" },
-      { name: "Chillers", href: "/productos/chillers" },
-      { name: "Equipos TVR y Tableros", href: "/productos/tvr-tableros" },
+      { name: "Todos los Productos", href: "/products" },
+      { name: "Chillers", href: "/products/chillers" },
+      { name: "Equipos TVR y Tableros", href: "/products/tvr" },
       {
         name: "Torres de Enfriamiento",
-        href: "/productos/torres-enfriamiento",
+        href: "/products/cooling",
       },
-      { name: "Equipos Paquete y Div", href: "/productos/paquete-dividido" },
-      { name: "Bombas Centrífugas", href: "/productos/bombas-centrifugas" },
-      { name: "Tubería Hidráulica", href: "/productos/tuberia-hidraulica" },
+      { name: "Equipos Paquete y Div", href: "/products/divpackage" },
+      { name: "Bombas Centrífugas", href: "/products/pumps" },
+      { name: "Tubería Hidráulica", href: "/products/hidraulic" },
     ],
   },
-  { link: "Nosotros", href: "/nosotros" },
-  { link: "Proyectos", href: "/proyectos" },
-  { link: "Contacto", href: "/contacto" },
+  { link: "Nosotros", href: "/about-us" },
+  { link: "Proyectos", href: "/projects" },
+  { link: "Contacto", href: "/contact" },
 ];
 ---
 
@@ -38,7 +38,9 @@ const links = [
   id="main-nav"
   class="absolute w-full h-[15dvh] z-40 flex items-center justify-between text-[12px] px-4 2xl:px-[12rem] lg:px-[4rem] bg-transparent text-white transition-colors duration-200 ease-in-out"
 >
-  <img id="nav-img" class="w-40 md:w-28 lg:w-40" src="/Logo-MAZ-Blanco.png" />
+  <a href="/">
+    <img id="nav-img" class="w-40 md:w-28 lg:w-40" src="/Logo-MAZ-Blanco.png" />
+  </a>
 
   <!-- Botón hamburguesa (solo visible en mobile) -->
   <button id="menu-toggle" class="md:hidden focus:outline-none">

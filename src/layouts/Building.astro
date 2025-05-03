@@ -1,0 +1,37 @@
+---
+import "@/src/styles/global.css";
+
+const { title } = Astro.props;
+---
+
+<html lang="es">
+  <title>{title}</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+  <body
+    class="bg-[#24408D] text-white flex items-center justify-center h-screen px-6 text-center"
+  >
+    <main class="max-w-md">
+      <img
+        src="/Logo-MAZ-Blanco.png"
+        alt="Logo MAZ"
+        class="w-32 mx-auto mb-6"
+      />
+      <h1 class="text-3xl md:text-4xl font-bold mb-4">
+        Página en construcción
+      </h1>
+      <p class="text-lg mb-8">
+        Estamos trabajando para brindarte una mejor experiencia. Vuelve pronto.
+      </p>
+      <a
+        href="/"
+        class="inline-block bg-white text-[#24408D] font-semibold py-2 px-6 rounded-md transition-colors duration-300 hover:bg-gray-100"
+      >
+        Regresar al inicio
+      </a>
+    </main>
+  </body>
+</html>
