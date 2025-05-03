@@ -5,7 +5,6 @@ import Welcome from "@/src/components/Welcome.astro";
 import Products from "@/src/components/Products.astro";
 import WhyUs from "@/src/components/WhyUs.astro";
 import FAQ from "@/src/components/FAQ.astro";
-
 ---
 
 <MainLayout title="MAZ - Soluciones de agua helada">
@@ -13,5 +12,27 @@ import FAQ from "@/src/components/FAQ.astro";
   <Welcome />
   <Products />
   <WhyUs />
-  <FAQ />
+  <FAQ
+    image="https://placehold.co/600x400?text=Chillers+FAQ"
+    alt="Preguntas frecuentes"
+    faqs={[
+      {
+        question: "¿Cuándo debo programar el mantenimiento?",
+        answer:
+          "Recomendamos programarlo mínimo una vez al año antes de cada temporada.",
+      },
+      {
+        question: "¿Con qué frecuencia debo cambiar filtros HVAC?",
+        answer: "Cada 1 a 3 meses.",
+      },
+      {
+        question: "¿Tienen garantía las reparaciones?",
+        answer: "Sí, ofrecemos garantía en nuestras reparaciones.",
+      },
+      {
+        question: "¿Cómo obtener presupuesto?",
+        answer: "Contáctanos por nuestro formulario o correo.",
+      },
+    ]}
+  />
 </MainLayout>
