@@ -1,10 +1,10 @@
 ---
 const {
-  title = "HVAC",
-  subtitle = "Especialistas en servicios HVAC",
-  background = "/bg-hero-section-1.jpg",
-  breadcrumb = "Inicio > Servicios > HVAC",
-  sectionLabel = "Nuestros Servicios",
+  title,
+  subtitle,
+  background,
+  breadcrumb,
+  sectionLabel,
 } = Astro.props;
 ---
 
@@ -24,7 +24,7 @@ const {
   >
     <div>
       <p
-        class="uppercase tracking-widest bg-gray-200/30 text-white px-3 py-1 text-sm font-bold rounded-full mb-2"
+        class="uppercase text-center tracking-widest bg-gray-200/30 text-white px-3 py-1 text-sm font-bold rounded-full mb-2"
       >
         {sectionLabel}
       </p>

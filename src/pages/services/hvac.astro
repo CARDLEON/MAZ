@@ -1,11 +1,17 @@
 ---
-import OnlyNavTop from "@/src/layouts/OnlyNavTop.astro";
+import MainLayout from "@/src/layouts/MainLayout.astro";
 import HeroSection from "@/src/components/HeroSection.astro";
 import GeneralSection from "@/src/components/GeneralSection.astro";
 ---
 
-<OnlyNavTop>
-  <HeroSection />
+<MainLayout title="MAZ - Servicios para HVAC">
+  <HeroSection
+    title="HVAC",
+    subtitle="Especialistas en servicios HVAC",
+    background="/bg-hero-section-1.jpg",
+    breadcrumb="Inicio > Servicios > HVAC",
+    sectionLabel="Nuestros Servicios",
+  />
   <GeneralSection
     categories={[
       { label: "Chillers", href: "/productos/chillers", isActive: true },
@@ -52,4 +58,4 @@ import GeneralSection from "@/src/components/GeneralSection.astro";
       },
     ]}
   />
-</OnlyNavTop>
+</MainLayout>

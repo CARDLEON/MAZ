@@ -1,0 +1,46 @@
+---
+interface Product {
+  title: string;
+  img: string;
+  description: string;
+  link: string;
+  isFeatured?: boolean,
+  badgeText?: string
+}
+
+const { products = [] } = Astro.props;
+---
+
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 place-items-center py-20">
+  {
+    products.map(({ title, img, description, link, isFeatured, badgeText }: Product) => (
+      <div class="relative group flex flex-col items-center bg-gray-100 p-6 rounded-lg shadow-md w-full max-w-xs overflow-hidden cursor-pointer">
+
+        {isFeatured && badgeText && (
+          <div class="absolute top-3 right-3 bg-[#24408D] text-white text-sx px-3 py-1 rounded-md z-10">
+            {badgeText}
+          </div>
+        )}
+
+        <!-- Imagen -->
+        <img
+          src={img}
+          alt={title}
+          class="h-48 object-contain mb-4 transition-opacity duration-500 group-hover:opacity-20"
+        />
+
+        <!-- Título normal -->
+        <h3 class="text-lg font-bold transition-opacity duration-500 group-hover:opacity-20">{title}</h3>
+
+        <!-- Overlay al hover -->
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <h3 class="text-lg font-bold text-[#0e3e96] mb-2">{title}</h3>
+          <p class="text-sm text-black mb-4">{description}</p>
+          <a href={link} class="inline-block bg-[#0e3e96] text-white px-4 py-2 rounded-md text-sm hover:bg-[#1e3673] transition">
+            Ver más
+          </a>
+        </div>
+      </div>
+    ))
+  }
+</div>
