@@ -36,7 +36,7 @@ const links = [
 
 <nav
   id="main-nav"
-  class="absolute w-full h-[15dvh] z-40 flex items-center justify-between text-[12px] px-4 2xl:px-[12rem] lg:px-[4rem] bg-transparent text-white transition-colors duration-200 ease-in-out"
+  class="absolute w-full h-[15dvh] z-50 flex items-center justify-between text-[12px] px-4 2xl:px-[12rem] lg:px-[4rem] bg-transparent text-white transition-colors duration-200 ease-in-out"
 >
   <a href="/">
     <img id="nav-img" class="w-40 md:w-28 lg:w-40" src="/Logo-MAZ-Blanco.png" />
@@ -114,11 +114,12 @@ const links = [
 </nav>
 
 <!-- Menú Mobile desplegable -->
+<!-- class="hidden flex-col md:hidden w-full bg-white text-[#24408d] shadow-md px-4 mt-[15dvh]" -->
 <div
   id="mobile-menu"
-  class="hidden flex-col md:hidden w-full bg-white text-[#24408d] shadow-md px-4"
+  class="transition-all duration-500 ease-in-out max-h-0 opacity-0 overflow-hidden flex-col md:hidden w-full bg-transparent text-[#24408d] shadow-none px-4 mt-[15dvh]"
 >
-  <ul class="flex flex-col text-lg">
+  <ul class="flex flex-col text-lg bg-transparent">
     {
       links.map(({ link, href, submenu }) => (
         <li class="border-b border-gray-200">
@@ -209,11 +210,24 @@ const links = [
   const mobileMenu = document.getElementById("mobile-menu");
 
   toggleButton?.addEventListener("click", () => {
-    mobileMenu?.classList.toggle("hidden");
-    if (mobileMenu?.classList.contains("hidden")) {
-      menuIconPath?.setAttribute("d", "M4 8h16M4 16h16"); // Icono hamburguesa
+    const isMenuOpen = mobileMenu?.classList.contains("max-h-[800px]");
+
+    if (isMenuOpen) {
+      // Cerrando menú
+      mobileMenu?.classList.remove("max-h-[800px]", "opacity-100");
+      mobileMenu?.classList.add("max-h-0", "opacity-0");
+
+      menuIconPath?.setAttribute("d", "M4 8h16M4 16h16");
+      img?.setAttribute("src", "/Logo-MAZ-Blanco.png");
+      document.getElementById("menu-icon")?.setAttribute("stroke", "#ffffff");
     } else {
-      menuIconPath?.setAttribute("d", "M6 18L18 6M6 6l12 12"); // Icono "X"
+      // Abriendo menú
+      mobileMenu?.classList.remove("max-h-0", "opacity-0");
+      mobileMenu?.classList.add("max-h-[800px]", "opacity-100");
+
+      menuIconPath?.setAttribute("d", "M6 18L18 6M6 6l12 12");
+      img?.setAttribute("src", "/Logo-MAZ-Azul.png");
+      document.getElementById("menu-icon")?.setAttribute("stroke", "#24408d");
     }
   });
 
@@ -231,7 +245,7 @@ const links = [
     });
   });
 
-  // NUEVO: Manejo con animación suave en submenús desktop
+  // Manejo con animación suave en submenús desktop
   const desktopSubmenus = document.querySelectorAll(
     "ul.md\\:flex > li.relative"
   );
