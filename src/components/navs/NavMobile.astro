@@ -10,9 +10,9 @@ const { links } = Astro.props;
 
 <div
   id="mobile-menu"
-  class="transition-all duration-500 ease-in-out max-h-0 opacity-0 overflow-hidden flex-col md:hidden w-full bg-white text-[#24408d] px-4 mt-[15dvh] shadow-md"
+  class="transition-all duration-500 ease-in-out max-h-0 opacity-0 overflow-hidden flex-col md:hidden w-full bg-white text-[#24408d] px-4 shadow-md"
 >
-  <ul class="flex flex-col text-lg">
+  <ul class="flex flex-col text-lg mt-[15dvh]">
     {
       links.map(({ link, href, submenu }) => (
         <li class="border-b border-gray-200">
