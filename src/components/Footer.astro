@@ -7,12 +7,12 @@ import Location from "@/public/location.svg";
 import Whatsapp from "@/public/whatsapp.svg";
 ---
 
-<footer class="bg-[#0e3e96] text-white px-[8rem] py-12">
-  <div class="grid grid-cols-3 gap-15">
+<footer class="bg-[#0e3e96] text-white px-6 sm:px-12 md:px-20 lg:px-[8rem] py-12">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
     <!-- Columna Izquierda -->
-    <div class="flex flex-col justify-between">
+    <div class="flex flex-col">
       <img src="/Logo-MAZ-Blanco.png" alt="Logo MAZ" class="w-32 mb-6" />
-      <p class="text-sm leading-relaxed mb-8">
+      <p class="text-sm leading-relaxed mb-6">
         Brindamos soluciones integrales en climatización, refrigeración,
         instalaciones eléctricas, ingeniería y mantenimiento, ofreciendo un
         servicio de alta calidad a través de tecnologías innovadoras y un equipo
@@ -35,7 +35,7 @@ import Whatsapp from "@/public/whatsapp.svg";
     </div>
 
     <!-- Columna Central (Links) -->
-    <div class="flex flex-row justify-start place-items-center gap-3 pt-8">
+    <div class="flex flex-row items-center md:items-center gap-2 md:gap-3">
       <a href="#servicios" class="hover:underline font-semibold">Servicios</a>
       <a href="#productos" class="hover:underline font-semibold">Productos</a>
       <a href="#nosotros" class="hover:underline font-semibold">Nosotros</a>
@@ -44,13 +44,13 @@ import Whatsapp from "@/public/whatsapp.svg";
     </div>
 
     <!-- Columna Derecha -->
-    <div class="grid grid-cols-1 gap-4 text-sm pt-8">
-      <div class="flex items-center gap-4">
+    <div class="grid gap-4 text-sm">
+      <div class="flex items-start gap-3">
         <Mail width={34} />
         <span>ventas@mazaguahelada.com.mx</span>
       </div>
 
-      <div class="flex items-center gap-4">
+      <div class="flex items-start gap-3">
         <Location width={34} />
         <span>
           Idelfonso Vázquez No. 121, Col. Jardines de Escobedo,<br />
@@ -58,12 +58,12 @@ import Whatsapp from "@/public/whatsapp.svg";
         </span>
       </div>
 
-      <div class="flex items-center gap-4">
+      <div class="flex items-start gap-3">
         <Phone width={34} />
         <span>+52 (81) 1771 4793</span>
       </div>
 
-      <div class="flex items-center gap-4">
+      <div class="flex items-start gap-3">
         <Whatsapp width={34} />
         <span>+52 (81) 1312 4900</span>
       </div>
