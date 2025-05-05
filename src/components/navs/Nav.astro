@@ -1,8 +1,8 @@
 ---
 import { navLinks } from "@/src/utils/nav.config";
-import NavHeader from "@/src/components/NavHeader.astro";
-import NavDesktop from "@/src/components/NavDesktop.astro";
-import NavMobile from "@/src/components/NavMobile.astro";
+import NavHeader from "@/src/components/navs/NavHeader.astro";
+import NavDesktop from "@/src/components/navs/NavDesktop.astro";
+import NavMobile from "@/src/components/navs/NavMobile.astro";
 ---
 
 <nav
@@ -24,6 +24,7 @@ import NavMobile from "@/src/components/NavMobile.astro";
   const toggleButton = document.getElementById("menu-toggle");
   const menuIconPath = document.getElementById("menu-icon-path");
   const mobileMenu = document.getElementById("mobile-menu");
+  const menuIcon = document.getElementById("menu-icon");
 
   // ✅ Navbar scroll behavior
   window.addEventListener("scroll", () => {
@@ -38,6 +39,8 @@ import NavMobile from "@/src/components/NavMobile.astro";
     nav.classList.toggle("text-white", !scrolled);
     nav.classList.toggle("border-b", scrolled);
     btn?.classList.toggle("text-white", scrolled);
+
+    menuIcon.setAttribute("stroke", scrolled ? "#24408d" : "#fff");
 
     img.setAttribute(
       "src",
@@ -55,14 +58,12 @@ import NavMobile from "@/src/components/NavMobile.astro";
 
       menuIconPath?.setAttribute("d", "M4 8h16M4 16h16");
       img?.setAttribute("src", "/Logo-MAZ-Blanco.png");
-      document.getElementById("menu-icon")?.setAttribute("stroke", "#ffffff");
     } else {
       mobileMenu?.classList.remove("max-h-0", "opacity-0");
       mobileMenu?.classList.add("max-h-[800px]", "opacity-100");
 
       menuIconPath?.setAttribute("d", "M6 18L18 6M6 6l12 12");
       img?.setAttribute("src", "/Logo-MAZ-Azul.png");
-      document.getElementById("menu-icon")?.setAttribute("stroke", "#24408d");
     }
   });
 
