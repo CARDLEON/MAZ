@@ -1,0 +1,49 @@
+---
+
+---
+
+<div class="flex items-center justify-between w-full">
+  <!-- Logo MAZ -->
+  <a href="/">
+    <img
+      id="nav-img"
+      src="/Logo-MAZ-Blanco.png"
+      alt="Logo MAZ"
+      class="w-40 md:w-28 lg:w-40 transition-all duration-300"
+    />
+  </a>
+
+  <!-- Botón hamburguesa (solo visible en mobile) -->
+  <button
+    id="menu-toggle"
+    class="md:hidden focus:outline-none"
+    aria-label="Abrir menú"
+  >
+    <svg
+      id="menu-icon"
+      class="w-8 h-8"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        id="menu-icon-path"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M4 8h16M4 16h16"></path>
+    </svg>
+  </button>
+
+  <slot />
+
+  <!-- Botón Cotiza ahora (solo desktop) -->
+  <a
+    id="nav-btn"
+    href="#"
+    class="hidden md:block bg-[#24408d] text-white px-[15px] py-[8px] rounded-md transition-colors duration-300"
+  >
+    Cotiza ahora!
+  </a>
+</div>
