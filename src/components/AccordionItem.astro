@@ -3,10 +3,14 @@ const { question, answer } = Astro.props;
 ---
 
 <div class="accordion-item border-b overflow-hidden transition-all duration-500">
-  <button type="button" class="accordion-trigger flex justify-between items-center w-full py-4 text-left" aria-expanded="false">
-    <span class="text-lg font-bold">{question}</span>
+  <button
+    type="button"
+    class="accordion-trigger flex justify-between items-center w-full py-3 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#24408d]"
+    aria-expanded="false"
+  >
+    <span class="text-base sm:text-lg font-bold text-gray-800">{question}</span>
     <svg
-      class="w-6 h-6 transition-transform duration-300 cursor-pointer"
+      class="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 cursor-pointer"
       fill="none"
       stroke="currentColor"
       stroke-width="2"
@@ -18,6 +22,7 @@ const { question, answer } = Astro.props;
   </button>
 
   <div class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out text-gray-600 text-sm">
-    <p class="py-4 text-2xl">{answer}</p>
+    <p class="py-3 text-sm sm:text-base leading-relaxed">{answer}</p>
   </div>
 </div>
+
