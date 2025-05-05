@@ -41,7 +41,7 @@ jobs:
           webhook-type: incoming-webhook
           payload: |
             {
-              "text": ":rocket: Deploy completado exitosamente por _${{ github.actor }}_ en *${{ github.repository }}*.",
+              "text": ":rocket: Deploy completado correctamente por _${{ github.actor }}_ en *${{ github.repository }}*.",
               "blocks": [
                 {
                   "type": "section",
