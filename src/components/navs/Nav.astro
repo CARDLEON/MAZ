@@ -52,18 +52,22 @@ import NavMobile from "@/src/components/navs/NavMobile.astro";
   toggleButton?.addEventListener("click", () => {
     const isOpen = mobileMenu?.classList.contains("max-h-[800px]");
 
+    menuIcon.setAttribute("stroke", isOpen ? "#fff" : "#24408d");
+
     if (isOpen) {
       mobileMenu?.classList.remove("max-h-[800px]", "opacity-100");
       mobileMenu?.classList.add("max-h-0", "opacity-0");
 
       menuIconPath?.setAttribute("d", "M4 8h16M4 16h16");
       img?.setAttribute("src", "/Logo-MAZ-Blanco.png");
+      document.body.classList.remove("overflow-hidden")
     } else {
       mobileMenu?.classList.remove("max-h-0", "opacity-0");
       mobileMenu?.classList.add("max-h-[800px]", "opacity-100");
-
+      
       menuIconPath?.setAttribute("d", "M6 18L18 6M6 6l12 12");
       img?.setAttribute("src", "/Logo-MAZ-Azul.png");
+      document.body.classList.add("overflow-hidden")
     }
   });
 
