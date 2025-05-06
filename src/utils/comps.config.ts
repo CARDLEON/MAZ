@@ -9,6 +9,7 @@ export const navLinks: NavLink[] = [
     link: "Servicios",
     href: "#",
     submenu: [
+      { name: "Todos los Servicios", href: "/services" },
       { name: "HVAC", href: "/services/hvac" },
       { name: "Instalaciones eléctricas", href: "/services/electric" },
       { name: "Servicios de Ingeniería", href: "/services/engineering" },
