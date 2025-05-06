@@ -1,5 +1,5 @@
 ---
-
+const { img } = Astro.props;
 ---
 
 <div class="flex items-center justify-between w-full">
@@ -7,7 +7,7 @@
   <a href="/">
     <img
       id="nav-img"
-      src="/Logo-MAZ-Blanco.png"
+      src={img}
       alt="Logo MAZ"
       class="w-40 md:w-28 lg:w-40 transition-all duration-300"
     />
