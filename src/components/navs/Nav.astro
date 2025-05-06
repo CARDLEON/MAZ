@@ -9,7 +9,7 @@ import NavMobile from "@/src/components/navs/NavMobile.astro";
   id="main-nav"
   class="absolute w-full h-[15dvh] z-50 flex items-center justify-between text-[12px] px-4 2xl:px-[12rem] lg:px-[4rem] bg-transparent text-white transition-colors duration-200 ease-in-out"
 >
-  <NavHeader>
+  <NavHeader img="/Logo-MAZ-Blanco.png">
     <NavDesktop links={navLinks} />
   </NavHeader>
 </nav>
@@ -60,14 +60,14 @@ import NavMobile from "@/src/components/navs/NavMobile.astro";
 
       menuIconPath?.setAttribute("d", "M4 8h16M4 16h16");
       img?.setAttribute("src", "/Logo-MAZ-Blanco.png");
-      document.body.classList.add("overflow-hidden")
+      document.body.classList.remove("overflow-hidden");
     } else {
       mobileMenu?.classList.remove("max-h-0", "opacity-0");
       mobileMenu?.classList.add("max-h-[800px]", "opacity-100");
 
       menuIconPath?.setAttribute("d", "M6 18L18 6M6 6l12 12");
       img?.setAttribute("src", "/Logo-MAZ-Azul.png");
-      document.body.classList.remove("overflow-hidden")
+      document.body.classList.add("overflow-hidden");
     }
   });
 
