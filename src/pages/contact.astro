@@ -1,5 +1,15 @@
 ---
-import Building from "@/src/layouts/Building.astro";
+import MainLayout from "@/src/layouts/MainLayout.astro";
+import HeroSection from "@/src/components/hero/HeroSection.astro";
+import ContactForm from "@/src/components/common/ContactForm.astro";
 ---
 
-<Building />
+<MainLayout title="MAZ - Formulario de contacto">
+  <HeroSection
+    title="Contacto"
+    breadcrumb="Inicio > Contacto"
+    background="/bg-hero-section-1.jpg"
+    sectionLabel="Contactanos"
+  />
+  <ContactForm />
+</MainLayout>
