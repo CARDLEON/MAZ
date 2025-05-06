@@ -17,7 +17,7 @@ const { images = [] } = Astro.props;
       id="main-image"
       src={images[0]?.src}
       alt={images[0]?.alt}
-      class="rounded-xl object-cover max-h-[400px] w-full transition-opacity duration-300"
+      class="rounded-xl object-cover max-h-[400px] min-h-[400px] w-full transition-opacity duration-300 sm:overflow-hidden"
     />
   </div>
 
