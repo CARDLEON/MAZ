@@ -1,0 +1,32 @@
+---
+interface Project {
+  title: string;
+  img: string;
+  description: string;
+  link: string;
+}
+
+const { projects = [] } = Astro.props;
+---
+
+<div class="grid grid-cols-1 md:grid-cols-3 md:px-8 lg:grid-cols-4 gap-8 place-items-center py-20 lg:px-10">
+  {
+    projects.map(({ title, img, link }: Project) => (
+      <div>
+        <div class="flex flex-col items-center rounded-lg shadow-md w-full max-w-xs overflow-hidden cursor-pointer">
+          <!-- Imagen -->
+          <a href={link} class="cursor-pointer" >
+            <img
+              src={img}
+              alt={title}
+              class="w-full object-fill transition-opacity duration-500 group-hover:opacity-20"
+            />
+          </a>
+        </div>
+
+        <!-- Título normal -->
+        <h3 class="text-md text-center font-bold mt-5">{title}</h3>
+      </div>
+    ))
+  }
+</div>

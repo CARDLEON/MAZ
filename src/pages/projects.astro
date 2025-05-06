@@ -1,5 +1,20 @@
 ---
-import Building from "@/src/layouts/Building.astro";
+import MainLayout from "@/src/layouts/MainLayout.astro";
+import HeroSection from "@/src/components/hero/HeroSection.astro";
+import ProjectsGrid from "@/src/components/projects/ProjectsGrid.astro";
+
+import { gridProjects } from "@/src/utils/comps.config";
 ---
 
-<Building />
+<MainLayout title="MAZ - Descubre en qué tipo de proyectos te podemos apoyar!">
+  <HeroSection
+    title="Nuestros Proyectos"
+    ,
+    breadcrumb="Inicio > Proyectos"
+    ,
+    background="/bg-hero-section-2.jpg"
+    ,
+    sectionLabel="Proyectos"
+  />
+  <ProjectsGrid projects={gridProjects}/>
+</MainLayout>

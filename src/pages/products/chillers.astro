@@ -2,6 +2,8 @@
 import HeroSection from "@/src/components/hero/HeroSection.astro";
 import ProductGrid from "@/src/components/products/ProductGrid.astro";
 import MainLayout from "@/src/layouts/MainLayout.astro";
+
+import { gridProducts } from "@/src/utils/comps.config";
 ---
 
 <MainLayout title="MAZ - Servicios para Chillers">
@@ -17,53 +19,5 @@ import MainLayout from "@/src/layouts/MainLayout.astro";
     sectionLabel="Chillers"
     ,
   />
-  <ProductGrid
-    products={[
-      {
-        img: "https://placehold.co/300x300?text=AeroChill",
-        title: "AeroChill",
-        description:
-          "Ofrece un rendimiento excepcional con tecnología avanzada para un enfriamiento más eficiente y sostenible.",
-        link: "/products/product/aerochill",
-        isFeatured: true,
-        badgeText: "Más vendido",
-      },
-      {
-        img: "https://placehold.co/300x300?text=Clima+Comfort",
-        title: "Clima Comfort",
-        description:
-          "Sistema compacto ideal para climatizar espacios reducidos de manera eficiente.",
-        link: "/products/product/comfort",
-        isFeatured: true,
-        badgeText: "20% de descuento",
-      },
-      {
-        img: "https://placehold.co/300x300?text=AeroChill",
-        title: "AeroChill",
-        description: "Tecnología de vanguardia para máxima eficiencia.",
-        link: "/products/product/aerochill",
-      },
-      {
-        img: "https://placehold.co/300x300?text=FrostWave",
-        title: "FrostWave",
-        description:
-          "Excelente desempeño en condiciones industriales exigentes.",
-        link: "/products/product/frostwave",
-      },
-      {
-        img: "https://placehold.co/300x300?text=ZephyrCool",
-        title: "ZephyrCool",
-        description: "Alta capacidad de enfriamiento y ahorro energético.",
-        link: "/products/product/zephyr",
-      },
-      {
-        img: "https://placehold.co/300x300?text=PolarAir",
-        title: "PolarAir",
-        description:
-          "Solución compacta para climatización eficiente y sostenible.",
-        link: "/products/product/polar",
-      },
-    ]}
-  />
-
+  <ProductGrid products={gridProducts} />
 </MainLayout>
