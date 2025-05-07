@@ -179,11 +179,11 @@ export const highlightsElec: HighlightType[] = [
 
 export const highlightsEng: HighlightType[] = [
   {
-    title: "Compromiso con la Innovación y Calidad",
-    text: "Con más de una década de experiencia, nos mantenemos a la vanguardia...on más de una década de experiencia, nos mantenemos a la vanguardia...",
+    title: "Ingeniería con Visión Estratégica",
+    text: "Desarrollamos proyectos de ingeniería pensados para optimizar recursos, integrar tecnologías y asegurar resultados tangibles en cada etapa del proceso.",
   },
   {
-    title: "Atención Integral y Soporte Continuo",
-    text: "Desde la selección e instalación hasta el mantenimiento y reparación, brindamos un servicio completo. Nuestro compromiso es asegurar el funcionamiento ininterrumpido de tus sistemas, ofreciendo soport etécnico y suministro de refacciones cuando lo necesites. ",
+    title: "Soluciones Eficientes y Personalizadas",
+    text: "Cada proyecto es único. En MAZ diseñamos soluciones a medida, combinando precisión técnica con una visión estratégica que responde a las necesidades reales de tu operación.",
   },
 ];
