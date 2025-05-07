@@ -1,14 +1,20 @@
 ---
 import ProductGrid from "@/src/components/products/ProductGrid.astro";
+
+import { products } from "@/src/utils/comps.config";
 ---
 
-<section class="px-4 sm:px-6 md:px-12 lg:px-[6rem] xl:px-[10rem] py-12 md:py-20">
+<section
+  class="px-4 sm:px-6 md:px-12 lg:px-[6rem] xl:px-[10rem] py-12 md:py-20"
+>
   <div class="flex flex-col items-center text-center">
     <span
       class="inline-block bg-gray-200 text-gray-600 px-3 py-1 text-sm sm:text-sm font-bold rounded-full mb-4"
-      >Soluciones completas</span
-    >
-    <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-4">Nuestros Productos</h2>
+      >Soluciones completas
+    </span>
+    <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-4">
+      Nuestros Productos
+    </h2>
     <p class="text-sm sm:text-base md:text-lg lg:text-xl max-w-4xl text-black">
       Ofrecemos una gama de chillers diseñados para optimizar tus sistemas de
       refrigeración y aire acondicionado. Con tecnología de vanguardia y
@@ -17,48 +23,5 @@ import ProductGrid from "@/src/components/products/ProductGrid.astro";
     </p>
   </div>
 
-  <ProductGrid
-    products={[
-      {
-        img: "https://placehold.co/300x300?text=AeroChill",
-        title: "AeroChill",
-        description:
-          "Ofrece un rendimiento excepcional con tecnología avanzada para un enfriamiento más eficiente y sostenible.",
-        link: "#",
-      },
-      {
-        img: "https://placehold.co/300x300?text=Clima+Comfort",
-        title: "Clima Comfort",
-        description:
-          "Sistema compacto ideal para climatizar espacios reducidos de manera eficiente.",
-        link: "#",
-      },
-      {
-        img: "https://placehold.co/300x300?text=AeroChill",
-        title: "AeroChill",
-        description: "Tecnología de vanguardia para máxima eficiencia.",
-        link: "#",
-      },
-      {
-        img: "https://placehold.co/300x300?text=FrostWave",
-        title: "FrostWave",
-        description:
-          "Excelente desempeño en condiciones industriales exigentes.",
-        link: "#",
-      },
-      {
-        img: "https://placehold.co/300x300?text=ZephyrCool",
-        title: "ZephyrCool",
-        description: "Alta capacidad de enfriamiento y ahorro energético.",
-        link: "#",
-      },
-      {
-        img: "https://placehold.co/300x300?text=PolarAir",
-        title: "PolarAir",
-        description:
-          "Solución compacta para climatización eficiente y sostenible.",
-        link: "#",
-      },
-    ]}
-  />
+  <ProductGrid products={products} />
 </section>

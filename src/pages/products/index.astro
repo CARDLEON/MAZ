@@ -1,1 +1,17 @@
-<h1>Hello from all products</h1>
+---
+import HeroSection from "@/src/components/hero/HeroSection.astro";
+import MainLayout from "@/src/layouts/MainLayout.astro";
+import ProductGrid from "@/src/components/products/ProductGrid.astro";
+
+import { featProducts } from "@/src/utils/comps.config";
+---
+
+<MainLayout title="MAZ - Todos nuestros servicios">
+  <HeroSection
+    title="Nuestros Productos"
+    subtitle="Conoce nuestros productos estrella"
+    background="/bg-hero-section-2.jpg"
+    breadcrumb="Inicio > Servicios > Todos los Productos"
+  />
+  <ProductGrid products={featProducts}/>
+</MainLayout>

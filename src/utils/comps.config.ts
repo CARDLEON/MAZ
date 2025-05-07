@@ -42,6 +42,45 @@ export type ProductsType = {
   badgeText?: string;
 };
 
+export const featProducts: ProductsType[] = [
+  {
+    img: "https://placehold.co/300x300?text=AeroChill",
+    title: "AeroChill",
+    description:
+      "Ofrece un rendimiento excepcional con tecnología avanzada para un enfriamiento más eficiente y sostenible.",
+    link: "/products/product/aerochill",
+    isFeatured: true,
+    badgeText: "Más vendido",
+  },
+  {
+    img: "https://placehold.co/300x300?text=Clima+Comfort",
+    title: "Clima Comfort",
+    description:
+      "Sistema compacto ideal para climatizar espacios reducidos de manera eficiente.",
+    link: "/products/product/comfort",
+    isFeatured: true,
+    badgeText: "20% de descuento",
+  },
+  {
+    img: "https://placehold.co/300x300?text=FrostWave",
+    title: "FrostWave",
+    description:
+      "Ofrece un rendimiento excepcional con tecnología avanzada para un enfriamiento más eficiente y sostenible.",
+    link: "/products/product/aerochill",
+    isFeatured: true,
+    badgeText: "Nuevo!",
+  },
+  {
+    img: "https://placehold.co/300x300?text=Clima+Comfort",
+    title: "Clima Comfort",
+    description:
+      "Sistema compacto ideal para climatizar espacios reducidos de manera eficiente.",
+    link: "/products/product/comfort",
+    isFeatured: true,
+    badgeText: "50% de descuento",
+  },
+];
+
 export const gridProducts: ProductsType[] = [
   {
     img: "https://placehold.co/300x300?text=AeroChill",
@@ -213,5 +252,53 @@ export const services: ServicesType[] = [
     title: "Trabajos de Pintura Industrial",
     description: "Acabado profesional y protección avanzada para tus equipos.",
     link: "/services/engineering",
+  },
+];
+
+export type ProductType = {
+  img: string;
+  title: string;
+  description: string;
+  link: string;
+};
+
+export const products: ProductType[] = [
+  {
+    img: "https://placehold.co/300x300?text=AeroChill",
+    title: "AeroChill",
+    description:
+      "Ofrece un rendimiento excepcional con tecnología avanzada para un enfriamiento más eficiente y sostenible.",
+    link: "#",
+  },
+  {
+    img: "https://placehold.co/300x300?text=Clima+Comfort",
+    title: "Clima Comfort",
+    description:
+      "Sistema compacto ideal para climatizar espacios reducidos de manera eficiente.",
+    link: "#",
+  },
+  {
+    img: "https://placehold.co/300x300?text=AeroChill",
+    title: "AeroChill",
+    description: "Tecnología de vanguardia para máxima eficiencia.",
+    link: "#",
+  },
+  {
+    img: "https://placehold.co/300x300?text=FrostWave",
+    title: "FrostWave",
+    description: "Excelente desempeño en condiciones industriales exigentes.",
+    link: "#",
+  },
+  {
+    img: "https://placehold.co/300x300?text=ZephyrCool",
+    title: "ZephyrCool",
+    description: "Alta capacidad de enfriamiento y ahorro energético.",
+    link: "#",
+  },
+  {
+    img: "https://placehold.co/300x300?text=PolarAir",
+    title: "PolarAir",
+    description: "Solución compacta para climatización eficiente y sostenible.",
+    link: "#",
   },
 ];
