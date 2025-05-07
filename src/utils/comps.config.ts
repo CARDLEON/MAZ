@@ -13,6 +13,7 @@ export const navLinks: NavLink[] = [
       { name: "HVAC", href: "/services/hvac" },
       { name: "Instalaciones eléctricas", href: "/services/electric" },
       { name: "Servicios de Ingeniería", href: "/services/engineering" },
+      { name: "Servicios y Refacciones", href: "/services/refac" },
     ],
   },
   {
@@ -21,11 +22,6 @@ export const navLinks: NavLink[] = [
     submenu: [
       { name: "Todos los Productos", href: "/products" },
       { name: "Chillers", href: "/products/chillers" },
-      { name: "Equipos TVR y Tableros", href: "/products/tvr" },
-      { name: "Torres de Enfriamiento", href: "/products/cooling" },
-      { name: "Equipos Paquete y Div", href: "/products/divpackage" },
-      { name: "Bombas Centrífugas", href: "/products/pumps" },
-      { name: "Tubería Hidráulica", href: "/products/hidraulic" },
     ],
   },
   { link: "Nosotros", href: "/about-us" },
