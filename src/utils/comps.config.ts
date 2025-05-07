@@ -91,7 +91,7 @@ export type ProjectType = {
   img: string;
   title: string;
   link?: string;
-}
+};
 
 export const gridProjects: ProjectType[] = [
   {
@@ -124,4 +124,66 @@ export const gridProjects: ProjectType[] = [
     title: "Solución de climatización escolar",
     link: "#",
   },
-]
+];
+
+export type BrandsType = {
+  name: string;
+  logo: string;
+};
+
+export type HighlightType = {
+  title: string;
+  text: string;
+};
+
+export const brandsHvac: BrandsType[] = [
+  {
+    name: "Carrier",
+    logo: "https://placehold.co/100x40?text=Carrier",
+  },
+  {
+    name: "Trane",
+    logo: "https://placehold.co/100x40?text=Trane",
+  },
+  {
+    name: "Honeywell",
+    logo: "https://placehold.co/100x40?text=Honeywell",
+  },
+  {
+    name: "Daikin",
+    logo: "https://placehold.co/100x40?text=Daikin",
+  },
+];
+
+export const highlightsHvac: HighlightType[] = [
+  {
+    title: "Compromiso con la Innovación y Calidad",
+    text: "Con más de una década de experiencia, nos mantenemos a la vanguardia...on más de una década de experiencia, nos mantenemos a la vanguardia...",
+  },
+  {
+    title: "Atención Integral y Soporte Continuo",
+    text: "Desde la selección e instalación hasta el mantenimiento y reparación, brindamos un servicio completo. Nuestro compromiso es asegurar el funcionamiento ininterrumpido de tus sistemas, ofreciendo soport etécnico y suministro de refacciones cuando lo necesites. ",
+  },
+];
+
+export const highlightsElec: HighlightType[] = [
+  {
+    title: "Infraestructura Eléctrica Confiable",
+    text: "Diseñamos e implementamos instalaciones eléctricas de alto desempeño, asegurando la correcta integración entre sistemas, seguridad operativa y continuidad en tus procesos.",
+  },
+  {
+    title: "Soluciones Integrales a tu Medida",
+    text: "Desde la planeación y ejecución hasta las pruebas finales, en MAZ ofrecemos un servicio eléctrico completo, enfocado en brindar eficiencia, adaptabilidad y soporte técnico especializado para cada proyecto.",
+  },
+];
+
+export const highlightsEng: HighlightType[] = [
+  {
+    title: "Compromiso con la Innovación y Calidad",
+    text: "Con más de una década de experiencia, nos mantenemos a la vanguardia...on más de una década de experiencia, nos mantenemos a la vanguardia...",
+  },
+  {
+    title: "Atención Integral y Soporte Continuo",
+    text: "Desde la selección e instalación hasta el mantenimiento y reparación, brindamos un servicio completo. Nuestro compromiso es asegurar el funcionamiento ininterrumpido de tus sistemas, ofreciendo soport etécnico y suministro de refacciones cuando lo necesites. ",
+  },
+];

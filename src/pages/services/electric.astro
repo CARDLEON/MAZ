@@ -1,0 +1,29 @@
+---
+import MainLayout from "@/src/layouts/MainLayout.astro";
+import HeroSection from "@/src/components/hero/HeroSection.astro";
+import GeneralSection from "@/src/components/layout/GeneralSection.astro";
+
+import { highlightsElec } from "@/src/utils/comps.config";
+---
+
+<MainLayout title="MAZ - Servicios para instalaciones electricas">
+  <HeroSection
+    title="Instalaciones Electricas"
+    subtitle="Especialistas en instalaciones electricas"
+    background="/bg-hero-section-1.jpg"
+    breadcrumb="Inicio > Servicios > Instalaciones eléctricas"
+    sectionLabel="Nuestros Servicios"
+  />
+  <GeneralSection
+    categories={[
+      { label: "Armado de tableros" },
+      { label: "Cableado" },
+      { label: "Instalación de charola" },
+      { label: "Tubería conduit" },
+      { label: "Tubería neumática" },
+    ]}
+    title="Servicios de instalación eléctrica personalizados para cada necesidad"
+    description={`En <b>MAZ Soluciones de Agua Helada</b>, comprendemos la importancia de una infraestructura eléctrica confiable. Por eso, <b>ofrecemos soluciones integrales en instalaciones eléctricas</b>, <b>garantizando</b> una integración precisa, operación <b>segura</b> y desempeño <b>óptimo</b> de todos tus sistemas.`}
+    highlights={highlightsElec}
+  />
+</MainLayout>
