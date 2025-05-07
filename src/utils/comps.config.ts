@@ -200,18 +200,18 @@ export const services: ServicesType[] = [
     img: "/Serv-1.jpg",
     title: "Instalación y Mantenimiento de Chillers",
     description: "Para aplicaciones industriales y comerciales",
-    link: "#",
+    link: "/services/hvac",
   },
   {
     img: "/Serv-2.jpg",
     title: "Instalaciones Eléctricas",
     description: "Soluciones eléctricas confiables y seguras para tu proyecto.",
-    link: "#",
+    link: "/services/electric",
   },
   {
     img: "/Serv-3.jpg",
     title: "Trabajos de Pintura Industrial",
     description: "Acabado profesional y protección avanzada para tus equipos.",
-    link: "#",
+    link: "/services/engineering",
   },
 ];
