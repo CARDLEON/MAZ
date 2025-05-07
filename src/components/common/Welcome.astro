@@ -1,24 +1,7 @@
 ---
-const services = [
-  {
-    img: "/Serv-1.jpg",
-    title: "Instalación y Mantenimiento de Chillers",
-    description: "Para aplicaciones industriales y comerciales",
-    link: "#",
-  },
-  {
-    img: "/Serv-2.jpg",
-    title: "Instalaciones Eléctricas",
-    description: "Soluciones eléctricas confiables y seguras para tu proyecto.",
-    link: "#",
-  },
-  {
-    img: "/Serv-3.jpg",
-    title: "Trabajos de Pintura Industrial",
-    description: "Acabado profesional y protección avanzada para tus equipos.",
-    link: "#",
-  },
-];
+import ServicesGrid from "@/src/components/sections/ServicesGrid.astro"
+
+import { services } from "@/src/utils/comps.config"
 ---
 
 <section class="px-16 lg:px-32 py-20">
@@ -57,41 +40,5 @@ const services = [
     </div>
   </div>
 
-  <!-- Servicios -->
-  <div class="text-center mb-16">
-    <span
-      class="inline-block bg-gray-200 text-gray-600 px-3 py-1 text-sm font-bold rounded-full mb-4"
-      >Soluciones completas</span
-    >
-    <h2 class="text-3xl font-bold mb-4">Nuestros Servicios</h2>
-    <p class="max-w-3xl mx-auto text-gray-700">
-      Ofrecemos una amplia gama de servicios especializados para garantizar el
-      mejor rendimiento en sistemas de climatización y refrigeración. Nuestra
-      experiencia y compromiso con la calidad nos permiten brindar soluciones a
-      medida que cumplen con las necesidades específicas de cada cliente.
-    </p>
-  </div>
-
-  <!-- Cards de servicios -->
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-    {
-      services.map(({ img, title, description, link }) => (
-        <div class="flex flex-col rounded-lg overflow-hidden shadow-md">
-          <img src={img} alt={title} class="w-full h-64 object-cover" />
-          <div class="bg-[#0e3e96] text-white p-6 flex flex-col flex-1 justify-between">
-            <div>
-              <h3 class="text-lg font-bold mb-2">{title}</h3>
-              <p class="text-sm">{description}</p>
-            </div>
-            <a
-              href={link}
-              class="mt-4 text-center inline-block bg-white text-[#0e3e96] font-semibold px-4 py-2 rounded-md text-sm hover:bg-gray-100 transition"
-            >
-              Ver más
-            </a>
-          </div>
-        </div>
-      ))
-    }
-  </div>
+  <ServicesGrid services={services} />
 </section>

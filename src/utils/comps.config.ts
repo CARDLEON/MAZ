@@ -187,3 +187,31 @@ export const highlightsEng: HighlightType[] = [
     text: "Cada proyecto es único. En MAZ diseñamos soluciones a medida, combinando precisión técnica con una visión estratégica que responde a las necesidades reales de tu operación.",
   },
 ];
+
+export type ServicesType = {
+  img: string;
+  title: string;
+  description: string;
+  link: string;
+};
+
+export const services: ServicesType[] = [
+  {
+    img: "/Serv-1.jpg",
+    title: "Instalación y Mantenimiento de Chillers",
+    description: "Para aplicaciones industriales y comerciales",
+    link: "#",
+  },
+  {
+    img: "/Serv-2.jpg",
+    title: "Instalaciones Eléctricas",
+    description: "Soluciones eléctricas confiables y seguras para tu proyecto.",
+    link: "#",
+  },
+  {
+    img: "/Serv-3.jpg",
+    title: "Trabajos de Pintura Industrial",
+    description: "Acabado profesional y protección avanzada para tus equipos.",
+    link: "#",
+  },
+];
