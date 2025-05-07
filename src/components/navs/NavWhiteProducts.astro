@@ -7,7 +7,7 @@ import NavMobileWhite from "@/src/components/navs/NavMobileWhiteProducts.astro";
 
 <nav
   id="main-nav"
-  class="w-full h-[15dvh] z-50 flex items-center justify-between text-[12px] px-4 2xl:px-[12rem] lg:px-[4rem] border-b-1 border-b-[#24408d] bg-white text-[#24408d] transition-colors duration-200 ease-in-out"
+  class="w-full h-[15dvh] z-50 flex items-center justify-between text-[12px] px-4 2xl:px-[12rem] lg:px-[4rem] bg-white text-[#24408d] transition-colors duration-200 ease-in-out"
 >
   <NavHeader img="/Logo-MAZ-Azul.png">
     <NavDesktop links={navLinks} />
@@ -34,30 +34,34 @@ import NavMobileWhite from "@/src/components/navs/NavMobileWhiteProducts.astro";
 
     nav.classList.toggle("fixed", scrolled);
     nav.classList.toggle("top-0", scrolled);
+    nav.classList.toggle("bg-white", scrolled);
+    nav.classList.toggle("text-[#24408d]", scrolled);
+    nav.classList.toggle("text-white", !scrolled);
+    nav.classList.toggle("border-b", scrolled);
+    btn.classList.toggle("text-white", scrolled);
+
+    menuIcon.setAttribute("stroke", scrolled ? "#24408d" : "#fff");
   });
 
   // ✅ Toggle menú mobile
-  toggleButton.addEventListener("click", () => {
-    const isOpen = mobileMenu.classList.contains("max-h-[800px]");
-
-    if (!menuIcon || !mobileMenu || !menuIconPath) return;
+  toggleButton?.addEventListener("click", () => {
+    const isOpen = mobileMenu?.classList.contains("max-h-[800px]");
 
     menuIcon.setAttribute("stroke", isOpen ? "#fff" : "#24408d");
 
     if (isOpen) {
-      // When closed
-      mobileMenu.classList.remove("max-h-[800px]", "opacity-100");
-      mobileMenu.classList.add("max-h-0", "opacity-0");
+      mobileMenu?.classList.remove("max-h-[800px]", "opacity-100");
+      mobileMenu?.classList.add("max-h-0", "opacity-0");
 
-      menuIconPath.setAttribute("d", "M4 8h16M4 16h16");
+      menuIconPath?.setAttribute("d", "M4 8h16M4 16h16");
+      img?.setAttribute("src", "/Logo-MAZ-Blanco.png");
       document.body.classList.remove("overflow-hidden");
     } else {
-      // When open
-      mobileMenu.classList.remove("max-h-0", "opacity-0");
-      mobileMenu.classList.add("max-h-[800px]", "opacity-100");
+      mobileMenu?.classList.remove("max-h-0", "opacity-0");
+      mobileMenu?.classList.add("max-h-[800px]", "opacity-100");
 
       menuIconPath?.setAttribute("d", "M6 18L18 6M6 6l12 12");
-      img.setAttribute("src", "/Logo-MAZ-Azul.png");
+      img?.setAttribute("src", "/Logo-MAZ-Azul.png");
       document.body.classList.add("overflow-hidden");
     }
   });

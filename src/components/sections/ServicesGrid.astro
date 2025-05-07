@@ -1,0 +1,56 @@
+---
+import type { ServicesType } from "@/src/utils/comps.config";
+
+const { services = [] } = Astro.props;
+---
+
+<section class="px-4 sm:px-6 lg:px-12 py-12">
+  <!-- Encabezado -->
+  <div class="text-center mb-12">
+    <span
+      class="inline-block bg-gray-200 text-gray-600 px-3 py-1 text-xs sm:text-sm font-bold rounded-full mb-4"
+    >
+      Soluciones completas
+    </span>
+    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
+      Nuestros Servicios
+    </h2>
+    <p class="max-w-3xl mx-auto text-gray-700 text-sm sm:text-base">
+      Ofrecemos una amplia gama de servicios especializados para garantizar el
+      mejor rendimiento en sistemas de climatización y refrigeración. Nuestra
+      experiencia y compromiso con la calidad nos permiten brindar soluciones a
+      medida que cumplen con las necesidades específicas de cada cliente.
+    </p>
+  </div>
+
+  <!-- Cards de servicios -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    {
+      services.map(({ img, title, description, link }: ServicesType) => (
+        <div class="flex flex-col rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01]">
+          <img
+            src={img}
+            alt={title}
+            class="w-full h-56 sm:h-64 object-cover"
+          />
+          <div class="bg-[#0e3e96] text-white p-6 flex flex-col flex-1 justify-between">
+            <div>
+              <h3 class="text-base sm:text-lg font-semibold mb-2">
+                {title}
+              </h3>
+              <p class="text-sm leading-relaxed">
+                {description}
+              </p>
+            </div>
+            <a
+              href={link}
+              class="mt-4 text-center inline-block bg-white text-[#0e3e96] font-semibold px-4 py-2 rounded-md text-sm hover:bg-gray-100 transition-colors duration-200"
+            >
+              Ver más
+            </a>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
