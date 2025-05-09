@@ -1,6 +1,9 @@
 ---
 const { img } = Astro.props;
+import ContactModal from "@/src/components/common/ContactModal.astro";
 ---
+
+<ContactModal client:load />
 
 <div class="flex items-center justify-between w-full">
   <!-- Logo MAZ -->
@@ -41,9 +44,42 @@ const { img } = Astro.props;
   <!-- Botón Cotiza ahora (solo desktop) -->
   <a
     id="nav-btn"
-    href="#"
-    class="hidden md:block bg-[#24408d] text-white px-[15px] py-[8px] rounded-md transition-colors duration-300"
+    class="hidden md:block bg-[#24408d] text-white px-[15px] py-[8px] rounded-md transition-colors duration-300 cursor-pointer"
+    onclick="openContactModal()"
   >
     Cotiza ahora
   </a>
 </div>
+
+<script is:inline>
+  function bindModalEvents() {
+    const close = document.getElementById("close-modal");
+    const modal = document.getElementById("contact-modal");
+
+    if (close && modal) {
+      close.addEventListener("click", () => {
+        modal.classList.remove("opacity-100", "pointer-events-auto");
+        modal.classList.add("opacity-0", "pointer-events-none");
+      });
+    }
+  }
+
+  // Ejecuta al cargar por primera vez
+  document.addEventListener("DOMContentLoaded", () => {
+    bindModalEvents();
+  });
+
+  // Ejecuta después de cada transición de página
+  document.addEventListener("astro:after-swap", () => {
+    bindModalEvents();
+  });
+
+  // Función global para abrir el modal (puede estar en layout también)
+  window.openContactModal = () => {
+    const modal = document.getElementById("contact-modal");
+    if (!modal) return;
+    modal.classList.remove("opacity-0", "pointer-events-none");
+    modal.classList.add("opacity-100", "pointer-events-auto");
+  };
+</script>
+

@@ -7,7 +7,7 @@ export type NavLink = {
 export const navLinks: NavLink[] = [
   {
     link: "Servicios",
-    href: "#",
+    href: "/services",
     submenu: [
       { name: "Todos los Servicios", href: "/services" },
       { name: "HVAC", href: "/services/hvac" },
@@ -18,7 +18,7 @@ export const navLinks: NavLink[] = [
   },
   {
     link: "Productos",
-    href: "#",
+    href: "/products",
     submenu: [
       { name: "Todos los Productos", href: "/products" },
       { name: "Chillers", href: "/products/chillers" },
