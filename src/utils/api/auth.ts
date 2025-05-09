@@ -1,5 +1,5 @@
-const user = import.meta.env.WP_USERNAME;
-const pass = import.meta.env.WP_PASSWORD;
+const user = import.meta.env.VITE_JWT_USER || "";
+const pass = import.meta.env.VITE_JWT_PASS || "";
 
 export async function getToken() {
   const response = await fetch(
