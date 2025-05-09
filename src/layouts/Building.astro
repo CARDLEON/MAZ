@@ -1,16 +1,19 @@
 ---
 import "@/src/styles/global.css";
+import { ClientRouter } from "astro:transitions";
 
 const { title } = Astro.props;
 ---
 
 <html lang="es">
-  <title>{title}</title>
-  <meta name="robots" content="noindex, nofollow" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-
+  <head>
+    <title>{title}</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <ClientRouter />   
+  </head>
   <body
     class="bg-[#24408D] text-white flex items-center justify-center h-screen px-6 text-center"
   >
