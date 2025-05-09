@@ -5,37 +5,64 @@ import Phone from "@/public/phone.svg";
 import Mail from "@/public/mail.svg";
 import Location from "@/public/location.svg";
 import Whatsapp from "@/public/whatsapp.svg";
+
+type Props = {
+  description_footer: string;
+  fb_link_footer: string;
+  in_link_footer: string;
+  mail_footer: string;
+  location: string;
+  phone_footer: string;
+  whatsapp_footer: string;
+};
+
+const {
+  description_footer,
+  fb_link_footer,
+  in_link_footer,
+  mail_footer,
+  location,
+  phone_footer,
+  whatsapp_footer,
+} = Astro.props;
 ---
 
-<footer class="bg-[#0e3e96] text-white px-6 sm:px-12 md:px-20 lg:px-[8rem] py-12">
+<footer
+  class="bg-[#0e3e96] text-white px-6 sm:px-12 md:px-20 lg:px-[8rem] py-12"
+>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
     <!-- Columna Izquierda -->
     <div class="flex flex-col">
       <img src="/Logo-MAZ-Blanco.png" alt="Logo MAZ" class="w-32 mb-6" />
       <p class="text-sm leading-relaxed mb-6">
-        Brindamos soluciones integrales en climatización, refrigeración,
+        {description_footer}
+        <!-- Brindamos soluciones integrales en climatización, refrigeración,
         instalaciones eléctricas, ingeniería y mantenimiento, ofreciendo un
         servicio de alta calidad a través de tecnologías innovadoras y un equipo
         altamente capacitado. Nos comprometemos con la eficiencia, cercanía y
         satisfacción de nuestros clientes, asegurando que cada proyecto y
-        servicio se realice de manera oportuna, segura y sostenible.
+        servicio se realice de manera oportuna, segura y sostenible. -->
       </p>
 
       <div class="flex gap-4">
-        <a href="https://www.facebook.com/Mazaguahelada/" target="_blank">
+        <!-- <a href="https://www.facebook.com/Mazaguahelada/" target="_blank"> -->
+        <a href={fb_link_footer} target="_blank">
           <Facebook width={34} />
         </a>
-        <a
+        <!-- <a
           href="https://www.linkedin.com/company/mazaguahelada"
           target="_blank"
-        >
+        > -->
+        <a href={in_link_footer} target="_blank">
           <LinkedIn width={34} />
         </a>
       </div>
     </div>
 
     <!-- Columna Central (Links) -->
-    <div class="flex flex-row text-sm items-center md:items-center gap-2 md:gap-3">
+    <div
+      class="flex flex-row text-sm items-center md:items-center gap-2 md:gap-3"
+    >
       <a href="#servicios" class="hover:underline font-semibold">Servicios</a>
       <a href="#productos" class="hover:underline font-semibold">Productos</a>
       <a href="#nosotros" class="hover:underline font-semibold">Nosotros</a>
@@ -47,25 +74,29 @@ import Whatsapp from "@/public/whatsapp.svg";
     <div class="grid gap-4 text-sm">
       <div class="flex items-start gap-3">
         <Mail width={34} />
-        <span>ventas@mazaguahelada.com.mx</span>
+        <!-- <span>ventas@mazaguahelada.com.mx</span> -->
+        <span>{mail_footer}</span>
       </div>
 
       <div class="flex items-start gap-3">
         <Location width={34} />
-        <span>
+        <!-- <span>
           Idelfonso Vázquez No. 121, Col. Jardines de Escobedo,<br />
           Gral. Escobedo, N.L, C.P. 66050
-        </span>
+        </span> -->
+        <span set:html={location}/>
       </div>
 
       <div class="flex items-start gap-3">
         <Phone width={34} />
-        <span>+52 (81) 1771 4793</span>
+        <!-- <span>+52 (81) 1771 4793</span> -->
+        <span>{phone_footer}</span>
       </div>
 
       <div class="flex items-start gap-3">
         <Whatsapp width={34} />
-        <span>+52 (81) 1312 4900</span>
+        <!-- <span>+52 (81) 1312 4900</span> -->
+        <span>{whatsapp_footer}</span>
       </div>
     </div>
   </div>

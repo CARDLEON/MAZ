@@ -1,11 +1,15 @@
 ---
-import NavTop from "@/src/components/navs/NavTop.astro";
+import { ClientRouter } from "astro:transitions";
+import { fetchNavTop } from "@/src/utils/queries/fetchNavTop";
+import { fetchFooter } from "@/src/utils/queries/fetchFooter";
+
 import Footer from "@/src/components/common/Footer.astro";
+import NavTop from "@/src/components/navs/NavTop.astro";
 import Nav from "@/src/components/navs/Nav.astro";
 import "@/src/styles/global.css";
 
-import { ClientRouter } from "astro:transitions";
-
+const navData = await fetchNavTop();
+const footerData = await fetchFooter();
 const { title } = Astro.props;
 ---
 
@@ -19,9 +23,9 @@ const { title } = Astro.props;
     <ClientRouter />
   </head>
   <body>
-    <NavTop />
+    <NavTop {...navData} />
     <Nav />
     <slot />
-    <Footer />
+    <Footer {...footerData}/>
   </body>
 </html>
