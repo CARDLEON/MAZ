@@ -10,9 +10,6 @@ export default defineConfig({
   output: "static",
   vite: {
     plugins: [tailwindcss()],
-    define: {
-      "process.env": process.env,
-    },
   },
 
   integrations: [react()],
