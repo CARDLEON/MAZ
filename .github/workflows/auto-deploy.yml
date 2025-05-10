@@ -22,6 +22,12 @@ jobs:
 
       - name: Build project
         run: npm run build
+        env:
+          VITE_JWT_USER: ${{ secrets.VITE_JWT_USER }}
+          VITE_JWT_PASS: ${{ secrets.VITE_JWT_PASS }}
+          VITE_WP_REST_ENDPOINT: ${{ secrets.VITE_WP_REST_ENDPOINT }}
+          VITE_WP_REST_ENDPOINT_ACF: ${{ secrets.VITE_WP_REST_ENDPOINT_ACF }}
+          VITE_JWT_SECRET: ${{ secrets.VITE_WP_PREVIEW_SECRET }}
 
       - name: Deploy via FTP
         id: deploy
