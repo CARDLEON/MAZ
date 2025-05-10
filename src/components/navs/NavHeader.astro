@@ -1,6 +1,8 @@
 ---
 const { img } = Astro.props;
 import ContactModal from "@/src/components/common/ContactModal.tsx";
+
+import Image from "astro/components/Image.astro";
 ---
 
 <ContactModal client:load />
@@ -8,11 +10,13 @@ import ContactModal from "@/src/components/common/ContactModal.tsx";
 <div class="flex items-center justify-between w-full">
   <!-- Logo MAZ -->
   <a href="/">
-    <img
+    <Image
       id="nav-img"
       src={img}
       alt="Logo MAZ"
       class="w-40 md:w-28 lg:w-40 transition-all duration-300"
+      width={160}
+      height={60}
     />
   </a>
 

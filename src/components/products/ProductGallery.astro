@@ -1,4 +1,6 @@
 ---
+import Image from "astro/components/Image.astro";
+
 import RArrow from "@/public/right-arrow.svg";
 import LArrow from "@/public/left-arrow.svg";
 
@@ -13,17 +15,21 @@ const { images = [] } = Astro.props;
 <div class="bg-[#e9f1fb] rounded-2xl p-6 shadow-md">
   <!-- Imagen principal -->
   <div class="relative">
-    <img
+    <Image
       id="main-image"
       src={images[0]?.src}
       alt={images[0]?.alt}
       class="rounded-xl object-cover max-h-[400px] min-h-[400px] w-full transition-opacity duration-300 sm:overflow-hidden"
+      width={100}
+      height={100}
     />
   </div>
 
   <!-- Miniaturas + Flechas -->
   <div class="relative mt-6">
-    <div class="flex items-center justify-center gap-4 overflow-x-auto relative">
+    <div
+      class="flex items-center justify-center gap-4 overflow-x-auto relative"
+    >
       <!-- Flecha izquierda -->
       <button
         id="prev-btn"
@@ -45,10 +51,12 @@ const { images = [] } = Astro.props;
               data-index={index}
               aria-label={`Vista previa ${alt}`}
             >
-              <img
+              <Image
                 src={src}
                 alt={alt}
                 class="w-full h-full object-cover rounded-md"
+                width={20}
+                height={20}
               />
             </button>
           ))
@@ -97,8 +105,14 @@ const { images = [] } = Astro.props;
       prevBtn?.classList.toggle("pointer-events-none", currentIndex === 0);
       prevBtn?.classList.toggle("opacity-50", currentIndex === 0);
 
-      nextBtn?.classList.toggle("pointer-events-none", currentIndex === thumbs.length - 1);
-      nextBtn?.classList.toggle("opacity-50", currentIndex === thumbs.length - 1);
+      nextBtn?.classList.toggle(
+        "pointer-events-none",
+        currentIndex === thumbs.length - 1
+      );
+      nextBtn?.classList.toggle(
+        "opacity-50",
+        currentIndex === thumbs.length - 1
+      );
     }
 
     thumbs.forEach((thumb, index) => {

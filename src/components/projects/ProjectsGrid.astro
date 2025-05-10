@@ -6,6 +6,8 @@ interface Project {
   link: string;
 }
 
+import Image from "astro/components/Image.astro";
+
 const { projects = [] } = Astro.props;
 ---
 
@@ -16,10 +18,12 @@ const { projects = [] } = Astro.props;
         <div class="flex flex-col items-center rounded-lg shadow-md w-full max-w-xs overflow-hidden cursor-pointer">
           <!-- Imagen -->
           <a href={link} class="cursor-pointer" >
-            <img
+            <Image
               src={img}
               alt={title}
               class="w-full object-fill transition-opacity duration-500 group-hover:opacity-20"
+              width={100}
+              height={100}
             />
           </a>
         </div>

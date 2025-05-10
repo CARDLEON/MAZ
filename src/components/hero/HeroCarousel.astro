@@ -2,21 +2,23 @@
 import LeftArrow from "@/public/left-arrow.svg";
 import RightArrow from "@/public/right-arrow.svg";
 
+import Image from "astro/components/Image.astro";
+
 const slides = [
   {
-    img: "/bg-home-hero-1.jpg",
+    img: "/bg-home-hero-1.webp",
     title: "Soluciones de Climatización Inteligente",
     subtitle:
       "Mejoramos la eficiencia energética y prolongando la vida útil de tus equipos",
   },
   {
-    img: "/bg-home-hero-2.jpg",
+    img: "/bg-home-hero-2.webp",
     title: "Servicios HVAC",
     subtitle:
       "Brindamos suministro, instalación, mantenimiento, diagnóstico, reparación, selección de equipos y suministro de refacciones.",
   },
   {
-    img: "/bg-home-hero-3.jpg",
+    img: "/bg-home-hero-3.webp",
     title: "Optimización Energética",
     subtitle:
       "Transformamos tu infraestructura con soluciones personalizadas en sistemas HVAC, Chillers y más, garantizando eficiencia enérgetica y máximo rendimiento.",
@@ -35,10 +37,13 @@ const slides = [
           class="carousel-slide absolute top-0 inset-0 w-full h-full transition-transform duration-700 ease-in-out"
           style={`transform: translateX(${index === 0 ? "0%" : "100%"})`}
         >
-          <img
+          <Image
             src={img}
             alt={`Slide ${index + 1}`}
             class="w-full h-full object-cover"
+            width={1600}
+            height={394}
+            format="webp"
           />
           <div class="absolute inset-0 bg-blue-300/30 z-10" />
           <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center bg-black/30">

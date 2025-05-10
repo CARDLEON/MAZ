@@ -1,5 +1,6 @@
 ---
 import AccordionItem from "@/src/components/common/AccordionItem.astro";
+import Image from "astro/components/Image.astro";
 
 interface FaqItem {
   question: string;
@@ -25,7 +26,7 @@ const {
   <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
     <!-- Imagen -->
     <div class="w-full md:w-1/2">
-      <img src={image} alt={alt} class="rounded-lg w-full" />
+      <Image format="webp" src={image} alt={alt} class="rounded-lg w-full" width={600} height={400} />
     </div>
 
     <!-- Acordeón -->

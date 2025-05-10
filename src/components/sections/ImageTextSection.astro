@@ -5,6 +5,8 @@ interface Props {
   text?: string;
 }
 
+import Image from "astro/components/Image.astro";
+
 const {
   image = "https://placehold.co/600x400", // Placeholder por defecto
   alt = "Imagen ilustrativa",
@@ -16,10 +18,12 @@ const {
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
     <!-- Imagen -->
     <div>
-      <img
+      <Image
         src={image}
         alt={alt}
         class="w-full rounded-lg shadow-md object-cover"
+        width={600}
+        height={600}
       />
     </div>
 

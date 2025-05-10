@@ -8,6 +8,8 @@ interface Product {
   badgeText?: string
 }
 
+import Image from "astro/components/Image.astro";
+
 const { products = [] } = Astro.props;
 ---
 
@@ -23,10 +25,12 @@ const { products = [] } = Astro.props;
         )}
 
         <!-- Imagen -->
-        <img
+        <Image
           src={img}
           alt={title}
           class="h-48 object-contain mb-4 transition-opacity duration-500 group-hover:opacity-20"
+          width={192}
+          height={192}
         />
 
         <!-- Título normal -->

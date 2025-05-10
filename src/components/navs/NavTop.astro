@@ -13,7 +13,8 @@ type Props = {
   in_link_top: string;
 };
 
-const { phone_top, email_top, schedule_top, fb_link_top, in_link_top } = Astro.props;
+const { phone_top, email_top, schedule_top, fb_link_top, in_link_top } =
+  Astro.props;
 ---
 
 <section
@@ -29,17 +30,14 @@ const { phone_top, email_top, schedule_top, fb_link_top, in_link_top } = Astro.p
         <li class="flex gap-2 items-center">
           <Phone width={20} />
           {phone_top}
-          <!-- +52 (81) 1771 4793 -->
         </li>
         <li class="flex gap-2 items-center">
           <Mail width={20} />
           {email_top}
-          <!-- ventas@mazaguahelada.com.mx -->
         </li>
         <li class="flex gap-2 items-center">
           <Clock width={20} />
           {schedule_top}
-          <!-- Lun - Vie 8:00 - 18:00 -->
         </li>
       </ul>
     </section>
@@ -47,16 +45,11 @@ const { phone_top, email_top, schedule_top, fb_link_top, in_link_top } = Astro.p
     <ul class="flex gap-2 mt-2 md:mt-0">
       <li>
         <a href={fb_link_top} target="_blank">
-          <!-- <a href="https://www.facebook.com/Mazaguahelada/" target="_blank"> -->
           <Facebook width={20} />
         </a>
       </li>
       <li>
         <a href={in_link_top} target="_blank">
-          <!-- <a
-          href="https://www.linkedin.com/company/mazaguahelada"
-          target="_blank"
-        > -->
           <LinkedIn width={20} />
         </a>
       </li>

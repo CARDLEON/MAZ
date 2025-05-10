@@ -1,12 +1,16 @@
 ---
+import Image from "astro/components/Image.astro";
+
 const { title, subtitle, background, breadcrumb, sectionLabel } = Astro.props;
 ---
 
 <section class="relative w-full h-[35vh] lg:h-[30vh] flex items-end pb-[1rem]">
-  <img
+  <Image
     src={background}
     alt="Fondo Hero HVAC"
     class="absolute inset-0 w-full h-full object-cover"
+    width={900}
+    height={311}
   />
 
   <!-- Capa oscura -->

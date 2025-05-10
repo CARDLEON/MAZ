@@ -1,4 +1,6 @@
 ---
+import Image from "astro/components/Image.astro";
+
 interface Category {
   label: string;
   href: string;
@@ -64,10 +66,11 @@ const {
           <div class="animate-marquee whitespace-nowrap flex gap-10 py-4 px-4">
             {[...brands, ...brands].map(({ name, logo }) => (
               <div class="flex-shrink-0 flex items-center justify-center w-40">
-                <img
+                <Image
                   src={logo}
                   alt={`Logo ${name}`}
                   class="h-12 object-contain"
+                  inferSize={true}
                 />
               </div>
             ))}

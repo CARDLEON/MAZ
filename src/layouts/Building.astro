@@ -1,6 +1,8 @@
 ---
-import "@/src/styles/global.css";
+import Image from "astro/components/Image.astro";
 import { ClientRouter } from "astro:transitions";
+
+import "@/src/styles/global.css";
 
 const { title } = Astro.props;
 ---
@@ -18,10 +20,12 @@ const { title } = Astro.props;
     class="bg-[#24408D] text-white flex items-center justify-center h-screen px-6 text-center"
   >
     <main class="max-w-md">
-      <img
-        src="/Logo-MAZ-Blanco.png"
+      <Image
+        src="/Logo-MAZ-Blanco.webp"
         alt="Logo MAZ"
         class="w-32 mx-auto mb-6"
+        width={128}
+        height={60}
       />
       <h1 class="text-3xl md:text-4xl font-bold mb-4">
         Página en construcción
