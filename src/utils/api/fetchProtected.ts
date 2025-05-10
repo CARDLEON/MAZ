@@ -1,6 +1,10 @@
 import { getToken } from "@/src/utils/api/auth";
 
+const cache = new Map<string, any>();
+
 export async function fetchProtected(url: string) {
+  if (cache.has(url)) return cache.get(url);
+
   const token = await getToken();
 
   const response = await fetch(url, {
@@ -9,7 +13,9 @@ export async function fetchProtected(url: string) {
     },
   });
 
-  if (!response.ok) throw new Error("Error en el fetching de datos");
+  if (!response.ok) throw new Error("Error al obtener datos protegidos");
 
-  return response.json();
+  const data = await response.json();
+  cache.set(url, data);
+  return data;
 }

@@ -232,19 +232,19 @@ export type ServicesType = {
 
 export const services: ServicesType[] = [
   {
-    img: "/Serv-1.jpg",
+    img: "/Serv-1.webp",
     title: "Instalación y Mantenimiento de Chillers",
     description: "Para aplicaciones industriales y comerciales",
     link: "/services/hvac",
   },
   {
-    img: "/Serv-2.jpg",
+    img: "/Serv-2.webp",
     title: "Instalaciones Eléctricas",
     description: "Soluciones eléctricas confiables y seguras para tu proyecto.",
     link: "/services/electric",
   },
   {
-    img: "/Serv-3.jpg",
+    img: "/Serv-3.webp",
     title: "Trabajos de Pintura Industrial",
     description: "Acabado profesional y protección avanzada para tus equipos.",
     link: "/services/engineering",
