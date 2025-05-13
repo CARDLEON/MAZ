@@ -1,17 +1,17 @@
 ---
 import MainLayout from "@/src/layouts/MainLayout.astro";
 import HeroSection from "@/src/components/hero/HeroSection.astro";
-import ProjectsGrid from "@/src/components/projects/ProjectsGrid.astro";
+import ProjectsGrid from "@/src/components/grids/ProjectsGrid.astro";
 
 import { gridProjects } from "@/src/utils/comps.config";
 ---
 
 <MainLayout title="MAZ - Descubre en qué tipo de proyectos te podemos apoyar!">
   <HeroSection
-    title="Nuestros Proyectos"
-    breadcrumb="Inicio > Proyectos"
-    background="/bg-hero-section-2.webp"
-    sectionLabel="Proyectos"
+    title_hero_section="Nuestros Proyectos"
+    breadcrumb_hero_section="Inicio > Proyectos"
+    background_hero_section="/bg-hero-section-2.webp"
+    sectionLabel_hero_section="Proyectos"
   />
   <ProjectsGrid projects={gridProjects}/>
 </MainLayout>

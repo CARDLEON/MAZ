@@ -1,12 +1,18 @@
 ---
 import Image from "astro/components/Image.astro";
 
-const { title, subtitle, background, breadcrumb, sectionLabel } = Astro.props;
+const {
+  title_hero_section,
+  subtitle_hero_section,
+  background_hero_section,
+  breadcrumb_hero_section,
+  sectionLabel_hero_section,
+} = Astro.props;
 ---
 
 <section class="relative w-full h-[35vh] lg:h-[30vh] flex items-end pb-[1rem]">
   <Image
-    src={background}
+    src={background_hero_section}
     alt="Fondo Hero HVAC"
     class="absolute inset-0 w-full h-full object-cover"
     width={900}
@@ -23,17 +29,17 @@ const { title, subtitle, background, breadcrumb, sectionLabel } = Astro.props;
   >
     <div>
       {
-        sectionLabel && (
+        sectionLabel_hero_section && (
           <p class="uppercase text-center tracking-widest bg-gray-200/30 text-white px-3 py-1 text-sm font-bold rounded-full mb-2">
-            {sectionLabel}
+            {sectionLabel_hero_section}
           </p>
         )
       }
-      <h1 class="text-3xl md:text-4xl font-bold">{title}</h1>
-      <p class="text-sm mt-2 text-white/80">{breadcrumb}</p>
+      <h1 class="text-3xl md:text-4xl font-bold">{title_hero_section}</h1>
+      <p class="text-sm mt-2 text-white/80">{breadcrumb_hero_section}</p>
     </div>
     <div>
-      <p class="text-lg md:text-xl font-medium">{subtitle}</p>
+      <p class="text-lg md:text-xl font-medium">{subtitle_hero_section}</p>
     </div>
   </div>
 </section>
