@@ -4,19 +4,12 @@ import MainLayout from "@/src/layouts/MainLayout.astro";
 import ProductGrid from "@/src/components/products/ProductGrid.astro";
 
 import { featProducts } from "@/src/utils/comps.config";
-import { fetchHeroSection } from "@/src/utils/queries/fetchHeroSection";
+import { fetchHeroSections } from "@/src/utils/queries/fetchHeroSections";
 
-const heroSectionData = await fetchHeroSection();
-console.log(heroSectionData)
+const data = await fetchHeroSections("contact_hero_section");
 ---
 
 <MainLayout title="MAZ - Todos nuestros servicios">
-  <!-- <HeroSection
-    title_hero_section="Nuestros Productos"
-    subtitle_hero_section="Conoce nuestros productos estrella"
-    background_hero_section="/bg-hero-section-2.webp"
-    breadcrumb_hero_section="Inicio > Servicios > Todos los Productos"
-  /> -->
-  <HeroSection {...heroSectionData} />
+  <HeroSection {...data} />
   <ProductGrid products={featProducts} />
 </MainLayout>

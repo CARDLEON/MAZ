@@ -1,9 +1,6 @@
-import { fetchProtected } from "@/src/utils/api/fetchProtected";
+import { fetchACF } from "@/src/utils/api/fetchACF";
 import type { Footer } from "@/src/utils/types";
 
-const url = `${import.meta.env.VITE_WP_REST_ENDPOINT_ACF}/pages/97`;
-
 export async function fetchFooter(): Promise<Footer> {
-  const { acf } = await fetchProtected(url);
-  return acf;
+  return await fetchACF<Footer>("pages", 97);
 }

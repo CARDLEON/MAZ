@@ -1,21 +1,45 @@
 import { getToken } from "@/src/utils/api/auth";
 
-const cache = new Map<string, any>();
+// Configuración TTL en ms
+const CACHE_TTL_MS = 60 * 1000; // 1 minuto por defecto (puedes ajustar)
+
+// Control interno de caché con vida útil
+const cache = new Map<string, { data: any; timestamp: number }>();
+
+// Detecta entorno actual (development, production)
+const isDev = import.meta.env.MODE === "development";
 
 export async function fetchProtected(url: string) {
-  if (cache.has(url)) return cache.get(url);
+  const now = Date.now();
+
+  // Re-fetch if TTL is exceeded
+  if (!isDev && cache.has(url)) {
+    const cached = cache.get(url)!;
+    if (now - cached.timestamp < CACHE_TTL_MS) {
+      return cached.data;
+    }
+  }
 
   const token = await getToken();
 
-  const response = await fetch(url, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
+  try {
+    const response = await fetch(url, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
 
-  if (!response.ok) throw new Error("Error al obtener datos protegidos");
+    if (!response.ok) throw new Error(`Error ${response.status}: ${response.statusText}`);
 
-  const data = await response.json();
-  cache.set(url, data);
-  return data;
+    const data = await response.json();
+
+    if (!isDev) {
+      cache.set(url, { data, timestamp: now });
+    }
+
+    return data;
+  } catch (error: any) {
+    console.error(`[fetchProtected] Error al hacer fetch: ${error.message}`);
+    throw error;
+  }
 }

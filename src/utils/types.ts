@@ -20,7 +20,7 @@ export type Footer = {
 export type HeroSection = {
   title_hero_section: string;
   subtitle_hero_section: string;
-  background_hero_section: string;
+  bg_hero_section: string;
   breadcrumb_hero_section: string;
-  sectionLabel_hero_section?: string;
+  sectionlabel_hero_section?: string;
 };

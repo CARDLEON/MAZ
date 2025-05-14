@@ -1,9 +1,11 @@
-import { fetchProtected } from "@/src/utils/api/fetchProtected";
+import { fetchACF } from "@/src/utils/api/fetchACF";
 import type { TopBar } from "@/src/utils/types";
 
-const url = `${import.meta.env.VITE_WP_REST_ENDPOINT_ACF}/pages/97`;
-
 export async function fetchTopSection(): Promise<TopBar> {
-  const { acf } = await fetchProtected(url);
-  return acf;
+  try {
+    const acf = await fetchACF<any>("pages", 97);
+    return acf;
+  } catch (error: any) {
+    throw new Error(`Error fetching ACF data: ${error}`);
+  }
 }
