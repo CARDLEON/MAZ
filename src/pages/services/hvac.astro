@@ -3,17 +3,14 @@ import MainLayout from "@/src/layouts/MainLayout.astro";
 import HeroSection from "@/src/components/hero/HeroSection.astro";
 import ServicesHomeSection from "@/src/components/layout/ServicesHomeSection.astro";
 
+import { fetchHeroSections } from "@/src/utils/queries/fetchHeroSections";
 import { brandsHvac, highlightsHvac } from "@/src/utils/comps.config";
+
+const data = await fetchHeroSections("hvac_hero_section");
 ---
 
 <MainLayout title="MAZ - Servicios para HVAC">
-  <HeroSection
-    title_hero_section="HVAC"
-    subtitle_hero_section="Especialistas en servicios HVAC"
-    bg_hero_section="/bg-hero-section-1.webp"
-    breadcrumb_hero_section="Inicio > Servicios > HVAC"
-    sectionLabel_hero_section="Nuestros Servicios"
-  />
+  <HeroSection {...data} />
   <ServicesHomeSection
     categories={[
       { label: "Chillers" },

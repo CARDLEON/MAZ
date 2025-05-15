@@ -1,0 +1,68 @@
+---
+import OnlyNav from "@/src/layouts/OnlyNav.astro";
+import ProductDetail from "@/src/components/products/ProductDetail.astro";
+import Features from "@/src/components/common/Features.astro";
+import FAQ from "@/src/components/common/FAQ.astro";
+import ImageTextSection from "@/src/components/layout/ImageTextSection.astro";
+
+import { fetchProductById } from "@/src/utils/queries/fetchProducts";
+
+const ectScroll = await fetchProductById(249);
+---
+
+<OnlyNav title="MAZ - ECT Scroll Chiller">
+  <ProductDetail {...ectScroll} />
+  <Features
+    features={[
+      {
+        icon: "/bulb.svg",
+        title: "Ahorro de energía",
+        description:
+          "Diseñado para consumir un mínimo de energía, reduciendo sus facturas de electricidad sin comprometer el rendimiento.",
+      },
+      {
+        icon: "/mute.svg",
+        title: "Operación silenciosa",
+        description:
+          "Funciona con un nivel de ruido bajo, lo que garantiza un entorno tranquilo para trabajar o descansar.",
+      },
+      {
+        icon: "/fast.svg",
+        title: "Enfriamiento turbo",
+        description:
+          "Enfriamiento instantáneo al operar al aire acondicionado a máxima capacidad por un periodo corto, enfría la habitación rápidamente.",
+      },
+    ]}
+  />
+  <ImageTextSection
+    image="https://placehold.co/600x400"
+    alt="Chillers industriales"
+    text="Manténgase fresco y cómodo todo el año con chillers inteligentes y de bajo consumo energético, diseñada para brindar máximo rendimiento, confiabilidad y control del clima sin esfuerzo."
+  />
+  <FAQ
+    image="https://placehold.co/600x400?text=Chillers+FAQ"
+    alt="Preguntas frecuentes"
+    faqs={[
+      {
+        question: "Rendimiento de refrigeración",
+        answer:
+          "Este equipo proporciona una capacidad de enfriamiento de hasta 12,000 BTU/h, ideal para mantener espacios frescos y confortables incluso en condiciones de alta temperatura exterior.",
+      },
+      {
+        question: "Energía y eficiencia energética",
+        answer:
+          "Clasificación energética A++ para mayor eficiencia y ahorro. Incorpora tecnología inverter que ajusta el consumo según la necesidad, reduciendo hasta un 40% el gasto energético.",
+      },
+      {
+        question: "Dimensiones y peso",
+        answer:
+          "Unidad interior: 80 x 28 x 22 cm (Ancho x Alto x Fondo), 10 kg. Unidad exterior: 70 x 55 x 30 cm, 25 kg. Compacto y fácil de instalar en espacios reducidos.",
+      },
+      {
+        question: "Información adicional",
+        answer:
+          "Incluye control remoto multifunción, modo nocturno, temporizador programable y filtros lavables para un mantenimiento sencillo. Compatible con instalación en residencias o pequeñas oficinas.",
+      },
+    ]}
+  />
+</OnlyNav>

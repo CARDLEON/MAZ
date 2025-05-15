@@ -24,3 +24,12 @@ export type HeroSection = {
   breadcrumb_hero_section: string;
   sectionlabel_hero_section?: string;
 };
+
+export type Product = {
+  product_image: string;
+  product_title: string;
+  product_description: string;
+  product_category: string;
+  product_highlights: string;
+  product_capacities: string;
+};

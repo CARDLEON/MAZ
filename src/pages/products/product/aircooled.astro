@@ -4,20 +4,14 @@ import ProductDetail from "@/src/components/products/ProductDetail.astro";
 import Features from "@/src/components/common/Features.astro";
 import FAQ from "@/src/components/common/FAQ.astro";
 import ImageTextSection from "@/src/components/layout/ImageTextSection.astro";
+
+import { fetchProductById } from "@/src/utils/queries/fetchProducts";
+
+const airCooledChiller = await fetchProductById(231);
 ---
 
-<OnlyNav title="MAZ - Producto Frost Wave">
-  <ProductDetail
-    category="Chillers"
-    title="FrostWave"
-    description="Su avanzada tecnología permite optimizar el rendimiento energético mientras proporciona un enfriamiento confiable y constante."
-    highlights="Es la solución ideal para empresas que buscan maximizar la eficiencia de sus procesos de refrigeración con tecnología de vanguardia."
-    capacities={[
-      { label: "1 Unidad", value: "1" },
-      { label: "2 Unidades", value: "2" },
-      { label: "3 Unidades", value: "3" },
-    ]}
-  />
+<OnlyNav title="MAZ - Air Cooled">
+  <ProductDetail {...airCooledChiller}/>
   <Features
     features={[
       {

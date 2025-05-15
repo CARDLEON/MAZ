@@ -79,46 +79,40 @@ export const featProducts: ProductsType[] = [
 
 export const gridProducts: ProductsType[] = [
   {
-    img: "https://placehold.co/300x300?text=AeroChill",
-    title: "AeroChill",
+    img: "/AirHandlerPackage.webp",
+    title: "Air Handler y Package Units",
     description:
       "Ofrece un rendimiento excepcional con tecnología avanzada para un enfriamiento más eficiente y sostenible.",
-    link: "/products/product/aerochill",
+    link: "/products/product/airhandler",
     isFeatured: true,
     badgeText: "Más vendido",
   },
   {
-    img: "https://placehold.co/300x300?text=Clima+Comfort",
-    title: "Clima Comfort",
+    img: "/CondenserEvaporator.webp",
+    title: "Condensadores y Evaporadores",
     description:
       "Sistema compacto ideal para climatizar espacios reducidos de manera eficiente.",
-    link: "/products/product/comfort",
+    link: "/products/product/condenv",
     isFeatured: true,
     badgeText: "20% de descuento",
   },
   {
-    img: "https://placehold.co/300x300?text=AeroChill",
-    title: "AeroChill",
+    img: "/EcogreenECC06Z-Chiller.webp",
+    title: "Ecogreen",
     description: "Tecnología de vanguardia para máxima eficiencia.",
-    link: "/products/product/aerochill",
+    link: "/products/product/ecogreen",
   },
   {
-    img: "https://placehold.co/300x300?text=FrostWave",
-    title: "FrostWave",
+    img: "/AirCooled-Chiller.webp",
+    title: "Air Cooled",
     description: "Excelente desempeño en condiciones industriales exigentes.",
-    link: "/products/product/frostwave",
+    link: "/products/product/aircooled",
   },
   {
-    img: "https://placehold.co/300x300?text=ZephyrCool",
-    title: "ZephyrCool",
+    img: "/ECTScroll-Chiller.webp",
+    title: "ECT Scroll Chiller",
     description: "Alta capacidad de enfriamiento y ahorro energético.",
-    link: "/products/product/zephyr",
-  },
-  {
-    img: "https://placehold.co/300x300?text=PolarAir",
-    title: "PolarAir",
-    description: "Solución compacta para climatización eficiente y sostenible.",
-    link: "/products/product/polar",
+    link: "/products/product/ectscroll",
   },
 ];
 
