@@ -4,16 +4,13 @@ import HeroSection from "@/src/components/hero/HeroSection.astro";
 import ServicesHomeSection from "@/src/components/layout/ServicesHomeSection.astro";
 
 import { highlightsEng } from "@/src/utils/comps.config";
+import { fetchHeroSections } from "@/src/utils/queries/fetchHeroSections";
+
+const heroData = await fetchHeroSections("engin_hero_section");
 ---
 
 <MainLayout title="MAZ - Servicios para instalaciones electricas">
-  <HeroSection
-    title_hero_section="Ingeniería"
-    subtitle_hero_section="Especialistas en soluciones de ingeniería"
-    bg_hero_section="/bg-hero-section-1.webp"
-    breadcrumb_hero_section="Inicio > Servicios > Ingeniería"
-    sectionLabel_hero_section="Nuestros Servicios"
-  />
+  <HeroSection {...heroData} />
   <ServicesHomeSection
     categories={[
       { label: "Ingenierías eléctricas e hidrosanitarias" },

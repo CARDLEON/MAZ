@@ -4,15 +4,13 @@ import ServicesGrid from "@/src/components/grids/ServicesGrid.astro";
 import MainLayout from "@/src/layouts/MainLayout.astro";
 
 import { services } from "@/src/utils/comps.config";
+import { fetchHeroSections } from "@/src/utils/queries/fetchHeroSections";
+
+const heroData = await fetchHeroSections("services_hero_section")
 ---
 
 <MainLayout title="MAZ - Todos nuestros servicios">
-  <HeroSection 
-    title_hero_section="Nuestros Servicios"
-    subtitle_hero_section="Explora todos los servicios que tenemos disponibles para ti"
-    bg_hero_section="/bg-hero-section-3.webp"
-    breadcrumb_hero_section="Inicio > Servicios > Todos los Servicios"
-  />
+  <HeroSection {...heroData}/>
   <ServicesGrid 
     services={services}
   />

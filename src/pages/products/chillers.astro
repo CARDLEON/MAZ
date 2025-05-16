@@ -4,16 +4,12 @@ import ProductGrid from "@/src/components/products/ProductGrid.astro";
 import MainLayout from "@/src/layouts/MainLayout.astro";
 
 import { gridProducts } from "@/src/utils/comps.config";
+import { fetchHeroSections } from "@/src/utils/queries/fetchHeroSections";
+
+const heroData = await fetchHeroSections("chillers_hero_section")
 ---
 
 <MainLayout title="MAZ - Servicios para Chillers">
-  <HeroSection
-    title_hero_section="Chillers"
-    subtitle_hero_section="Equipos de enfriamiento diseñados para diversas aplicaciones industriales."
-    bg_hero_section="/bg-hero-section-2.webp"
-    breadcrumb_hero_section="Inicio > Productos > Chillers"
-    sectionLabel_hero_section="Chillers"
-    ,
-  />
+  <HeroSection {...heroData} />
   <ProductGrid products={gridProducts} />
 </MainLayout>

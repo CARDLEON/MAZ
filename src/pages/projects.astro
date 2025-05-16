@@ -5,14 +5,11 @@ import ProjectsGrid from "@/src/components/grids/ProjectsGrid.astro";
 
 import { gridProjects } from "@/src/utils/comps.config";
 import { fetchHeroSections } from "@/src/utils/queries/fetchHeroSections";
+
+const heroData = await fetchHeroSections("projects_hero_section");
 ---
 
 <MainLayout title="MAZ - Descubre en qué tipo de proyectos te podemos apoyar!">
-  <HeroSection
-    title_hero_section="Nuestros Proyectos"
-    breadcrumb_hero_section="Inicio > Proyectos"
-    bg_hero_section="/bg-hero-section-2.webp"
-    sectionLabel_hero_section="Proyectos"
-  />
-  <ProjectsGrid projects={gridProjects}/>
+  <HeroSection {...heroData} />
+  <ProjectsGrid projects={gridProjects} />
 </MainLayout>

@@ -4,16 +4,13 @@ import HeroSection from "@/src/components/hero/HeroSection.astro";
 import ServicesHomeSection from "@/src/components/layout/ServicesHomeSection.astro";
 
 import { highlightsElec } from "@/src/utils/comps.config";
+import { fetchHeroSections } from "@/src/utils/queries/fetchHeroSections";
+
+const heroData = await fetchHeroSections("electric_hero_section");
 ---
 
 <MainLayout title="MAZ - Servicios para instalaciones electricas">
-  <HeroSection
-    title_hero_section="Instalaciones Electricas"
-    subtitle_hero_section="Especialistas en instalaciones electricas"
-    bg_hero_section="/bg-hero-section-1.webp"
-    breadcrumb_hero_section="Inicio > Servicios > Instalaciones eléctricas"
-    sectionLabel_hero_section="Nuestros Servicios"
-  />
+  <HeroSection {...heroData} />
   <ServicesHomeSection
     categories={[
       { label: "Armado de tableros" },
