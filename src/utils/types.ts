@@ -33,3 +33,11 @@ export type Product = {
   product_highlights: string;
   product_capacities: string;
 };
+
+export type WelcomeSection = {
+  img_home_welcome: string;
+  label_welcome: string;
+  message_welcome: string;
+  submessage_welcome: string;
+  cta_url: string;
+};

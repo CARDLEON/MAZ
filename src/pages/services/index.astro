@@ -6,12 +6,10 @@ import MainLayout from "@/src/layouts/MainLayout.astro";
 import { services } from "@/src/utils/comps.config";
 import { fetchHeroSections } from "@/src/utils/queries/fetchHeroSections";
 
-const heroData = await fetchHeroSections("services_hero_section")
+const heroData = await fetchHeroSections("services_hero_section");
 ---
 
 <MainLayout title="MAZ - Todos nuestros servicios">
-  <HeroSection {...heroData}/>
-  <ServicesGrid 
-    services={services}
-  />
+  <HeroSection {...heroData} />
+  <ServicesGrid services={services} />
 </MainLayout>
