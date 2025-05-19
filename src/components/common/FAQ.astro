@@ -26,7 +26,15 @@ const {
   <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
     <!-- Imagen -->
     <div class="w-full md:w-1/2">
-      <Image format="webp" src={image} alt={alt} class="rounded-lg w-full" width={600} height={400} loading="lazy" />
+      <Image
+        format="webp"
+        src={image}
+        alt={alt}
+        class="rounded-lg w-full"
+        width={600}
+        height={400}
+        loading="lazy"
+      />
     </div>
 
     <!-- Acordeón -->
@@ -40,28 +48,40 @@ const {
   </div>
 
   <!-- Script para acordeones -->
-  <script type="module" is:inline>
-    const accordions = document.querySelectorAll(".accordion-item");
+  <script is:inline>
+    function initFAQScripts() {
+      const accordions = document.querySelectorAll(".accordion-item");
 
-    accordions.forEach((item) => {
-      const trigger = item.querySelector(".accordion-trigger");
-      const content = item.querySelector(".accordion-content");
-      const svg = trigger.querySelector("svg");
+      accordions.forEach((item) => {
+        const trigger = item.querySelector(".accordion-trigger");
+        const content = item.querySelector(".accordion-content");
+        const svg = trigger.querySelector("svg");
 
-      trigger.addEventListener("click", () => {
-        const expanded = trigger.getAttribute("aria-expanded") === "true";
+        // Eliminar listeners anteriores
+        const clonedTrigger = trigger.cloneNode(true);
+        trigger.replaceWith(clonedTrigger);
 
-        trigger.setAttribute("aria-expanded", (!expanded).toString());
-        item.classList.toggle("open");
+        clonedTrigger.addEventListener("click", () => {
+          const expanded =
+            clonedTrigger.getAttribute("aria-expanded") === "true";
 
-        if (!expanded) {
-          content.style.maxHeight = content.scrollHeight + "px";
-          svg.classList.add("rotate-180");
-        } else {
-          content.style.maxHeight = "0px";
-          svg.classList.remove("rotate-180");
-        }
+          clonedTrigger.setAttribute("aria-expanded", (!expanded).toString());
+          item.classList.toggle("open");
+
+          if (!expanded) {
+            content.style.maxHeight = content.scrollHeight + "px";
+            svg.classList.add("rotate-180");
+          } else {
+            content.style.maxHeight = "0px";
+            svg.classList.remove("rotate-180");
+          }
+        });
       });
-    });
+    }
+
+    // Ejecutar al cargar página inicial
+    document.addEventListener("astro:page-load", initFAQScripts);
+    // Ejecutar después de cambiar de ruta
+    document.addEventListener("astro:after-swap", initFAQScripts);
   </script>
 </section>
