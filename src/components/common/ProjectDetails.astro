@@ -1,0 +1,84 @@
+---
+import ContactModal from "@/src/components/common/ContactModal.tsx";
+---
+
+<ContactModal client:load />
+
+<section
+  class="bg-white py-12 px-4 sm:px-6 lg:px-16 max-w-6xl mx-auto font-[var(--font-poppins)] text-[#1e1e1e] space-y-10"
+>
+  <!-- Sección superior -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div>
+      <h2 class="text-2xl sm:text-3xl font-bold mb-4 text-[#24408d]">
+        Proyecto
+      </h2>
+      <p class="text-base sm:text-lg leading-relaxed">
+        Se ejecutó un servicio completo de climatización industrial en una
+        planta de producción de papel. Las actividades incluyeron mantenimiento
+        preventivo, reemplazo de filtros, y adecuación de manejadoras de aire
+        conectadas a red de ductería de gran volumen.
+      </p>
+    </div>
+
+    <div>
+      <h2 class="text-2xl sm:text-3xl font-bold mb-4 text-[#24408d]">
+        Alcance del Servicio
+      </h2>
+      <p class="text-base sm:text-lg leading-relaxed">
+        Equipos de marcas líderes:
+        <strong>Ecochillers, Trane, York, Carrier</strong><br />
+        Capacidad operativa desde <strong>1TR hasta 250TR</strong>
+      </p>
+    </div>
+  </div>
+
+  <!-- Lista de servicios -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+    <div>
+      <h3 class="text-xl font-bold mb-4 text-[#24408d]">
+        Alcance del Servicio
+      </h3>
+      <ul class="list-disc list-inside space-y-2 text-base sm:text-lg">
+        <li>Limpieza y sustitución de filtros industriales</li>
+        <li>Revisión de bandejas de drenado y serpentines</li>
+        <li>Alineación y fijación de ductos metálicos</li>
+        <li>Mejora en presión estática del sistema</li>
+        <li>Operación sin interrupciones en línea de producción</li>
+      </ul>
+    </div>
+
+    <div class="flex justify-center md:justify-end">
+      <img
+        src="/Serv-1.webp"
+        alt="Fotografía del sistema HVAC"
+        class="rounded-lg w-full max-w-md shadow-md"
+        loading="lazy"
+      />
+    </div>
+  </div>
+
+  <!-- Marcas -->
+  <div>
+    <h3 class="text-xl font-bold mb-4 text-[#24408d]">Marcas y capacidades</h3>
+    <p class="text-base sm:text-lg">
+      Equipos de marcas líderes:
+      <strong
+        ><span class="text-[#0a7a40]">Ecochillers</span>, Trane, York, Carrier</strong
+      >
+    </p>
+  </div>
+
+  <!-- CTA -->
+  <div class="mt-8 text-center">
+    <p class="text-lg sm:text-xl font-semibold mb-4">
+      ¿Agenda un diagnóstico con nuestro equipo?
+    </p>
+    <a
+      class="inline-block bg-blue-900 hover:bg-blue-800 text-white font-semibold py-3 px-6 rounded transition duration-200 cursor-pointer"
+      onclick="window.openContactModal?.()"
+    >
+      Solicitar atención
+    </a>
+  </div>
+</section>

@@ -18,9 +18,8 @@ export const navLinks: NavLink[] = [
   },
   {
     link: "Productos",
-    href: "/products",
+    href: "/products/chillers",
     submenu: [
-      { name: "Todos los Productos", href: "/products" },
       { name: "Chillers", href: "/products/chillers" },
     ],
   },
@@ -125,8 +124,8 @@ export type ProjectType = {
 export const gridProjects: ProjectType[] = [
   {
     img: "https://placehold.co/400x300",
-    title: "Solución de climatización para el hogar",
-    link: "#",
+    title: "HVAC para Industria de Papel y la Higiene",
+    link: "/projects/paper",
   },
   {
     img: "https://placehold.co/400x300",
@@ -136,21 +135,6 @@ export const gridProjects: ProjectType[] = [
   {
     img: "https://placehold.co/400x300",
     title: "Compre soluciones HVAC",
-    link: "#",
-  },
-  {
-    img: "https://placehold.co/400x300",
-    title: "Solución HVAC para el sector sanitario",
-    link: "#",
-  },
-  {
-    img: "https://placehold.co/400x300",
-    title: "Solución HVAC para restaurantes",
-    link: "#",
-  },
-  {
-    img: "https://placehold.co/400x300",
-    title: "Solución de climatización escolar",
     link: "#",
   },
 ];

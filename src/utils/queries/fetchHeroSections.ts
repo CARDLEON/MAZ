@@ -14,7 +14,6 @@ export async function fetchHeroSections(
       subtitle_hero_section,
       bg_hero_section,
       breadcrumb_hero_section,
-      sectionlabel_hero_section,
     } = acf[fieldKey];
 
     return {
@@ -22,7 +21,6 @@ export async function fetchHeroSections(
       subtitle_hero_section,
       bg_hero_section: bg_hero_section?.url || "",
       breadcrumb_hero_section,
-      sectionlabel_hero_section,
     };
   } catch (error: any) {
     throw new Error(`Error fetching data: ${error}`);

@@ -1,0 +1,14 @@
+---
+import ProjectDetails from "@/src/components/common/ProjectDetails.astro";
+import MainLayout from "@/src/layouts/MainLayout.astro";
+import HeroSection from "@/src/components/hero/HeroSection.astro";
+
+import { fetchHeroSections } from "@/src/utils/queries/fetchHeroSections";
+
+const data = await fetchHeroSections("contact_hero_section");
+---
+
+<MainLayout title="HVAC para la industria del papel">
+  <HeroSection {...data} />
+  <ProjectDetails />
+</MainLayout>

@@ -22,16 +22,41 @@ export type HeroSection = {
   subtitle_hero_section: string;
   bg_hero_section: string;
   breadcrumb_hero_section: string;
-  sectionlabel_hero_section?: string;
+};
+
+// export type Product = {
+//   product_image: string;
+//   product_title: string;
+//   product_description: string;
+//   product_category: string;
+//   product_highlights: string;
+// };
+
+export type ProductACF = {
+  product_category: string;
+  product_title: string;
+  product_description: string;
+  product_highlight: string;
+  product_image?: {
+    url?: string;
+  };
+  product_featured: boolean;
+  product_featured_text: string;
+  product_link: string;
 };
 
 export type Product = {
-  product_image: string;
-  product_title: string;
-  product_description: string;
-  product_category: string;
-  product_highlights: string;
-  product_capacities: string;
+  id: number;
+  slug: string;
+  acf: ProductACF;
+};
+
+export type ProductPost = {
+  id: number;
+  slug: string;
+  title: {
+    rendered: string;
+  };
 };
 
 export type WelcomeSection = {

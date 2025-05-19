@@ -6,7 +6,7 @@ const cache = new Map<string, { data: any; timestamp: number }>();
 // Detecta entorno actual (development, production)
 const isDev = import.meta.env.MODE === "development";
 
-export async function fetchProtected(url: string) {
+export async function fetchProtected<T = any>(url: string): Promise<T> {
   const now = Date.now();
 
   const token = await getToken();
