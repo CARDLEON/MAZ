@@ -17,10 +17,10 @@ export const navLinks: NavLink[] = [
     ],
   },
   {
-    link: "Productos",
+    link: "Chillers",
     href: "/products/chillers",
     submenu: [
-      { name: "Chillers", href: "/products/chillers" },
+      { name: "Todos los Chillers", href: "/products/chillers" },
     ],
   },
   { link: "Nosotros", href: "/about-us" },

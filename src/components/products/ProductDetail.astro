@@ -16,14 +16,14 @@ const {
 ---
 
 <section
-  class="grid grid-cols-1 lg:grid-cols-2 gap-10 px-6 md:px-10 lg:px-[12rem] py-12 items-center bg-white"
+  class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 px-4 sm:px-6 md:px-10 py-12 items-center bg-white"
 >
   <!-- temporary only one image per product -->
   <Image
     id="main-image"
     src={product_image || ""}
     alt="Chiller image with ecochillers logo in the top"
-    class="rounded-xl object-contain max-h-[600px] min-h-[600px] w-full transition-opacity duration-300 sm:overflow-hidden"
+    class="rounded-xl object-contain w-full min-h-[300px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px] max-h-[600px] transition-opacity duration-300"
     width={600}
     height={600}
     inferSize={true}
