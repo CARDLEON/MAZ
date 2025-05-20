@@ -1,0 +1,54 @@
+---
+import Image from "astro/components/Image.astro";
+
+const {
+  product_title,
+  product_image,
+  product_highlight,
+  product_featured,
+  product_featured_text,
+  product_link,
+} = Astro.props;
+---
+
+<div class="w-full h-full">
+  <div
+    class="group relative flex flex-col items-center bg-gray-100 p-6 rounded-lg shadow-md w-full h-full max-w-xs md:max-w-md min-h-[350px] max-h-[350px] overflow-hidden cursor-pointer"
+  >
+    {
+      product_featured && (
+        <div class="absolute top-3 right-3 bg-[#24408D] text-white text-sx px-3 py-1 rounded-md z-10">
+          {product_featured_text}
+        </div>
+      )
+    }
+
+    <Image
+      src={product_image?.url || "https://placehold.co/200x200"}
+      alt={product_title || "Imagen alusiva al producto mostrado en pantalla"}
+      class="h-48 object-contain mb-4 transition-opacity duration-500 group-hover:opacity-20"
+      width={192}
+      height={192}
+      loading="lazy"
+    />
+
+    <h3
+      class="text-lg font-bold transition-opacity duration-500 group-hover:opacity-20"
+    >
+      {product_title}
+    </h3>
+
+    <div
+      class="absolute inset-0 flex flex-col items-center justify-center text-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+    >
+      <h3 class="text-lg font-bold text-[#0e3e96] mb-2">{product_title}</h3>
+      <p class="text-sm text-black mb-4">{product_highlight}</p>
+      <a
+        href={product_link}
+        class="inline-block bg-[#0e3e96] text-white px-4 py-2 rounded-md text-sm hover:bg-[#1e3673] transition"
+      >
+        Ver más
+      </a>
+    </div>
+  </div>
+</div>

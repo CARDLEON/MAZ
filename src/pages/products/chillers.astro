@@ -1,8 +1,9 @@
 ---
 import HeroSection from "@/src/components/hero/HeroSection.astro";
+import ProductGrid from "@/src/components/products/ProductGrid.astro";
 import MainLayout from "@/src/layouts/MainLayout.astro";
-import { LazyProductGrid } from "@/src/components/lazy";
 
+import { gridProducts } from "@/src/utils/comps.config";
 import { fetchHeroSections } from "@/src/utils/queries/fetchHeroSections";
 import { fetchAllProducts } from "@/src/utils/queries/fetchAllProducts";
 
@@ -15,6 +16,6 @@ const allProducts = await fetchAllProducts();
   <div
     class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 py-12 place-items-center"
   >
-    {allProducts.map(({ acf }) => <LazyProductGrid client:visible {...acf} />)}
+    {allProducts.map(({ acf }) => <ProductGrid {...acf} />)}
   </div>
 </MainLayout>

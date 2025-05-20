@@ -20,48 +20,17 @@ jobs:
         with:
           node-version: 20
 
-      - name: Setup PNPM
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
 
       - name: Build project
-        run: pnpm build
+        run: npm run build
         env:
           VITE_JWT_USER: ${{ secrets.VITE_JWT_USER }}
           VITE_JWT_PASS: ${{ secrets.VITE_JWT_PASS }}
           VITE_WP_REST_ENDPOINT: ${{ secrets.VITE_WP_REST_ENDPOINT }}
           VITE_WP_REST_ENDPOINT_ACF: ${{ secrets.VITE_WP_REST_ENDPOINT_ACF }}
           VITE_JWT_SECRET: ${{ secrets.VITE_WP_PREVIEW_SECRET }}
-
-      - name: Prepare deployment structure
-        run: |
-          # Create base directory
-          mkdir -p dist/maz
-          
-          # Move client and server to their locations
-          mv dist/client dist/maz/
-          mv dist/server dist/maz/
-          
-          # Copy .htaccess to root
-          cp .htaccess dist/maz/
-          
-          # Prepare server files
-          cp server/package.json dist/maz/server/
-          cd dist/maz/server && pnpm install --prod
-          
-          # Set correct permissions
-          chmod +x entry.mjs
-          echo "PORT=4321" > .env
-          
-          # Create start script
-          echo '#!/bin/bash
-          cd "$( dirname "${BASH_SOURCE[0]}" )"
-          node entry.mjs' > start.sh
-          chmod +x start.sh
 
       - name: Deploy via FTP
         id: deploy
@@ -71,21 +40,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: ${{ secrets.FTP_PATH }}
-          local-dir: ./dist/maz/
-          chmod: "755"
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            **/.env
-
-      - name: Verify deployment
-        if: success()
-        run: |
-          echo "Deployment structure:"
-          ls -la dist/maz/
-          echo "Server files:"
-          ls -la dist/maz/server/
+          local-dir: ./dist/
 
       - name: Notify Slack Success
         if: success()
