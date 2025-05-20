@@ -125,7 +125,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "*Hubo un fallo durante el despliegue.*\nRepositorio: ${{ github.repository }}\nBranch: ${{ github.ref_name }}"
+                    "text": "*Despliegue fallido.*\nRepositorio: ${{ github.repository }}\nBranch: ${{ github.ref_name }}"
                   }
                 },
                 {
