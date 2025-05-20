@@ -37,16 +37,21 @@ jobs:
           VITE_WP_REST_ENDPOINT_ACF: ${{ secrets.VITE_WP_REST_ENDPOINT_ACF }}
           VITE_JWT_SECRET: ${{ secrets.VITE_WP_PREVIEW_SECRET }}
 
-      - name: Verify and prepare deployment structure
+      - name: Prepare deployment structure
         run: |
-          # Ensure correct directory structure
-          mkdir -p dist/public_html
-          mv dist/client dist/public_html/
-          mv dist/server dist/public_html/
+          # Create base directory
+          mkdir -p dist/maz
+          
+          # Move client and server to their locations
+          mv dist/client dist/maz/
+          mv dist/server dist/maz/
+          
+          # Copy .htaccess to root
+          cp .htaccess dist/maz/
           
           # Prepare server files
-          cp server/package.json dist/public_html/server/
-          cd dist/public_html/server && pnpm install --prod
+          cp server/package.json dist/maz/server/
+          cd dist/maz/server && pnpm install --prod
           
           # Set correct permissions
           chmod +x entry.mjs
@@ -66,7 +71,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: ${{ secrets.FTP_PATH }}
-          local-dir: ./dist/client/
+          local-dir: ./dist/maz/
           chmod: "755"
           exclude: |
             **/.git*
@@ -78,9 +83,9 @@ jobs:
         if: success()
         run: |
           echo "Deployment structure:"
-          ls -la dist/public_html/
+          ls -la dist/maz/
           echo "Server files:"
-          ls -la dist/public_html/server/
+          ls -la dist/maz/server/
 
       - name: Notify Slack Success
         if: success()
@@ -125,7 +130,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "*Despliegue fallido.*\nRepositorio: ${{ github.repository }}\nBranch: ${{ github.ref_name }}"
+                    "text": "*Hubo un fallo durante el despliegue.*\nRepositorio: ${{ github.repository }}\nBranch: ${{ github.ref_name }}"
                   }
                 },
                 {
