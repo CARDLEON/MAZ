@@ -50,7 +50,7 @@ jobs:
           
           # Set correct permissions
           chmod +x entry.mjs
-          echo "PORT=4322" > .env
+          echo "PORT=4321" > .env
           
           # Create start script
           echo '#!/bin/bash

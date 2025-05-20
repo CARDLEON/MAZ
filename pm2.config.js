@@ -4,7 +4,7 @@ module.exports = {
     script: './server/entry.mjs',
     watch: true,
     env: {
-      PORT: 4322,
+      PORT: 4321,
       NODE_ENV: 'production'
     },
     error_file: './logs/err.log',
