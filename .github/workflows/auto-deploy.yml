@@ -37,19 +37,26 @@ jobs:
           VITE_WP_REST_ENDPOINT_ACF: ${{ secrets.VITE_WP_REST_ENDPOINT_ACF }}
           VITE_JWT_SECRET: ${{ secrets.VITE_WP_PREVIEW_SECRET }}
 
-      - name: Prepare server files
+      - name: Verify and prepare deployment structure
         run: |
-          cp server/package.json dist/server/
-          cd dist/server && pnpm install --prod
+          # Ensure correct directory structure
+          mkdir -p dist/public_html
+          mv dist/client dist/public_html/
+          mv dist/server dist/public_html/
+          
+          # Prepare server files
+          cp server/package.json dist/public_html/server/
+          cd dist/public_html/server && pnpm install --prod
+          
+          # Set correct permissions
           chmod +x entry.mjs
           echo "PORT=4322" > .env
-
-      - name: Create start script
-        run: |
+          
+          # Create start script
           echo '#!/bin/bash
-          cd /home/u841590911/domains/maz.sandboxcardleon.com/public_html/server
-          node entry.mjs' > dist/server/start.sh
-          chmod +x dist/server/start.sh
+          cd "$( dirname "${BASH_SOURCE[0]}" )"
+          node entry.mjs' > start.sh
+          chmod +x start.sh
 
       - name: Deploy via FTP
         id: deploy
@@ -59,8 +66,21 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: ${{ secrets.FTP_PATH }}
-          local-dir: ./dist/
+          local-dir: ./dist/public_html/
           chmod: "755"
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/.env
+
+      - name: Verify deployment
+        if: success()
+        run: |
+          echo "Deployment structure:"
+          ls -la dist/public_html/
+          echo "Server files:"
+          ls -la dist/public_html/server/
 
       - name: Notify Slack Success
         if: success()
