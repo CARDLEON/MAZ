@@ -41,6 +41,15 @@ jobs:
         run: |
           cp server/package.json dist/server/
           cd dist/server && pnpm install --prod
+          chmod +x entry.mjs
+          echo "PORT=4322" > .env
+
+      - name: Create start script
+        run: |
+          echo '#!/bin/bash
+          cd /home/u841590911/domains/maz.sandboxcardleon.com/public_html/server
+          node entry.mjs' > dist/server/start.sh
+          chmod +x dist/server/start.sh
 
       - name: Deploy via FTP
         id: deploy
@@ -51,6 +60,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: ${{ secrets.FTP_PATH }}
           local-dir: ./dist/
+          chmod: "755"
 
       - name: Notify Slack Success
         if: success()
