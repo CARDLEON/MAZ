@@ -20,17 +20,27 @@ jobs:
         with:
           node-version: 20
 
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
       - name: Install dependencies
-        run: npm install
+        run: pnpm install
 
       - name: Build project
-        run: npm run build
+        run: pnpm build
         env:
           VITE_JWT_USER: ${{ secrets.VITE_JWT_USER }}
           VITE_JWT_PASS: ${{ secrets.VITE_JWT_PASS }}
           VITE_WP_REST_ENDPOINT: ${{ secrets.VITE_WP_REST_ENDPOINT }}
           VITE_WP_REST_ENDPOINT_ACF: ${{ secrets.VITE_WP_REST_ENDPOINT_ACF }}
           VITE_JWT_SECRET: ${{ secrets.VITE_WP_PREVIEW_SECRET }}
+
+      - name: Prepare server files
+        run: |
+          cp server/package.json dist/server/
+          cd dist/server && pnpm install --prod
 
       - name: Deploy via FTP
         id: deploy

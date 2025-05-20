@@ -1,14 +1,17 @@
-import { fetchProtected } from "@/src/utils/api/fetchProtected";
+import { api } from "@/src/utils/api/axios.config";
+
+interface ACFResponse<T> {
+  acf: T;
+}
 
 export async function fetchACF<T>(slug: string, id: number): Promise<T> {
-  // Fetch via page ID -> ACF
   try {
-    const url = `${import.meta.env.VITE_WP_REST_ENDPOINT_ACF}/${slug}/${id}`;
+    const url = `/${slug}/${id}`;
+    const data = await api.get<ACFResponse<T>>(url);
 
-    const { acf } = await fetchProtected(url);
-
-    return acf as T;
+    return (data as unknown as ACFResponse<T>).acf;
   } catch (error: any) {
-    throw new Error(`Error fetching ACF data: ${error}`);
+    console.error("Error fetching ACF data:", error);
+    throw new Error(`Error fetching ACF data: ${error.message}`);
   }
 }

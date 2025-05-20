@@ -1,0 +1,13 @@
+{
+  "name": "maz-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": ">=18.14.1"
+  }
+} 

@@ -72,40 +72,46 @@ const slides = [
 </section>
 
 <script is:inline>
-  const slides = document.querySelectorAll(".carousel-slide");
-  const prevButton = document.querySelector("#prev-slide");
-  const nextButton = document.querySelector("#next-slide");
+  function initHeroCarousel() {
+    const slides = document.querySelectorAll(".carousel-slide");
+    const prevButton = document.querySelector("#prev-slide");
+    const nextButton = document.querySelector("#next-slide");
 
-  let currentSlide = 0;
-  const totalSlides = slides.length;
-  const autoSlideDelay = 4500;
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+    const autoSlideDelay = 4500;
 
-  function showSlide(index) {
-    slides.forEach((slide, idx) => {
-      if (idx === index) {
-        slide.style.transform = "translateX(0%)";
-      } else if (idx < index) {
-        slide.style.transform = "translateX(-100%)";
-      } else {
-        slide.style.transform = "translateX(100%)";
-      }
+    function showSlide(index) {
+      slides.forEach((slide, idx) => {
+        if (idx === index) {
+          slide.style.transform = "translateX(0%)";
+        } else if (idx < index) {
+          slide.style.transform = "translateX(-100%)";
+        } else {
+          slide.style.transform = "translateX(100%)";
+        }
+      });
+    }
+
+    prevButton.addEventListener("click", () => {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      showSlide(currentSlide);
     });
+
+    nextButton.addEventListener("click", () => {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      showSlide(currentSlide);
+    });
+
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      showSlide(currentSlide);
+    }, autoSlideDelay);
+
+    showSlide(currentSlide);
   }
-
-  prevButton.addEventListener("click", () => {
-    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-    showSlide(currentSlide);
-  });
-
-  nextButton.addEventListener("click", () => {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    showSlide(currentSlide);
-  });
-
-  setInterval(() => {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    showSlide(currentSlide);
-  }, autoSlideDelay);
-
-  showSlide(currentSlide);
+  // Ejecutar al cargar página inicial
+  document.addEventListener("astro:page-load", initHeroCarousel);
+  // Ejecutar después de cambiar de ruta
+  document.addEventListener("astro:after-swap", initHeroCarousel);
 </script>
