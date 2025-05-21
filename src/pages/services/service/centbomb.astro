@@ -1,5 +1,14 @@
 ---
-import Building from "@/src/layouts/Building.astro";
+import HeroSection from "@/src/components/hero/HeroSection.astro";
+import CentBombLanding from "@/src/components/landings/CentBombLanding.astro";
+import ServiceLayout from "@/src/layouts/ServiceLayout.astro";
+
+import { fetchHeroSections } from "@/src/utils/queries/fetchHeroSections";
+
+const heroData = await fetchHeroSections("chillers_hero_section");
 ---
 
-<Building />
+<ServiceLayout title="MAZ - Servicios para Bombas Centrifugas">
+  <HeroSection {...heroData} />
+  <CentBombLanding />
+</ServiceLayout>

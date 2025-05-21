@@ -1,6 +1,6 @@
 ---
 import HeroSection from "@/src/components/hero/HeroSection.astro";
-import PackageLanding from "@/src/components/landings/PackageLanding.astro";
+import HVACKeyHandLanding from "@/src/components/landings/HVACKeyHandLanding.astro";
 import ServiceLayout from "@/src/layouts/ServiceLayout.astro";
 
 import { fetchHeroSections } from "@/src/utils/queries/fetchHeroSections";
@@ -8,7 +8,7 @@ import { fetchHeroSections } from "@/src/utils/queries/fetchHeroSections";
 const heroData = await fetchHeroSections("chillers_hero_section");
 ---
 
-<ServiceLayout title="MAZ - Servicios para Equipo Paquete y Divididos">
+<ServiceLayout title="MAZ - Servicios para Soluciones HVAC Llave en Mano">
   <HeroSection {...heroData} />
-  <PackageLanding />
+  <HVACKeyHandLanding />
 </ServiceLayout>

@@ -1,5 +1,14 @@
 ---
-import Building from "@/src/layouts/Building.astro";
+import HeroSection from "@/src/components/hero/HeroSection.astro";
+import CoolingLanding from "@/src/components/landings/CoolingLanding.astro";
+import ServiceLayout from "@/src/layouts/ServiceLayout.astro";
+
+import { fetchHeroSections } from "@/src/utils/queries/fetchHeroSections";
+
+const heroData = await fetchHeroSections("chillers_hero_section");
 ---
 
-<Building />
+<ServiceLayout title="MAZ - Servicios para Torres de Enfriamiento">
+  <HeroSection {...heroData} />
+  <CoolingLanding />
+</ServiceLayout>
