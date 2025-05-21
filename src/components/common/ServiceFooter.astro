@@ -1,0 +1,126 @@
+---
+import LinkedIn from "@/public/linkedin.svg";
+import Facebook from "@/public/facebook.svg";
+import Phone from "@/public/phone.svg";
+import Mail from "@/public/mail.svg";
+import Location from "@/public/location.svg";
+import Whatsapp from "@/public/whatsapp.svg";
+
+import Image from "astro/components/Image.astro";
+
+type Props = {
+  description_footer: string;
+  fb_link_footer: string;
+  in_link_footer: string;
+  mail_footer: string;
+  location_footer: string;
+  phone_footer: string;
+  whatsapp_footer: string;
+};
+
+const {
+  description_footer,
+  fb_link_footer,
+  in_link_footer,
+  mail_footer,
+  location_footer,
+  phone_footer,
+  whatsapp_footer,
+} = Astro.props;
+---
+
+<section
+  class="bg-[#24408d] text-white px-4 sm:px-6 lg:px-16 py-6 flex flex-col sm:flex-row items-center justify-between gap-4"
+>
+  <div class="flex items-center gap-3">
+    <!-- Ícono check -->
+    <div
+      class="bg-[#06c4b0] w-8 h-8 rounded-full flex items-center justify-center"
+    >
+      <svg
+        class="w-4 h-4 text-white"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="3"
+        viewBox="0 0 24 24"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"
+        ></path>
+      </svg>
+    </div>
+    <h2 class="text-lg sm:text-xl font-bold">
+      Soluciones integrales personalizadas
+    </h2>
+  </div>
+
+  <a
+    href="/contact"
+    class="bg-[#3ad0fd] hover:bg-[#1bbbe9] text-[#0c0c0c] font-semibold px-6 py-2 rounded-md transition text-sm sm:text-base"
+  >
+    Programar cita
+  </a>
+</section>
+
+<footer
+  class="bg-[#0e3e96] text-white px-6 sm:px-12 md:px-20 lg:px-[8rem] py-12"
+>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+    <!-- Columna Izquierda -->
+    <div class="flex flex-col">
+      <Image
+        src="/Logo-MAZ-Blanco.webp"
+        alt="Logo MAZ"
+        class="mb-6"
+        width={128}
+        height={40}
+        loading="lazy"
+      />
+      <p class="text-sm leading-relaxed mb-6">
+        {description_footer}
+      </p>
+
+      <div class="flex gap-4">
+        <a href={fb_link_footer} target="_blank">
+          <Facebook width={34} />
+        </a>
+        <a href={in_link_footer} target="_blank">
+          <LinkedIn width={34} />
+        </a>
+      </div>
+    </div>
+
+    <!-- Columna Central (Links) -->
+    <div
+      class="text-sm gap-2 md:gap-3 grid sm:grid-cols-2 gap-y-2 sm:gap-y-3 md:flex md:flex-row md:items-center"
+    >
+      <a href="#servicios" class="hover:underline font-semibold">Servicios</a>
+      <a href="#productos" class="hover:underline font-semibold">Productos</a>
+      <a href="#nosotros" class="hover:underline font-semibold">Nosotros</a>
+      <a href="#proyectos" class="hover:underline font-semibold">Proyectos</a>
+      <a href="#contacto" class="hover:underline font-semibold">Contacto</a>
+    </div>
+
+    <!-- Columna Derecha -->
+    <div class="grid gap-4 text-sm">
+      <div class="flex items-start gap-3">
+        <Mail width={34} />
+        <span>{mail_footer}</span>
+      </div>
+
+      <div class="flex items-start gap-3">
+        <Location width={34} />
+        <span set:html={location_footer} />
+      </div>
+
+      <div class="flex items-start gap-3">
+        <Phone width={34} />
+        <span>{phone_footer}</span>
+      </div>
+
+      <div class="flex items-start gap-3">
+        <Whatsapp width={34} />
+        <span>{whatsapp_footer}</span>
+      </div>
+    </div>
+  </div>
+</footer>

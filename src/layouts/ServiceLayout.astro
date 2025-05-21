@@ -1,0 +1,31 @@
+---
+import { ClientRouter } from "astro:transitions";
+import { fetchTopSection } from "@/src/utils/queries/fetchNavTop";
+import { fetchFooter } from "@/src/utils/queries/fetchFooter";
+
+import ServiceFooter from "@/src/components/common/ServiceFooter.astro";
+import TopSection from "@/src/components/layout/TopSection.astro";
+import Nav from "@/src/components/navs/Nav.astro";
+import "@/src/styles/global.css";
+
+const navData = await fetchTopSection();
+const footerData = await fetchFooter();
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth scrollbar-hide">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>{title}</title>
+    <ClientRouter />
+  </head>
+  <body>
+    <TopSection {...navData} />
+    <Nav />
+    <slot />
+    <ServiceFooter {...footerData} />
+  </body>
+</html>
