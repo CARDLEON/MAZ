@@ -11,7 +11,7 @@ export const navLinks: NavLink[] = [
     submenu: [
       { name: "Todos los Servicios", href: "/services" },
       { name: "HVAC", href: "/services/hvac" },
-      { name: "Instalaciones eléctricas", href: "/services/electric" },
+      { name: "Instalaciones Eléctricas", href: "/services/electric" },
       { name: "Eficacia Energética", href: "/services/efficiency" },
       { name: "Refacciones", href: "/services/refac" },
       { name: "Pintura Electroestática", href: "/services/electrostatic" },

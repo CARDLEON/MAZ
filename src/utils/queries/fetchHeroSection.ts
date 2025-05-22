@@ -22,7 +22,7 @@ export async function fetchHeroSectionById(
     return {
       title_hero_section,
       subtitle_hero_section,
-      bg_hero_section: bg_hero_section?.url || "",
+      bg_hero_section: bg_hero_section?.url || "/",
       breadcrumb_hero_section,
     };
   } catch (error: any) {
