@@ -12,107 +12,20 @@ export const navLinks: NavLink[] = [
       { name: "Todos los Servicios", href: "/services" },
       { name: "HVAC", href: "/services/hvac" },
       { name: "Instalaciones eléctricas", href: "/services/electric" },
-      { name: "Servicios de Ingeniería", href: "/services/engineering" },
-      { name: "Servicios y Refacciones", href: "/services/refac" },
+      { name: "Eficacia Energética", href: "/services/efficiency" },
+      { name: "Refacciones", href: "/services/refac" },
+      { name: "Pintura Electroestática", href: "/services/electrostatic" },
+      { name: "Ingeniería a Detalle", href: "/services/engineering" },
     ],
   },
   {
     link: "Chillers",
     href: "/products/chillers",
-    submenu: [
-      { name: "Todos los Chillers", href: "/products/chillers" },
-    ],
+    submenu: [{ name: "Todos los Chillers", href: "/products/chillers" }],
   },
   { link: "Nosotros", href: "/about-us" },
   { link: "Proyectos", href: "/projects" },
   { link: "Contacto", href: "/contact" },
-];
-
-export type ProductsType = {
-  img: string;
-  title: string;
-  description: string;
-  link: string;
-  isFeatured?: boolean;
-  badgeText?: string;
-};
-
-export const featProducts: ProductsType[] = [
-  {
-    img: "https://placehold.co/300x300?text=AeroChill",
-    title: "AeroChill",
-    description:
-      "Ofrece un rendimiento excepcional con tecnología avanzada para un enfriamiento más eficiente y sostenible.",
-    link: "/products/product/aerochill",
-    isFeatured: true,
-    badgeText: "Más vendido",
-  },
-  {
-    img: "https://placehold.co/300x300?text=Clima+Comfort",
-    title: "Clima Comfort",
-    description:
-      "Sistema compacto ideal para climatizar espacios reducidos de manera eficiente.",
-    link: "/products/product/comfort",
-    isFeatured: true,
-    badgeText: "20% de descuento",
-  },
-  {
-    img: "https://placehold.co/300x300?text=FrostWave",
-    title: "FrostWave",
-    description:
-      "Ofrece un rendimiento excepcional con tecnología avanzada para un enfriamiento más eficiente y sostenible.",
-    link: "/products/product/aerochill",
-    isFeatured: true,
-    badgeText: "Nuevo!",
-  },
-  {
-    img: "https://placehold.co/300x300?text=Clima+Comfort",
-    title: "Clima Comfort",
-    description:
-      "Sistema compacto ideal para climatizar espacios reducidos de manera eficiente.",
-    link: "/products/product/comfort",
-    isFeatured: true,
-    badgeText: "50% de descuento",
-  },
-];
-
-export const gridProducts: ProductsType[] = [
-  {
-    img: "/AirHandlerPackage.webp",
-    title: "Air Handler y Package Units",
-    description:
-      "Ofrece un rendimiento excepcional con tecnología avanzada para un enfriamiento más eficiente y sostenible.",
-    link: "/products/product/airhandler",
-    isFeatured: true,
-    badgeText: "Más vendido",
-  },
-  {
-    img: "/CondenserEvaporator.webp",
-    title: "Condensadores y Evaporadores",
-    description:
-      "Sistema compacto ideal para climatizar espacios reducidos de manera eficiente.",
-    link: "/products/product/condenv",
-    isFeatured: true,
-    badgeText: "20% de descuento",
-  },
-  {
-    img: "/EcogreenECC06Z-Chiller.webp",
-    title: "Ecogreen",
-    description: "Tecnología de vanguardia para máxima eficiencia.",
-    link: "/products/product/ecogreen",
-  },
-  {
-    img: "/AirCooled-Chiller.webp",
-    title: "Air Cooled",
-    description: "Excelente desempeño en condiciones industriales exigentes.",
-    link: "/products/product/aircooled",
-  },
-  {
-    img: "/ECTScroll-Chiller.webp",
-    title: "ECT Scroll Chiller",
-    description: "Alta capacidad de enfriamiento y ahorro energético.",
-    link: "/products/product/ectscroll",
-  },
 ];
 
 export type ProjectType = {
@@ -229,50 +142,219 @@ export const services: ServicesType[] = [
   },
 ];
 
-export type ProductType = {
-  img: string;
-  title: string;
-  description: string;
-  link: string;
-};
+export const servicesElec = [
+  {
+    id: "armado",
+    label: "Armado de tableros",
+    highlights: [
+      {
+        title: "Infraestructura Confiable",
+        text: "Diseñamos tableros de control con componentes de la más alta calidad, asegurando tolerancias precisas y fácil mantenimiento.",
+      },
+      {
+        title: "Integración Óptima",
+        text: "Adaptamos cada tablero a tu layout y sistema eléctrico, para una instalación rápida y sin contratiempos.",
+      },
+    ],
+    brands: [
+      {
+        name: "Schneider Electric",
+        logo: "https://placehold.co/100x40?text=Schneider+Electric",
+      },
+      { name: "Siemens", logo: "https://placehold.co/100x40?text=Siemens" },
+    ],
+  },
+  {
+    id: "cableado",
+    label: "Cableado",
+    highlights: [
+      {
+        title: "Cableado Estructurado",
+        text: "Implementamos cableado CAT6 y fibra óptica cumpliendo normas TIA/EIA para redes de datos y comunicaciones.",
+      },
+      {
+        title: "Potencia Segura",
+        text: "Instalamos rutas y acometidas de potencia con canalizaciones metálicas y aislantes de alta resistencia.",
+      },
+    ],
+    brands: [
+      { name: "Panduit", logo: "https://placehold.co/100x40?text=Panduit" },
+      { name: "Legrand", logo: "https://placehold.co/100x40?text=Legrand" },
+    ],
+  },
+  {
+    id: "charola",
+    label: "Instalación de charola",
+    highlights: [
+      {
+        title: "Soporte Robusto",
+        text: "Proveemos charolas portacables de acero galvanizado para soportar grandes cargas y resistir ambientes corrosivos.",
+      },
+      {
+        title: "Diseño a Medida",
+        text: "Cortamos y doblamos en sitio según tu diseño, optimizando espacio y facilitando futuras ampliaciones.",
+      },
+    ],
+    brands: [
+      { name: "Erico", logo: "https://placehold.co/100x40?text=Erico" },
+      {
+        name: "OBO Bettermann",
+        logo: "https://placehold.co/100x40?text=OBO+Bettermann",
+      },
+    ],
+  },
+  {
+    id: "conduit",
+    label: "Tubería conduit",
+    highlights: [
+      {
+        title: "Instalación Segura",
+        text: "Realizamos rutas con tubería conduit metálica y plástica, garantizando protección mecánica y eléctrica.",
+      },
+      {
+        title: "Protección Robusta",
+        text: "Aseguramos sellado y fijación correctos para prevenir humedad y vibraciones en entornos industriales.",
+      },
+    ],
+    brands: [
+      {
+        name: "Example Co",
+        logo: "https://placehold.co/100x40?text=Example+Co",
+      },
+      {
+        name: "Sample Inc",
+        logo: "https://placehold.co/100x40?text=Sample+Inc",
+      },
+    ],
+  },
+  {
+    id: "neumatica",
+    label: "Tubería neumática",
+    highlights: [
+      {
+        title: "Flujo Óptimo",
+        text: "Instalamos tuberías de aire comprimido con conexiones de alta estanqueidad para minimizar pérdidas.",
+      },
+      {
+        title: "Montaje Preciso",
+        text: "Diseñamos rutas sin fugas y con un enrutamiento eficiente para facilitar mantenimiento y futuras ampliaciones.",
+      },
+    ],
+    brands: [
+      { name: "AirTech", logo: "https://placehold.co/100x40?text=AirTech" },
+      { name: "PneuCorp", logo: "https://placehold.co/100x40?text=PneuCorp" },
+    ],
+  },
+];
 
-export const products: ProductType[] = [
+export const servicesRefac = [
   {
-    img: "https://placehold.co/300x300?text=AeroChill",
-    title: "AeroChill",
-    description:
-      "Ofrece un rendimiento excepcional con tecnología avanzada para un enfriamiento más eficiente y sostenible.",
-    link: "#",
+    id: "equipo-refrigeracion",
+    label: "Equipo de Refrigeración",
+    highlights: [
+      {
+        title: "Refacciones Originales",
+        text: "Suministro de piezas originales para chillers y sistemas de enfriamiento, garantizando compatibilidad 100%.",
+      },
+      {
+        title: "Mantenimiento Preventivo",
+        text: "Kits de refacciones recomendados según horas de operación, para maximizar la vida útil del equipo.",
+      },
+    ],
+    brands: [
+      { name: "Marca A", logo: "https://placehold.co/100x40?text=Marca+A" },
+      { name: "Marca B", logo: "https://placehold.co/100x40?text=Marca+B" },
+    ],
   },
   {
-    img: "https://placehold.co/300x300?text=Clima+Comfort",
-    title: "Clima Comfort",
-    description:
-      "Sistema compacto ideal para climatizar espacios reducidos de manera eficiente.",
-    link: "#",
+    id: "equipo-electrico",
+    label: "Equipo Eléctrico",
+    highlights: [
+      {
+        title: "Componentes de Control",
+        text: "Contactores, relés y fusibles de alta calidad para tableros y sistemas de potencia.",
+      },
+      {
+        title: "Accesorios Seguros",
+        text: "Terminales, conectores y canalizaciones certificados que cumplen normas eléctricas internacionales.",
+      },
+    ],
+    brands: [
+      { name: "Marca C", logo: "https://placehold.co/100x40?text=Marca+C" },
+      { name: "Marca D", logo: "https://placehold.co/100x40?text=Marca+D" },
+    ],
+  },
+];
+
+export const servicesEng = [
+  {
+    id: "ingenierias-electricas-e-hidrosanitarias",
+    label: "Ingenierías eléctricas e hidrosanitarias",
+    highlights: [
+      {
+        title: "",
+        text: "Diseño y cálculo de instalaciones eléctricas e hidrosanitarias, asegurando cumplimiento de normativas y eficiencia operativa.",
+      },
+    ],
+    brands: [
+      { name: "Autodesk", logo: "https://placehold.co/100x40?text=Autodesk" },
+      { name: "Trimble", logo: "https://placehold.co/100x40?text=Trimble" },
+    ],
   },
   {
-    img: "https://placehold.co/300x300?text=AeroChill",
-    title: "AeroChill",
-    description: "Tecnología de vanguardia para máxima eficiencia.",
-    link: "#",
+    id: "planos-catalogos-de-conceptos",
+    label: "Planos y catálogos de conceptos",
+    highlights: [
+      {
+        title: "",
+        text: "Elaboración de planos detallados y catálogos de conceptos para facilitar la comprensión y aprobación de proyectos.",
+      },
+    ],
+    brands: [
+      { name: "Autodesk", logo: "https://placehold.co/100x40?text=Autodesk" },
+      { name: "Trimble", logo: "https://placehold.co/100x40?text=Trimble" },
+    ],
   },
   {
-    img: "https://placehold.co/300x300?text=FrostWave",
-    title: "FrostWave",
-    description: "Excelente desempeño en condiciones industriales exigentes.",
-    link: "#",
+    id: "hojas-de-calculo",
+    label: "Hojas de cálculo",
+    highlights: [
+      {
+        title: "",
+        text: "Desarrollo de hojas de cálculo personalizadas para dimensionamiento, presupuestos y análisis de costos, minimizando errores.",
+      },
+    ],
+    brands: [
+      { name: "Autodesk", logo: "https://placehold.co/100x40?text=Autodesk" },
+      { name: "Trimble", logo: "https://placehold.co/100x40?text=Trimble" },
+    ],
   },
   {
-    img: "https://placehold.co/300x300?text=ZephyrCool",
-    title: "ZephyrCool",
-    description: "Alta capacidad de enfriamiento y ahorro energético.",
-    link: "#",
+    id: "seleccion-de-equipos",
+    label: "Selección de equipos",
+    highlights: [
+      {
+        title: "",
+        text: "Asesoría en selección de equipos y materiales, eligiendo las mejores opciones según carga, eficiencia energética y presupuesto.",
+      },
+    ],
+    brands: [
+      { name: "Autodesk", logo: "https://placehold.co/100x40?text=Autodesk" },
+      { name: "Trimble", logo: "https://placehold.co/100x40?text=Trimble" },
+    ],
   },
   {
-    img: "https://placehold.co/300x300?text=PolarAir",
-    title: "PolarAir",
-    description: "Solución compacta para climatización eficiente y sostenible.",
-    link: "#",
+    id: "distribucion",
+    label: "Distribución",
+    highlights: [
+      {
+        title: "",
+        text: "Diagramas de distribución de sistemas y rutas de instalación para optimizar espacio y garantizar seguridad y accesibilidad.",
+      },
+    ],
+    brands: [
+      { name: "Autodesk", logo: "https://placehold.co/100x40?text=Autodesk" },
+      { name: "Trimble", logo: "https://placehold.co/100x40?text=Trimble" },
+    ],
   },
 ];

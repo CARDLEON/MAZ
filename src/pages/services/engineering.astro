@@ -1,30 +1,24 @@
 ---
 import MainLayout from "@/src/layouts/MainLayout.astro";
 import HeroSection from "@/src/components/hero/HeroSection.astro";
-import ServicesHomeSection from "@/src/components/layout/ServicesHomeSection.astro";
+import ServicesHomeSection from "@/src/components/layout/ServicesHomeSection.tsx";
 
-import { highlightsEng } from "@/src/utils/comps.config";
+import { servicesEng } from "@/src/utils/comps.config";
 import { fetchHeroSectionById } from "@/src/utils/queries/fetchHeroSection";
 
-const heroData = await fetchHeroSectionById(285);
+const heroData = await fetchHeroSectionById(308);
+
+const title =
+  "Servicios de ingeniería a detalle para sistemas de refrigeración y eléctricos";
+const description = `En <b class="text-[#24408d]">MAZ Soluciones de Agua Helada</b>, comprendemos la importancia de una infraestructura eléctrica confiable. Por eso, <b class="text-[#24408d]">ofrecemos soluciones integrales en instalaciones eléctricas</b>, <b class="text-[#24408d]">garantizando</b> una integración precisa, operación <b class="text-[#24408d]">segura</b> y desempeño <b class="text-[#24408d]">óptimo</b> de todos tus sistemas.`;
 ---
 
 <MainLayout title="MAZ - Servicios para instalaciones eléctricas">
   <HeroSection {...heroData} />
   <ServicesHomeSection
-    categories={[
-      { label: "Ingenierías eléctricas e hidrosanitarias" },
-      { label: "Hojas de cálculo" },
-      { label: "Selección de equipos" },
-      { label: "Distribución" },
-      { label: "Catálogos de conceptos" },
-      { label: "Planos" },
-      { label: "Cálculos eléctricos" },
-      { label: "Tierras físicas" },
-      { label: "Calidad de energía" },
-    ]}
-    title="Soluciones de ingeniería personalizados para cada necesidad"
-    description={`En <b>MAZ Soluciones de Agua Helada</b>, desarrollamos proyectos de ingeniería con un enfoque <b>técnico y estratégico</b>, garantizando soluciones eficientes y completamente adaptadas a las necesidades específicas de cada cliente.`}
-    highlights={highlightsEng}
+    client:visible
+    title={title}
+    description={description}
+    services={servicesEng}
   />
 </MainLayout>
