@@ -14,7 +14,7 @@ export const navLinks: NavLink[] = [
       { name: "Instalaciones Eléctricas", href: "/services/electric" },
       { name: "Eficacia Energética", href: "/services/efficiency" },
       { name: "Refacciones", href: "/services/refac" },
-      { name: "Pintura Electroestática", href: "/services/electrostatic" },
+      { name: "Pintura Electroestática", href: "/services/paint" },
       { name: "Ingeniería a Detalle", href: "/services/engineering" },
     ],
   },
