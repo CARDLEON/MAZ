@@ -34,16 +34,17 @@ const {
 >
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
     <!-- Columna Izquierda -->
-    <div class="flex flex-col">
+    <div class="flex flex-col gap-4">
       <Image
         src="/Logo-MAZ-Blanco.webp"
         alt="Logo MAZ"
-        class="mb-6"
+        class="w-50"
         width={128}
-        height={40}
+        height={128}
         loading="lazy"
       />
-      <p class="text-sm leading-relaxed mb-6">
+
+      <p class="text-sm leading-relaxed">
         {description_footer}
       </p>
 
@@ -59,7 +60,7 @@ const {
 
     <!-- Columna Central (Links) -->
     <div
-      class="text-sm gap-2 md:gap-3 grid sm:grid-cols-2 gap-y-2 sm:gap-y-3 md:flex md:flex-row md:items-center"
+      class="text-sm gap-2 md:gap-3 grid sm:grid-cols-2 gap-y-2 sm:gap-y-3 md:flex md:flex-row md:items-start"
     >
       <a href="#servicios" class="hover:underline font-semibold">Servicios</a>
       <a href="#productos" class="hover:underline font-semibold">Productos</a>

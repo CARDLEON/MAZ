@@ -1,0 +1,14 @@
+---
+import HeroSection from "@/src/components/hero/HeroSection.astro";
+import CalculationsLanding from "@/src/components/landings/CalculationsLanding.astro";
+import ServiceLayout from "@/src/layouts/ServiceLayout.astro";
+
+import { fetchHeroSectionById } from "@/src/utils/queries/fetchHeroSection";
+
+const heroData = await fetchHeroSectionById(313);
+---
+
+<ServiceLayout title="MAZ - Servicios para Cálculos">
+  <HeroSection {...heroData} />
+  <CalculationsLanding />
+</ServiceLayout>

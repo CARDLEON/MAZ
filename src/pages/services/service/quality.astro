@@ -1,0 +1,14 @@
+---
+import HeroSection from "@/src/components/hero/HeroSection.astro";
+import QualityLanding from "@/src/components/landings/QualityLanding.astro";
+import ServiceLayout from "@/src/layouts/ServiceLayout.astro";
+
+import { fetchHeroSectionById } from "@/src/utils/queries/fetchHeroSection";
+
+const heroData = await fetchHeroSectionById(315);
+---
+
+<ServiceLayout title="MAZ - Servicios para Calidad de Energía">
+  <HeroSection {...heroData} />
+  <QualityLanding />
+</ServiceLayout>

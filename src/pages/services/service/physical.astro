@@ -1,0 +1,14 @@
+---
+import HeroSection from "@/src/components/hero/HeroSection.astro";
+import PhysicalLanding from "@/src/components/landings/PhysicalLanding.astro";
+import ServiceLayout from "@/src/layouts/ServiceLayout.astro";
+
+import { fetchHeroSectionById } from "@/src/utils/queries/fetchHeroSection";
+
+const heroData = await fetchHeroSectionById(314);
+---
+
+<ServiceLayout title="MAZ - Servicios para Instalaciones Físicas">
+  <HeroSection {...heroData} />
+  <PhysicalLanding />
+</ServiceLayout>

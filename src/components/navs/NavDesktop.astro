@@ -8,13 +8,13 @@ interface Props {
 const { links } = Astro.props;
 ---
 
-<ul class="hidden md:flex md:gap-6 text-[12pt] items-center">
+<ul class="hidden md:flex gap-6 md:gap-8 text-[12pt] items-center">
   {
     links.map(({ link, href, submenu }) => (
       <li class="relative group">
         <a
           href={href}
-          class="flex items-center gap-1 hover:underline underline-offset-4 transition-colors"
+          class="font-semibold flex items-center gap-2 hover:underline underline-offset-4 transition-colors"
         >
           {link}
           {submenu && (
@@ -22,7 +22,7 @@ const { links } = Astro.props;
               class="w-4 h-4"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
+              stroke-width="3"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >

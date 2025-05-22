@@ -1,0 +1,14 @@
+---
+import HeroSection from "@/src/components/hero/HeroSection.astro";
+import PanelsLanding from "@/src/components/landings/PanelsLanding.astro";
+import ServiceLayout from "@/src/layouts/ServiceLayout.astro";
+
+import { fetchHeroSectionById } from "@/src/utils/queries/fetchHeroSection";
+
+const heroData = await fetchHeroSectionById(312);
+---
+
+<ServiceLayout title="MAZ - Servicios para Paneles Solares">
+  <HeroSection {...heroData} />
+  <PanelsLanding />
+</ServiceLayout>
