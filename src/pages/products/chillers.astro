@@ -3,14 +3,14 @@ import HeroSection from "@/src/components/hero/HeroSection.astro";
 import ProductGrid from "@/src/components/products/ProductGrid.astro";
 import MainLayout from "@/src/layouts/MainLayout.astro";
 
-import { fetchHeroSections } from "@/src/utils/queries/fetchHeroSections";
+import { fetchHeroSectionById } from "@/src/utils/queries/fetchHeroSection";
 import { fetchAllProducts } from "@/src/utils/queries/fetchAllProducts";
 
-const heroData = await fetchHeroSections("chillers_hero_section");
+const heroData = await fetchHeroSectionById(286);
 const allProducts = await fetchAllProducts();
 ---
 
-<MainLayout title="MAZ - Servicios para Chillers">
+<MainLayout title="MAZ - Chillers">
   <HeroSection {...heroData} />
   <div
     class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 py-12 place-items-center"

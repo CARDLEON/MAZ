@@ -4,12 +4,12 @@ import HeroSection from "@/src/components/hero/HeroSection.astro";
 import ServicesHomeSection from "@/src/components/layout/ServicesHomeSection.astro";
 
 import { highlightsElec } from "@/src/utils/comps.config";
-import { fetchHeroSections } from "@/src/utils/queries/fetchHeroSections";
+import { fetchHeroSectionById } from "@/src/utils/queries/fetchHeroSection";
 
-const heroData = await fetchHeroSections("electric_hero_section");
+const heroData = await fetchHeroSectionById(284);
 ---
 
-<MainLayout title="MAZ - Servicios para instalaciones electricas">
+<MainLayout title="MAZ - Servicios para instalaciones eléctricas">
   <HeroSection {...heroData} />
   <ServicesHomeSection
     categories={[

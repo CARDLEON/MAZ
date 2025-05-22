@@ -4,9 +4,9 @@ import ServicesGrid from "@/src/components/grids/ServicesGrid.astro";
 import MainLayout from "@/src/layouts/MainLayout.astro";
 
 import { services } from "@/src/utils/comps.config";
-import { fetchHeroSections } from "@/src/utils/queries/fetchHeroSections";
+import { fetchHeroSectionById } from "@/src/utils/queries/fetchHeroSection";
 
-const heroData = await fetchHeroSections("services_hero_section");
+const heroData = await fetchHeroSectionById(286);
 ---
 
 <MainLayout title="MAZ - Todos nuestros servicios">
