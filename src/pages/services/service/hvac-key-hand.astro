@@ -3,9 +3,9 @@ import HeroSection from "@/src/components/hero/HeroSection.astro";
 import HVACKeyHandLanding from "@/src/components/landings/HVACKeyHandLanding.astro";
 import ServiceLayout from "@/src/layouts/ServiceLayout.astro";
 
-import { fetchHeroSections } from "@/src/utils/queries/fetchHeroSections";
+import { fetchHeroSectionById } from "@/src/utils/queries/fetchHeroSection";
 
-const heroData = await fetchHeroSections("chillers_hero_section");
+const heroData = await fetchHeroSectionById(293);
 ---
 
 <ServiceLayout title="MAZ - Servicios para Soluciones HVAC Llave en Mano">

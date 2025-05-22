@@ -6,12 +6,12 @@ import AboutGrid from "@/src/components/grids/AboutGrid.astro";
 import ServicesGrid from "@/src/components/grids/ServicesGrid.astro";
 
 import { services } from "@/src/utils/comps.config";
-import { fetchHeroSections } from "@/src/utils/queries/fetchHeroSections";
+import { fetchHeroSectionById } from "@/src/utils/queries/fetchHeroSection";
 
-const heroData = await fetchHeroSections("aboutus_hero_section");
+const heroData = await fetchHeroSectionById(288);
 ---
 
-<MainLayout title="Sobre nosotros">
+<MainLayout title="MAZ - Sobre nosotros">
   <HeroSection {...heroData} />
   <HeaderAbout />
   <AboutGrid />

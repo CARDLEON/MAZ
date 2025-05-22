@@ -3,9 +3,9 @@ import MainLayout from "@/src/layouts/MainLayout.astro";
 import HeroSection from "@/src/components/hero/HeroSection.astro";
 import ContactForm from "@/src/components/common/ContactForm";
 
-import { fetchHeroSections } from "@/src/utils/queries/fetchHeroSections";
+import { fetchHeroSectionById } from "@/src/utils/queries/fetchHeroSection";
 
-const data = await fetchHeroSections("contact_hero_section");
+const data = await fetchHeroSectionById(162);
 ---
 
 <MainLayout title="MAZ - Formulario de contacto">

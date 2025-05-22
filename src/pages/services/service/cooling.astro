@@ -3,9 +3,9 @@ import HeroSection from "@/src/components/hero/HeroSection.astro";
 import CoolingLanding from "@/src/components/landings/CoolingLanding.astro";
 import ServiceLayout from "@/src/layouts/ServiceLayout.astro";
 
-import { fetchHeroSections } from "@/src/utils/queries/fetchHeroSections";
+import { fetchHeroSectionById } from "@/src/utils/queries/fetchHeroSection";
 
-const heroData = await fetchHeroSections("chillers_hero_section");
+const heroData = await fetchHeroSectionById(295);
 ---
 
 <ServiceLayout title="MAZ - Servicios para Torres de Enfriamiento">

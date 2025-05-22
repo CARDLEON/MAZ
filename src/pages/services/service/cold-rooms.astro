@@ -3,9 +3,9 @@ import HeroSection from "@/src/components/hero/HeroSection.astro";
 import ColdRoomsLanding from "@/src/components/landings/ColdRooms.astro";
 import ServiceLayout from "@/src/layouts/ServiceLayout.astro";
 
-import { fetchHeroSections } from "@/src/utils/queries/fetchHeroSections";
+import { fetchHeroSectionById } from "@/src/utils/queries/fetchHeroSection";
 
-const heroData = await fetchHeroSections("chillers_hero_section");
+const heroData = await fetchHeroSectionById(301);
 ---
 
 <ServiceLayout title="MAZ - Servicios para Cuartos Fríos Industriales">

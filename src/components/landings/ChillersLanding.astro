@@ -1,5 +1,5 @@
 ---
-
+import ProductFeatureGrid from "@/src/components/grids/ProductFeatureGrid.astro";
 ---
 
 <section
@@ -53,7 +53,7 @@
       </div>
 
       <a
-        href="#"
+        href="/contact"
         class="inline-block mt-6 bg-[#24408d] hover:bg-[#1b3270] text-white font-semibold px-6 py-2 rounded transition"
       >
         Cotiza tu proyecto con un especialista
@@ -70,7 +70,42 @@
     </div>
   </div>
 
-  <!-- TESTIMONIO CENTRADO -->
+  <!-- PRODUCT FEATURES -->
+  <ProductFeatureGrid
+    title="INVERTER CHILLERS"
+    subtitle="Ahorro, control y eficiencia"
+    features={[
+      "Reduce consumo energético hasta un 35%",
+      "Tecnología inteligente, operación silenciosa",
+      "Máxima precisión térmica",
+    ]}
+    imageUrl="https://placehold.co/600x400?text=Inverter+Chillers"
+  />
+
+  <ProductFeatureGrid
+    title="CONDENSING UNITS"
+    subtitle="Reemplaza sin rehacer tu sistema"
+    imageLeft={true}
+    features={[
+      "Renueva tu sistema de enfriamiento",
+      "Ahorro en infraestructura, mejor desempeño",
+      "Rápida integración",
+    ]}
+    imageUrl="https://placehold.co/600x400?text=Condensing+Units"
+  />
+
+  <ProductFeatureGrid
+    title="WATER COOLED SCREW CHILLERS"
+    subtitle="Rendimiento y potencia"
+    features={[
+      "Alta eficiencia y bajo impacto ambiental",
+      "Operación continua",
+      "Ideal para procesos industriales, farmacéuticos y manufactura",
+    ]}
+    imageUrl="https://placehold.co/600x400?text=Water+Cooled+Chillers"
+  />
+
+  <!-- TESTIMONIO -->
   <div class="max-w-4xl mx-auto text-center py-12 px-6">
     <div
       class="bg-[#e2e8f0] border-l-4 border-[#24408d] p-6 rounded-lg shadow-md"
