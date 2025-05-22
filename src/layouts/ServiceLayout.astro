@@ -6,6 +6,7 @@ import { fetchFooter } from "@/src/utils/queries/fetchFooter";
 import ServiceFooter from "@/src/components/common/ServiceFooter.astro";
 import TopSection from "@/src/components/layout/TopSection.astro";
 import Nav from "@/src/components/navs/Nav.astro";
+import WhatsAppButton from "@/src/components/common/WhatsAppButton.astro";
 import "@/src/styles/global.css";
 
 const navData = await fetchTopSection();
@@ -26,6 +27,7 @@ const { title } = Astro.props;
     <TopSection {...navData} />
     <Nav />
     <slot />
+    <WhatsAppButton />
     <ServiceFooter {...footerData} />
   </body>
 </html>
