@@ -1,4 +1,3 @@
-// src/components/ServicesHomeSection.tsx
 import React, { useState } from "react";
 
 export interface Highlight {
@@ -14,6 +13,7 @@ export interface Brand {
 export interface Service {
   id: string;
   label: string;
+  image: string;
   highlights: Highlight[];
   brands: Brand[];
 }
@@ -80,11 +80,11 @@ const ServicesHomeSection: React.FC<ServicesHomeSectionProps> = ({
             </h3>
 
             {/* Imagen del servicio activo */}
-            <div className="overflow-hidden rounded-md">
+            <div className="overflow-hidden rounded-md flex justify-center">
               <img
-                src={`https://placehold.co/200x100?text=${activeService.label}`}
+                src={activeService.image}
                 alt={activeService.label}
-                className="w-full h-auto"
+                className="w-1/2"
               />
             </div>
 
@@ -101,7 +101,7 @@ const ServicesHomeSection: React.FC<ServicesHomeSectionProps> = ({
             )}
 
             {/* Marcas (marquee) */}
-            {activeService.brands.length > 0 && (
+            {/* {activeService.brands.length > 0 && (
               <div className="overflow-hidden mt-10 rounded-md px-4 py-4">
                 <div className="animate-marquee whitespace-nowrap inline-flex py-4 w-max">
                   {[...activeService.brands, ...activeService.brands].map(
@@ -121,7 +121,7 @@ const ServicesHomeSection: React.FC<ServicesHomeSectionProps> = ({
                   )}
                 </div>
               </div>
-            )}
+            )} */}
           </>
         )}
       </div>

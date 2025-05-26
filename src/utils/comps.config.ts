@@ -146,6 +146,7 @@ export const servicesElec = [
   {
     id: "armado",
     label: "Armado de tableros",
+    image: "/Tableros.webp",
     highlights: [
       {
         title: "Infraestructura Confiable",
@@ -167,6 +168,7 @@ export const servicesElec = [
   {
     id: "cableado",
     label: "Cableado",
+    image: "/Wiring.webp",
     highlights: [
       {
         title: "Cableado Estructurado",
@@ -185,6 +187,7 @@ export const servicesElec = [
   {
     id: "charola",
     label: "Instalación de charola",
+    image: "/Charola.webp",
     highlights: [
       {
         title: "Soporte Robusto",
@@ -206,6 +209,7 @@ export const servicesElec = [
   {
     id: "conduit",
     label: "Tubería conduit",
+    image: "/Conduit.webp",
     highlights: [
       {
         title: "Instalación Segura",
@@ -230,6 +234,7 @@ export const servicesElec = [
   {
     id: "neumatica",
     label: "Tubería neumática",
+    image: "/Pneumatic.webp",
     highlights: [
       {
         title: "Flujo Óptimo",
