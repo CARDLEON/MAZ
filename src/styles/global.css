@@ -15,18 +15,22 @@
 
 /* For Webkit-based browsers (Chrome, Safari and Opera) */
 .scrollbar-hide::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 /* For IE, Edge and Firefox */
 .scrollbar-hide {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 @keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-100%); }
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 .animate-marquee {
@@ -35,13 +39,25 @@
 }
 
 @keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(12px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes popIn {
-  0% { opacity: 0; transform: scale(0.5); }
-  100% { opacity: 1; transform: scale(1); }
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .animate-fade-in {
@@ -50,4 +66,26 @@
 
 .animate-pop-in {
   animation: popIn 0.5s ease-out both;
+}
+
+@keyframes text-pulse {
+  0%,
+  92% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  93%,
+  96% {
+    transform: scale(1.05);
+    opacity: 0.65;
+  }
+  97%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-text-pulse {
+  animation: text-pulse 5s ease-in-out infinite;
 }
