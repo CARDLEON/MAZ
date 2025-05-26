@@ -25,11 +25,11 @@ const {
 <div class={`grid grid-cols-1 lg:grid-cols-2 gap-10 items-center`}>
   {
     imageLeft && (
-      <div>
+      <div class="flex justify-center">
         <img
           src={imageUrl}
           alt={imageAlt}
-          class="rounded-xl w-full object-cover shadow-md"
+          class="rounded-xl w-3/4 object-cover shadow-md"
         />
       </div>
     )
@@ -51,11 +51,11 @@ const {
 
   {
     !imageLeft && (
-      <div>
+      <div class="flex justify-center">
         <img
           src={imageUrl}
           alt={imageAlt}
-          class="rounded-xl w-full object-cover shadow-md"
+          class="rounded-xl w-3/4 object-cover shadow-md"
         />
       </div>
     )

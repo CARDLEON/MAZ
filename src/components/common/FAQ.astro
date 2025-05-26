@@ -15,7 +15,6 @@ interface Props {
 
 const {
   faqs = [],
-  image = "https://placehold.co/600x400?text=FAQ+Image",
   alt = "FAQ",
 }: Props = Astro.props;
 ---
@@ -25,13 +24,13 @@ const {
 >
   <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
     <!-- Imagen -->
-    <div class="w-full md:w-1/2">
+    <div class="w-full md:w-1/2 flex justify-center">
       <Image
         format="webp"
-        src={image}
+        src="/FAQImage.webp"
         alt={alt}
-        class="rounded-lg w-full"
-        width={600}
+        class="rounded-lg w-2/3"
+        width={400}
         height={400}
         loading="lazy"
       />
