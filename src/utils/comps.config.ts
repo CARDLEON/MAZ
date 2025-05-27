@@ -36,18 +36,13 @@ export type ProjectType = {
 
 export const gridProjects: ProjectType[] = [
   {
-    img: "https://placehold.co/400x300",
+    img: "/PaperHvac.webp",
     title: "HVAC para Industria de Papel y la Higiene",
     link: "/projects/paper",
   },
   {
-    img: "https://placehold.co/400x300",
+    img: "/OfficeHvac.webp",
     title: "Solución HVAC para oficinas",
-    link: "#",
-  },
-  {
-    img: "https://placehold.co/400x300",
-    title: "Compre soluciones HVAC",
     link: "#",
   },
 ];
