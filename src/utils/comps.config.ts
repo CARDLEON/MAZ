@@ -297,6 +297,7 @@ export const servicesEng = [
   {
     id: "ingenierias-electricas-e-hidrosanitarias",
     label: "Ingenierías eléctricas e hidrosanitarias",
+    image: "/ElectricalDesign.webp",
     highlights: [
       {
         title: "",
@@ -311,6 +312,7 @@ export const servicesEng = [
   {
     id: "planos-catalogos-de-conceptos",
     label: "Planos y catálogos de conceptos",
+    image: "/ElectricalDesign2.webp",
     highlights: [
       {
         title: "",
@@ -325,6 +327,7 @@ export const servicesEng = [
   {
     id: "hojas-de-calculo",
     label: "Hojas de cálculo",
+    image: "/ElectricalDesign.webp",
     highlights: [
       {
         title: "",
@@ -339,6 +342,7 @@ export const servicesEng = [
   {
     id: "seleccion-de-equipos",
     label: "Selección de equipos",
+    image: "/ElectricalDesign2.webp",
     highlights: [
       {
         title: "",
@@ -353,6 +357,7 @@ export const servicesEng = [
   {
     id: "distribucion",
     label: "Distribución",
+    image: "/ElectricalDesign.webp",
     highlights: [
       {
         title: "",
