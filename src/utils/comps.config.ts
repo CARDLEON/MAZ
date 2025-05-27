@@ -256,6 +256,7 @@ export const servicesRefac = [
   {
     id: "equipo-refrigeracion",
     label: "Equipo de Refrigeración",
+    image: "/Refrigeration.webp",
     highlights: [
       {
         title: "Refacciones Originales",
@@ -274,6 +275,7 @@ export const servicesRefac = [
   {
     id: "equipo-electrico",
     label: "Equipo Eléctrico",
+    image: "/Electric.webp",
     highlights: [
       {
         title: "Componentes de Control",
@@ -361,5 +363,72 @@ export const servicesEng = [
       { name: "Autodesk", logo: "https://placehold.co/100x40?text=Autodesk" },
       { name: "Trimble", logo: "https://placehold.co/100x40?text=Trimble" },
     ],
+  },
+];
+
+export const servicesHvac = [
+  {
+    id: "panels",
+    label: "Paneles Solares",
+    image: "/SolarPanels.webp",
+    highlights: [
+      {
+        title: "Energía Renovable",
+        text: "Aprovecha la energía solar para reducir costos y contribuir al medio ambiente con sistemas de paneles solares de alta eficiencia.",
+      },
+      {
+        title: "Integración Total",
+        text: "Soluciones llave en mano que se adaptan a tus necesidades energéticas y de espacio.",
+      },
+    ],
+    brands: brandsHvac,
+  },
+  {
+    id: "calculations",
+    label: "Cálculos Eléctricos",
+    image: "/Calculations.webp",
+    highlights: [
+      {
+        title: "Precisión y Seguridad",
+        text: "Realizamos cálculos eléctricos detallados para garantizar la seguridad y eficiencia de tus instalaciones.",
+      },
+      {
+        title: "Normatividad Cumplida",
+        text: "Todos nuestros proyectos cumplen con las normas nacionales e internacionales vigentes.",
+      },
+    ],
+    brands: brandsHvac,
+  },
+  {
+    id: "physical",
+    label: "Tierras Físicas",
+    image: "/Physical.webp",
+    highlights: [
+      {
+        title: "Protección Óptima",
+        text: "Diseño e instalación de sistemas de tierras físicas para proteger tus equipos y personal.",
+      },
+      {
+        title: "Mantenimiento y Diagnóstico",
+        text: "Ofrecemos servicios de diagnóstico y mantenimiento preventivo para asegurar la continuidad operativa.",
+      },
+    ],
+    brands: brandsHvac,
+  },
+  {
+    id: "quality",
+    label: "Calidad de Energía",
+    image: "/Quality.webp",
+    highlights: [
+      {
+        title: "Monitoreo y Corrección",
+        text: "Implementamos sistemas de monitoreo y corrección de calidad de energía para evitar fallas y optimizar el consumo.",
+      },
+      {
+        title: "Soluciones Personalizadas",
+        text: "Adaptamos nuestras soluciones a las necesidades específicas de tu industria o negocio.",
+      },
+    ],
+    brands: brandsHvac,
   },
 ];

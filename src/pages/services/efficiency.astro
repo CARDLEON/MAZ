@@ -1,26 +1,22 @@
 ---
 import MainLayout from "@/src/layouts/MainLayout.astro";
 import HeroSection from "@/src/components/hero/HeroSection.astro";
-import ServicesHomeSection from "@/src/components/layout/ServicesHomeSection.astro";
+import ServicesHomeSection from "@/src/components/layout/ServicesHomeSection.tsx";
 
+import { servicesHvac } from "@/src/utils/comps.config";
 import { fetchHeroSectionById } from "@/src/utils/queries/fetchHeroSection";
-import { brandsHvac, highlightsHvac } from "@/src/utils/comps.config";
 
 const data = await fetchHeroSectionById(303);
+const title = "Servicios HVAC Personalizados para Cada Necesidad";
+const description = `<p>En <strong>MAZ Soluciones de Agua Helada</strong>, entendemos que cada cliente tiene requerimientos únicos. Por ello, ofrecemos <strong>soluciones HVAC a medida</strong>, asegurando eficiencia energética, reducción de costos operativos y prolongación de la vida útil de tus equipos.</p>`;
 ---
 
 <MainLayout title="MAZ - Servicios para HVAC">
   <HeroSection {...data} />
   <ServicesHomeSection
-    categories={[
-      { label: "Paneles Solares", href: "/services/service/panels" },
-      { label: "Cálculos Eléctricos", href: "/services/service/calculations" },
-      { label: "Tierras Físicas", href: "/services/service/physical" },
-      { label: "Calidad de Energía", href: "/services/service/quality" },
-    ]}
-    title="Servicios HVAC Personalizados para Cada Necesidad"
-    description={`<p>En <strong>MAZ Soluciones de Agua Helada</strong>, entendemos que cada cliente tiene requerimientos únicos. Por ello, ofrecemos <strong>soluciones HVAC a medida</strong>, asegurando eficiencia energética, reducción de costos operativos y prolongación de la vida útil de tus equipos.</p>`}
-    highlights={highlightsHvac}
-    brands={brandsHvac}
+    client:visible
+    title={title}
+    description={description}
+    services={servicesHvac}
   />
 </MainLayout>
