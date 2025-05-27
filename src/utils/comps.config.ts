@@ -373,6 +373,169 @@ export const servicesEng = [
 
 export const servicesHvac = [
   {
+    id: "chillers",
+    label: "Chillers",
+    image: "/Chillers.webp",
+    highlights: [
+      {
+        title: "Eficiencia y Potencia",
+        text: "Soluciones avanzadas en chillers para aplicaciones industriales y comerciales, optimizando el consumo energético y el rendimiento del sistema.",
+      },
+      {
+        title: "Soporte Integral",
+        text: "Instalación, mantenimiento y refacciones para asegurar la operación continua de tus equipos de enfriamiento.",
+      },
+    ],
+    brands: brandsHvac,
+  },
+  {
+    id: "tvr",
+    label: "Equipos Tablero y TVR",
+    image: "/Tvr.webp",
+    highlights: [
+      {
+        title: "Tecnología de Vanguardia",
+        text: "Sistemas TVR para climatización eficiente y flexible en grandes espacios y edificios inteligentes.",
+      },
+      {
+        title: "Control Preciso",
+        text: "Automatización y monitoreo para máxima comodidad y ahorro energético.",
+      },
+    ],
+    brands: brandsHvac,
+  },
+  {
+    id: "cooling",
+    label: "Torres de Enfriamiento",
+    image: "/CoolingTower.webp",
+    highlights: [
+      {
+        title: "Desempeño Óptimo",
+        text: "Torres de enfriamiento diseñadas para prolongar la vida útil de tus sistemas y reducir el consumo de agua y energía.",
+      },
+      {
+        title: "Mantenimiento Especializado",
+        text: "Servicios de limpieza, reparación y optimización para máxima eficiencia.",
+      },
+    ],
+    brands: brandsHvac,
+  },
+  {
+    id: "package",
+    label: "Equipo Paquete y Divididos",
+    image: "/PackageUnit.webp",
+    highlights: [
+      {
+        title: "Versatilidad y Adaptabilidad",
+        text: "Soluciones en equipos paquete y sistemas divididos para todo tipo de espacios y requerimientos.",
+      },
+      {
+        title: "Instalación Rápida",
+        text: "Montaje eficiente y soporte técnico especializado.",
+      },
+    ],
+    brands: brandsHvac,
+  },
+  {
+    id: "centbomb",
+    label: "Bombas Centrífugas",
+    image: "/CentrifugalPump.webp",
+    highlights: [
+      {
+        title: "Transporte Eficiente",
+        text: "Bombas centrífugas de alta eficiencia para sistemas de agua helada y climatización industrial.",
+      },
+      {
+        title: "Durabilidad Garantizada",
+        text: "Equipos robustos y de bajo mantenimiento para operación continua.",
+      },
+    ],
+    brands: brandsHvac,
+  },
+  {
+    id: "hydraulic",
+    label: "Tubería Hidráulica",
+    image: "/HydraulicPipe.webp",
+    highlights: [
+      {
+        title: "Instalación Profesional",
+        text: "Tubería hidráulica para sistemas HVAC, asegurando estanqueidad y resistencia a largo plazo.",
+      },
+      {
+        title: "Materiales Certificados",
+        text: "Cumplimiento de normativas y máxima seguridad en cada proyecto.",
+      },
+    ],
+    brands: brandsHvac,
+  },
+  {
+    id: "hvac-key-hand",
+    label: "Soluciones HVAC Llave en Mano",
+    image: "/KeyHandHVAC.webp",
+    highlights: [
+      {
+        title: "Proyecto Integral",
+        text: "Desde el diseño hasta la puesta en marcha, nos encargamos de todo el proceso para tu tranquilidad.",
+      },
+      {
+        title: "Acompañamiento Total",
+        text: "Soporte técnico y asesoría personalizada en cada etapa del proyecto.",
+      },
+    ],
+    brands: brandsHvac,
+  },
+  {
+    id: "air-duct",
+    label: "Ducteria de Aire ",
+    image: "/AirDuct.webp",
+    highlights: [
+      {
+        title: "Distribución Eficiente",
+        text: "Diseño e instalación de ductos de aire para climatización industrial y comercial.",
+      },
+      {
+        title: "Aislamiento y Seguridad",
+        text: "Materiales de alta calidad para evitar pérdidas térmicas y garantizar la seguridad del sistema.",
+      },
+    ],
+    brands: brandsHvac,
+  },
+  {
+    id: "hydraulic-pipe",
+    label: "Tuberia Especializada para Sistemas HVAC",
+    image: "/SpecializedPipe.webp",
+    highlights: [
+      {
+        title: "Soluciones a Medida",
+        text: "Tubería especializada para aplicaciones específicas en sistemas HVAC, adaptada a cada necesidad.",
+      },
+      {
+        title: "Instalación Certificada",
+        text: "Personal capacitado y materiales certificados para máxima confiabilidad.",
+      },
+    ],
+    brands: brandsHvac,
+  },
+  {
+    id: "cold-rooms",
+    label: "Cuartos fríos Industriales a la Medida",
+    image: "/ColdRooms.webp",
+    highlights: [
+      {
+        title: "Control de Temperatura",
+        text: "Diseño y construcción de cuartos fríos industriales para almacenamiento seguro y eficiente.",
+      },
+      {
+        title: "Ahorro Energético",
+        text: "Sistemas de aislamiento y control para minimizar el consumo energético.",
+      },
+    ],
+    brands: brandsHvac,
+  },
+];
+
+export const servicesEff = [
+  {
     id: "panels",
     label: "Paneles Solares",
     image: "/SolarPanels.webp",

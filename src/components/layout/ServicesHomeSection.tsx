@@ -14,8 +14,8 @@ export interface Service {
   id: string;
   label: string;
   image: string;
-  highlights: Highlight[];
-  brands: Brand[];
+  highlights?: Highlight[];
+  brands?: Brand[];
 }
 
 interface ServicesHomeSectionProps {
@@ -89,10 +89,11 @@ const ServicesHomeSection: React.FC<ServicesHomeSectionProps> = ({
             </div>
 
             {/* Highlights */}
-            {activeService.highlights.length > 0 && (
-              <div className="space-y-10">
-                {activeService.highlights.map((h, idx) => (
-                  <div key={idx}>
+            {activeService?.highlights?.length &&
+              activeService.highlights.length > 0 && (
+                <div className="space-y-10">
+                  {activeService.highlights.map((h, idx) => (
+                    <div key={idx}>
                     <h4 className="font-bold text-[#24408D]">{h.title}</h4>
                     <p className="text-gray-700 font-normal">{h.text}</p>
                   </div>

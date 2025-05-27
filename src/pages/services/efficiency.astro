@@ -3,7 +3,7 @@ import MainLayout from "@/src/layouts/MainLayout.astro";
 import HeroSection from "@/src/components/hero/HeroSection.astro";
 import ServicesHomeSection from "@/src/components/layout/ServicesHomeSection.tsx";
 
-import { servicesHvac } from "@/src/utils/comps.config";
+import { servicesEff } from "@/src/utils/comps.config";
 import { fetchHeroSectionById } from "@/src/utils/queries/fetchHeroSection";
 
 const data = await fetchHeroSectionById(303);
@@ -17,6 +17,6 @@ const description = `<p>En <strong>MAZ Soluciones de Agua Helada</strong>, enten
     client:visible
     title={title}
     description={description}
-    services={servicesHvac}
+    services={servicesEff}
   />
 </MainLayout>
