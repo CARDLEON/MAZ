@@ -10,6 +10,7 @@ export const navLinks: NavLink[] = [
     href: "/services",
     submenu: [
       { name: "Todos los Servicios", href: "/services" },
+      { name: "Chillers", href: "/services/chillers" },
       { name: "HVAC", href: "/services/hvac" },
       { name: "Instalaciones Eléctricas", href: "/services/electric" },
       { name: "Eficacia Energética", href: "/services/efficiency" },
@@ -121,7 +122,7 @@ export const services: ServicesType[] = [
     img: "/Serv-1.webp",
     title: "Instalación y Mantenimiento de Chillers",
     description: "Para aplicaciones industriales y comerciales",
-    link: "/services/hvac",
+    link: "/services/chillers",
   },
   {
     img: "/Serv-2.webp",
