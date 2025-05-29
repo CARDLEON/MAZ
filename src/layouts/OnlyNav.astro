@@ -1,6 +1,6 @@
 ---
 import Footer from "@/src/components/common/Footer.astro";
-import NavWhiteProducts from "@/src/components/navs/NavWhiteProducts.astro";
+import Nav from "@/src/components/navs/Nav.astro";
 import WhatsAppButton from "@/src/components/common/WhatsAppButton.astro";
 import "@/src/styles/global.css";
 
@@ -13,7 +13,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es" class="scroll-smooth scrollbar-hide">
+<html lang="es" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,7 +22,7 @@ const { title } = Astro.props;
     <ClientRouter />
   </head>
   <body>
-    <NavWhiteProducts />
+    <Nav variant="white" />
     <slot />
     <WhatsAppButton />
     <Footer {...footerData} />

@@ -3,13 +3,21 @@ import { navLinks } from "@/src/utils/comps.config";
 import NavHeader from "@/src/components/navs/NavHeader.astro";
 import NavDesktop from "@/src/components/navs/NavDesktop.astro";
 import NavMobile from "@/src/components/navs/NavMobile.astro";
+
+const { variant = "default" } = Astro.props;
+const dynamicNav =
+  variant === "white"
+    ? "bg-white text-[#24408d]"
+    : "absolute text-white bg-transparent";
 ---
 
 <nav
   id="main-nav"
-  class="absolute w-full h-[15dvh] z-50 flex items-center justify-between text-[12px] px-4 2xl:px-[12rem] lg:px-[4rem] bg-transparent text-white transition-colors duration-200 ease-in-out"
+  class=`w-full h-[15dvh] z-50 flex items-center justify-between text-[12px] px-4 2xl:px-[12rem] lg:px-[4rem] transition-colors duration-200 ease-in-out
+    ${dynamicNav}`
+  data-variant={variant}
 >
-  <NavHeader img="/Logo-MAZ-Blanco.webp">
+  <NavHeader variant={variant}>
     <NavDesktop links={navLinks} />
   </NavHeader>
 </nav>
@@ -46,19 +54,32 @@ import NavMobile from "@/src/components/navs/NavMobile.astro";
     window.addEventListener("scroll", () => {
       const scrolled = window.scrollY > 115;
 
+      const isWhiteVariant = nav.getAttribute("data-variant") === "white";
+
       nav.classList.toggle("fixed", scrolled);
       nav.classList.toggle("top-0", scrolled);
-      nav.classList.toggle("bg-white", scrolled);
-      nav.classList.toggle("text-[#24408d]", scrolled);
-      nav.classList.toggle("text-white", !scrolled);
       nav.classList.toggle("border-b", scrolled);
 
-      btn?.classList.toggle("text-white", scrolled);
-      menuIcon.setAttribute("stroke", scrolled ? "#24408d" : "#fff");
-      img.setAttribute(
-        "src",
-        scrolled ? "/Logo-MAZ-Azul.webp" : "/Logo-MAZ-Blanco.webp"
-      );
+      if (!isWhiteVariant) {
+        nav.classList.remove("bg-white", "text-[#24408d]");
+        nav.classList.add("bg-transparent", "text-white");
+
+        if (scrolled) {
+          nav.classList.remove("bg-transparent", "text-white");
+          nav.classList.add("bg-white", "text-[#24408d]");
+          img.setAttribute("src", "/Logo-MAZ-Azul.webp");
+          menuIcon.setAttribute("stroke", "#24408d");
+        } else {
+          img.setAttribute("src", "/Logo-MAZ-Blanco.webp");
+          menuIcon.setAttribute("stroke", "#fff");
+        }
+      } else {
+        nav.classList.add("text-[#24408d]");
+        nav.classList.remove("text-white");
+
+        img.setAttribute("src", "/Logo-MAZ-Azul.webp");
+        menuIcon.setAttribute("stroke", "#24408d");
+      }
     });
 
     // Toggle menú

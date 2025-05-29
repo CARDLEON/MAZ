@@ -24,7 +24,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #f5f5f5;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -35,11 +35,6 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: #452c6c; /* un morado más oscuro para hover */
-}
-/* For IE, Edge and Firefox */
-.scrollbar-hide {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
 }
 
 @keyframes marquee {
