@@ -1,0 +1,14 @@
+---
+import HeroSection from "@/src/components/hero/HeroSection.astro";
+import ChillerMaintenanceLanding from "@/src/components/landings/ChillerMaintenanceLanding.astro";
+import ServiceLayout from "@/src/layouts/ServiceLayout.astro";
+
+import { fetchHeroSectionById } from "@/src/utils/queries/fetchHeroSection";
+
+const heroData = await fetchHeroSectionById(326);
+---
+
+<ServiceLayout title="MAZ - Póliza de Mantenimiento de Chillers">
+  <HeroSection {...heroData} />
+  <ChillerMaintenanceLanding />
+</ServiceLayout>
