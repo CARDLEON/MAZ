@@ -1,8 +1,8 @@
 ---
-const { img } = Astro.props;
 import ContactModal from "@/src/components/common/ContactModal.tsx";
-
 import Image from "astro/components/Image.astro";
+
+const { variant = "default" } = Astro.props;
 ---
 
 <ContactModal client:load />
@@ -12,7 +12,9 @@ import Image from "astro/components/Image.astro";
   <a href="/">
     <Image
       id="nav-img"
-      src={img}
+      src={variant === "white"
+        ? "/Logo-MAZ-Azul.webp"
+        : "/Logo-MAZ-Blanco.webp"}
       alt="Logo MAZ"
       class="w-40 md:w-28 lg:w-40 transition-all duration-300"
       width={160}
