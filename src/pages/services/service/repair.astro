@@ -1,0 +1,14 @@
+---
+import HeroSection from "@/src/components/hero/HeroSection.astro";
+import ChillerRepairLanding from "@/src/components/landings/ChillerRepairLanding.astro";
+import ServiceLayout from "@/src/layouts/ServiceLayout.astro";
+
+import { fetchHeroSectionById } from "@/src/utils/queries/fetchHeroSection";
+
+const heroData = await fetchHeroSectionById(323);
+---
+
+<ServiceLayout title="MAZ - Reparacion de Chillers">
+  <HeroSection {...heroData} />
+  <ChillerRepairLanding />
+</ServiceLayout>
