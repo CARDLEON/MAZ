@@ -1,5 +1,7 @@
 export type TopBar = {
   phone_top: string;
+  phone_top_2: string;
+  phone_top_3: string;
   email_top: string;
   schedule_top: string;
   fb_link_top: string;

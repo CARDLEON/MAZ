@@ -18,6 +18,24 @@
   display: none;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #5b348b; /* morado principal */
+  border-radius: 6px;
+  border: 2px solid #f5f5f5; /* crea un padding visual */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #452c6c; /* un morado más oscuro para hover */
+}
 /* For IE, Edge and Firefox */
 .scrollbar-hide {
   -ms-overflow-style: none; /* IE and Edge */

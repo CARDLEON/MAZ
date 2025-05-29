@@ -27,6 +27,15 @@ import NavMobileWhite from "@/src/components/navs/NavMobileWhiteProducts.astro";
     const mobileMenu = document.getElementById("mobile-menu");
     const menuIcon = document.getElementById("menu-icon");
 
+    // Limpiar clases y logo al cargar la barra
+    if (nav && img) {
+      nav.classList.remove("text-[#24408d]");
+      nav.classList.remove("text-white");
+      nav.classList.add("text-[#24408d]");
+      img.setAttribute("src", "/Logo-MAZ-Azul.webp");
+      menuIcon.setAttribute("stroke", "#24408d");
+    }
+
     // ✅ Navbar scroll behavior
     window.addEventListener("scroll", () => {
       if (!nav || !btn || !img) return;
@@ -35,10 +44,14 @@ import NavMobileWhite from "@/src/components/navs/NavMobileWhiteProducts.astro";
 
       nav.classList.toggle("fixed", scrolled);
       nav.classList.toggle("top-0", scrolled);
-      nav.classList.toggle("bg-white", scrolled);
       nav.classList.toggle("border-b", scrolled);
 
-      menuIcon.setAttribute("stroke", scrolled ? "#24408d" : "#fff");
+      // Siempre forzar color azul y logo azul en cada scroll
+      nav.classList.remove("text-white");
+      nav.classList.remove("text-[#24408d]");
+      nav.classList.add("text-[#24408d]");
+      img.setAttribute("src", "/Logo-MAZ-Azul.webp");
+      menuIcon?.setAttribute("stroke", "#24408d");
     });
 
     // ✅ Toggle menú mobile
