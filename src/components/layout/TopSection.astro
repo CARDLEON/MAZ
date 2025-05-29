@@ -7,14 +7,21 @@ import Clock from "@/public/clock.svg";
 
 type Props = {
   phone_top: string;
+  phone_top_2: string;
+  phone_top_3: string;
   email_top: string;
-  schedule_top: string;
   fb_link_top: string;
   in_link_top: string;
 };
 
-const { phone_top, email_top, schedule_top, fb_link_top, in_link_top } =
-  Astro.props;
+const {
+  phone_top,
+  phone_top_2,
+  phone_top_3,
+  email_top,
+  fb_link_top,
+  in_link_top,
+} = Astro.props;
 ---
 
 <section
@@ -25,19 +32,32 @@ const { phone_top, email_top, schedule_top, fb_link_top, in_link_top } =
   >
     <section>
       <ul
-        class="flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-4 items-start sm:items-center"
+        class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 items-start sm:items-center"
       >
-        <li class="flex gap-2 items-center">
-          <Phone width={20} />
-          {phone_top}
+        <li
+          class="flex flex-col sm:flex-row gap-0 sm:gap-2 items-start sm:items-center text-white"
+        >
+          <div class="flex items-center gap-2">
+            <Phone width={20} />
+            {phone_top && <span>{phone_top}</span>}
+          </div>
+
+          <div
+            class="flex items-center gap-2 sm:before:content-['/'] sm:before:mx-1"
+          >
+            {phone_top_2 && <span>{phone_top_2}</span>}
+          </div>
+
+          <div
+            class="flex items-center gap-2 sm:before:content-['/'] sm:before:mx-1"
+          >
+            {phone_top_3 && <span>{phone_top_3}</span>}
+          </div>
         </li>
-        <li class="flex gap-2 items-center">
+
+        <li class="flex gap-2 items-center text-white">
           <Mail width={20} />
           {email_top}
-        </li>
-        <li class="flex gap-2 items-center">
-          <Clock width={20} />
-          {schedule_top}
         </li>
       </ul>
     </section>
