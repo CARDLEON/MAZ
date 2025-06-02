@@ -1,8 +1,7 @@
 ---
+import Grid from "./Grid.astro";
 import type { ServicesType } from "@/src/utils/comps.config";
-
 import Image from "astro/components/Image.astro";
-
 const { services = [] } = Astro.props;
 ---
 
@@ -24,27 +23,26 @@ const { services = [] } = Astro.props;
       medida que cumplen con las necesidades específicas de cada cliente.
     </p>
   </div>
-
-  <!-- Cards de servicios -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+  <Grid>
     {
-      services.map(({ img, title, description, link }: ServicesType) => (
-        <div class="flex flex-col rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-[1.01]">
+      services.map((item: ServicesType) => (
+        <div>
           <Image
-            src={img}
-            alt={title}
+            src={item.img}
+            alt={item.title}
             class="w-full h-56 sm:h-64 object-cover"
             width={100}
             height={100}
-            loading="lazy"
           />
           <div class="bg-[#0e3e96] text-white p-6 flex flex-col flex-1 justify-between">
             <div>
-              <h3 class="text-base sm:text-lg font-semibold mb-2">{title}</h3>
-              <p class="text-sm leading-relaxed">{description}</p>
+              <h3 class="text-base sm:text-lg font-semibold mb-2">
+                {item.title}
+              </h3>
+              <p class="text-sm leading-relaxed">{item.description}</p>
             </div>
             <a
-              href={link}
+              href={item.link}
               class="mt-4 text-center inline-block bg-white text-[#0e3e96] font-semibold px-4 py-2 rounded-md text-sm hover:bg-gray-100 transition-colors duration-200"
             >
               Ver más
@@ -53,5 +51,5 @@ const { services = [] } = Astro.props;
         </div>
       ))
     }
-  </div>
+  </Grid>
 </section>
