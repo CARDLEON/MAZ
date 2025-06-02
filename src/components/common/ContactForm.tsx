@@ -1,9 +1,35 @@
+import Phone from "@/public/phone.svg";
+
 export default function ContactForm() {
   return (
     <section className="py-12 px-4 max-w-6xl mx-auto text-[#24408d]">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+        {/* Left column: text */}
+        <div className="flex items-center justify-center">
+          <p className="text-left text-base sm:text-lg md:text-xl font-medium">
+            Completa el formulario a continuación con tus datos y mensaje, y nos
+            pondremos en contacto contigo lo antes posible.
+          </p>
+        </div>
+        {/* Right column: informational placeholders */}
+        <div className="space-y-4">
+          <div className="w-full border border-gray-300 rounded px-4 py-2 bg-gray-50 text-gray-700 flex items-center gap-2">
+            <img src={Phone.src} alt="Phone icon" />
+            <span className="font-semibold">(81) 2211 8054</span>
+          </div>
+          <div className="w-full border border-gray-300 rounded px-4 py-2 bg-gray-50 text-gray-700 flex items-center gap-2">
+            <img src={Phone.src} alt="Phone icon" />
+            <span className="font-semibold">(81) 4491 1774</span>
+          </div>
+          <div className="w-full border border-gray-300 rounded px-4 py-2 bg-gray-50 text-gray-700">
+            Ubicación:
+            <span className="font-semibold"> General Escobedo, N.L</span>
+          </div>
+        </div>
+      </div>
+
       <p className="text-center text-base sm:text-lg md:text-xl font-medium mb-10">
-        Completa el formulario a continuación con tus datos y mensaje,<br />
-        y nos pondremos en contacto contigo lo antes posible.
+        Numeros de contacto
       </p>
 
       <form
@@ -72,7 +98,11 @@ export default function ContactForm() {
         </div>
 
         {/* Campos ocultos */}
-        <input type="hidden" name="_next" value="http://maz.sandboxcardleon.com/thanks" />
+        <input
+          type="hidden"
+          name="_next"
+          value="http://maz.sandboxcardleon.com/thanks"
+        />
         <input type="text" name="_honey" className="hidden" />
         <input type="hidden" name="_captcha" value="false" />
 
