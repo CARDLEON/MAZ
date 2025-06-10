@@ -1,11 +1,6 @@
 ---
 import Image from "astro/components/Image.astro";
-
-import ServicesGrid from "@/src/components/grids/ServicesGrid.astro";
-import { services } from "@/src/utils/comps.config";
-// import { fetchHomeData } from "@/src/utils/queries/fetchHomeData";
-
-// const homeData = await fetchHomeData();
+import OneCardServices from "@/src/components/layout/OneCardServices.astro";
 ---
 
 <section class="px-16 lg:px-32 py-20">
@@ -63,5 +58,27 @@ import { services } from "@/src/utils/comps.config";
     </div>
   </div>
 
-  <ServicesGrid services={services} />
+  <section class="px-4 sm:px-6 lg:px-12 py-12">
+    <!-- Encabezado -->
+    <div class="text-center mb-12">
+      <span
+        class="inline-block bg-gray-200 text-gray-600 px-3 py-1 text-xs sm:text-sm font-bold rounded-full mb-4"
+      >
+        Soluciones completas
+      </span>
+      <h2
+        class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-[#24408d]"
+      >
+        Nuestros Servicios
+      </h2>
+      <p class="max-w-3xl mx-auto text-gray-700 text-sm sm:text-base">
+        Ofrecemos una amplia gama de servicios especializados para garantizar el
+        mejor rendimiento en sistemas de climatización y refrigeración. Nuestra
+        experiencia y compromiso con la calidad nos permiten brindar soluciones
+        a medida que cumplen con las necesidades específicas de cada cliente.
+      </p>
+    </div>
+
+    <OneCardServices />
+  </section>
 </section>
