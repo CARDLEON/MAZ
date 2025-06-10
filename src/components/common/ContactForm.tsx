@@ -33,7 +33,7 @@ export default function ContactForm() {
       </p>
 
       <form
-        action="https://formsubmit.co/0d8b09a3d7a82b190b0b6ed056162ed4"
+        action="https://formsubmit.co/ventas@mazaguahelada.com.mx"
         method="POST"
         className="grid grid-cols-1 md:grid-cols-2 gap-6"
       >
@@ -48,6 +48,7 @@ export default function ContactForm() {
               type="text"
               name="name"
               required
+              pattern="^[A-Za-zÁÉÍÓÚÑáéíóúñ' -]{2,60}$"
               placeholder="Escriba su nombre"
               className="w-full border border-gray-400 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
@@ -62,6 +63,7 @@ export default function ContactForm() {
               type="email"
               name="email"
               required
+              pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
               placeholder="Escriba su correo electrónico"
               className="w-full border border-gray-400 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
@@ -76,6 +78,8 @@ export default function ContactForm() {
               type="tel"
               name="phone"
               required
+              inputMode="numeric"
+              pattern="^\+?[0-9\s\-]{10,15}$"
               placeholder="Escriba su número telefónico"
               className="w-full border border-gray-400 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
