@@ -6,7 +6,6 @@ import { fetchFooter } from "@/src/utils/queries/fetchFooter";
 import Footer from "@/src/components/common/Footer.astro";
 import TopSection from "@/src/components/layout/TopSection.astro";
 import WhatsAppButton from "@/src/components/common/WhatsAppButton.astro";
-// import Nav from "@/src/components/navs/Nav.astro";
 import Nav from "@/src//components/navs/Nav";
 import "@/src/styles/global.css";
 
@@ -24,15 +23,25 @@ const { title } = Astro.props;
 
     <!-- Google Tag Manager -->
     <script>
-      (function (w, d, s, l, i) {
+      (function (
+        w: any, // casteamos a any para poder hacer w['dataLayer']
+        d: Document,
+        s: string,
+        l: string,
+        i: string
+      ) {
+        // Inicializa dataLayer
         w[l] = w[l] || [];
         w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
+
+        // Creamos el <script> correctamente tipado
+        const f = d.getElementsByTagName(s)[0];
+        const j = d.createElement(s) as HTMLScriptElement;
+        const dl = l !== "dataLayer" ? "&l=" + l : "";
+
         j.async = true;
         j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
+        f.parentNode!.insertBefore(j, f);
       })(window, document, "script", "dataLayer", "GTM-PPJ4F6RG");
     </script>
     <!-- End Google Tag Manager -->
