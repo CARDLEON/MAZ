@@ -84,7 +84,7 @@ const ServicesHomeSection: React.FC<ServicesHomeSectionProps> = ({
               <img
                 src={activeService.image}
                 alt={activeService.label}
-                className="w-1/2"
+                className="w-full md:w-1/2"
               />
             </div>
 
@@ -94,35 +94,12 @@ const ServicesHomeSection: React.FC<ServicesHomeSectionProps> = ({
                 <div className="space-y-10">
                   {activeService.highlights.map((h, idx) => (
                     <div key={idx}>
-                    <h4 className="font-bold text-[#24408D]">{h.title}</h4>
-                    <p className="text-gray-700 font-normal">{h.text}</p>
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {/* Marcas (marquee) */}
-            {/* {activeService.brands.length > 0 && (
-              <div className="overflow-hidden mt-10 rounded-md px-4 py-4">
-                <div className="animate-marquee whitespace-nowrap inline-flex py-4 w-max">
-                  {[...activeService.brands, ...activeService.brands].map(
-                    (b, idx) => (
-                      <div
-                        key={idx}
-                        className="flex-shrink-0 flex items-center justify-center w-40"
-                      >
-                        <img
-                          src={b.logo}
-                          alt={`Logo ${b.name}`}
-                          className="h-12 object-contain"
-                          loading="lazy"
-                        />
-                      </div>
-                    )
-                  )}
+                      <h4 className="font-bold text-[#24408D]">{h.title}</h4>
+                      <p className="text-gray-700 font-normal">{h.text}</p>
+                    </div>
+                  ))}
                 </div>
-              </div>
-            )} */}
+              )}
           </>
         )}
       </div>

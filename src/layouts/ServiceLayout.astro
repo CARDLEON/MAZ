@@ -5,7 +5,7 @@ import { fetchFooter } from "@/src/utils/queries/fetchFooter";
 
 import ServiceFooter from "@/src/components/common/ServiceFooter.astro";
 import TopSection from "@/src/components/layout/TopSection.astro";
-import Nav from "@/src/components/navs/Nav.astro";
+import Nav from "@/src/components/navs/Nav";
 import WhatsAppButton from "@/src/components/common/WhatsAppButton.astro";
 import "@/src/styles/global.css";
 
@@ -25,7 +25,7 @@ const { title } = Astro.props;
   </head>
   <body>
     <TopSection {...navData} />
-    <Nav />
+    <Nav client:load />
     <slot />
     <WhatsAppButton />
     <ServiceFooter {...footerData} />
