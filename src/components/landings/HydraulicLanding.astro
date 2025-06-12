@@ -1,6 +1,7 @@
 ---
 
 ---
+import Image from "astro/components/Image.astro"
 
 <!-- TUBERÍA HIDRÁULICA -->
 <div
@@ -33,10 +34,13 @@
 
   <!-- Imagen -->
   <div class="w-full">
-    <img
+    <Image
       src="/HydraulicPipe.webp"
       alt="Tubería Hidráulica"
       class="rounded-xl w-full object-cover shadow-md"
+      width={800}
+      height={600}
+      loading="lazy"
     />
   </div>
 </div>
