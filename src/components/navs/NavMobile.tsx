@@ -4,26 +4,38 @@ import clsx from "clsx";
 interface NavMobileProps {
   links: NavLink[];
   menuOpen: boolean;
+  variant: "white" | "default";
 }
 
-export default function NavMobile({ links, menuOpen }: NavMobileProps) {
+export default function NavMobile({
+  links,
+  menuOpen,
+  variant,
+}: NavMobileProps) {
   return (
     <div
       id="mobile-menu"
       className={clsx(
-        "transition-all duration-500 ease-in-out overflow-hidden flex-col md:hidden w-full bg-white text-[#24408d] px-4 shadow-md",
-        menuOpen ? "max-h-[800px] opacity-100" : "max-h-0 opacity-0"
+        "fixed left-0 w-full z-40 transition-all duration-500 ease-in-out overflow-hidden md:hidden",
+        // variant === "white" ? "top-0" : "top-[17dvh]",
+        menuOpen
+          ? "max-h-[800px] opacity-100 bg-white text-[#24408d]"
+          : "max-h-0 opacity-0"
       )}
     >
-      <ul className="flex flex-col text-lg mt-[15dvh]">
+      <ul
+        className={clsx(
+          "flex flex-col text-lg transition-all duration-300",
+          variant === "white" ? "mt-0" : "mt-[15dvh]"
+        )}
+      >
         {links.map(({ link, href, submenu }) => (
           <li key={link} className="border-b border-gray-200">
             <div className="flex flex-col">
               {submenu ? (
                 <>
                   <button
-                    className="flex justify-between items-center w-full px-6 py-4 submenu-toggle text-left"
-                    data-has-submenu="true"
+                    className="flex justify-between items-center w-full px-6 py-4 text-left"
                     onClick={(e) => {
                       const submenuElement = e.currentTarget
                         .closest("div")
@@ -49,7 +61,7 @@ export default function NavMobile({ links, menuOpen }: NavMobileProps) {
                     </svg>
                   </button>
 
-                  <ul className="hidden flex-col bg-gray-100 submenu-items">
+                  <ul className="hidden flex-col bg-gray-100">
                     {submenu.map(({ name, href }) => (
                       <li key={name}>
                         <a
@@ -77,7 +89,6 @@ export default function NavMobile({ links, menuOpen }: NavMobileProps) {
 
       <div className="p-4">
         <a
-          href="#"
           onClick={() => window?.openContactModal?.()}
           className="block font-semibold text-center bg-[#24408d] text-white py-2 rounded-md"
         >

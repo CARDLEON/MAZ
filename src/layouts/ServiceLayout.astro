@@ -1,12 +1,12 @@
 ---
-import { ClientRouter } from "astro:transitions";
 import { fetchTopSection } from "@/src/utils/queries/fetchNavTop";
 import { fetchFooter } from "@/src/utils/queries/fetchFooter";
+import { ClientRouter } from "astro:transitions";
 
+import WhatsAppButton from "@/src/components/common/WhatsAppButton.astro";
 import ServiceFooter from "@/src/components/common/ServiceFooter.astro";
 import TopSection from "@/src/components/layout/TopSection.astro";
-import Nav from "@/src/components/navs/Nav";
-import WhatsAppButton from "@/src/components/common/WhatsAppButton.astro";
+import NavWrapper from "@/src/components/navs/NavWrapper";
 import "@/src/styles/global.css";
 
 const navData = await fetchTopSection();
@@ -15,7 +15,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es" class="scroll-smooth scrollbar-hide">
+<html lang="es" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,7 +25,7 @@ const { title } = Astro.props;
   </head>
   <body>
     <TopSection {...navData} />
-    <Nav client:load />
+    <NavWrapper client:load />
     <slot />
     <WhatsAppButton />
     <ServiceFooter {...footerData} />
