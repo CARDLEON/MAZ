@@ -33,7 +33,14 @@ export default function NavDesktop({ links }: NavDesktopProps) {
           </a>
 
           {submenu && (
-            <ul className="opacity-0 translate-y-4 pointer-events-none transition-all duration-200 ease-in-out absolute left-0 mt-2 bg-white text-[#24408d] rounded-md shadow-lg min-w-[240px] border border-gray-200 z-50 group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto">
+            <ul
+              className={clsx(
+                "absolute left-0 mt-2 min-w-[240px] bg-white text-[#24408d] rounded-md shadow-lg border border-gray-200 z-50 overflow-hidden",
+                "transition-all duration-300 ease-in-out",
+                "opacity-0 scale-y-95 group-hover:opacity-100 group-hover:scale-y-100 origin-top",
+                "invisible group-hover:visible delay-200 group-hover:delay-100"
+              )}
+            >
               {submenu.map(({ name, href }, i) => (
                 <li key={name}>
                   <a
