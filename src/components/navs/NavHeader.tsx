@@ -8,7 +8,6 @@ interface NavHeaderProps {
   children: ReactNode;
   menuOpen: boolean;
   setMenuOpen: (open: boolean) => void;
-  scrolled: boolean;
 }
 
 export default function NavHeader({
@@ -16,15 +15,13 @@ export default function NavHeader({
   children,
   menuOpen,
   setMenuOpen,
-  scrolled,
 }: NavHeaderProps) {
   const logoSrc =
-    variant === "white" || scrolled || menuOpen
+    variant === "white" || menuOpen
       ? "/Logo-MAZ-Azul.webp"
       : "/Logo-MAZ-Blanco.webp";
 
-  const iconStroke =
-    variant === "white" || scrolled || menuOpen ? "#24408d" : "#fff";
+  const iconStroke = variant === "white" || menuOpen ? "#24408d" : "#fff";
 
   return (
     <>
