@@ -33,7 +33,7 @@ export default function ContactForm() {
       </p>
 
       <form
-        action="https://formsubmit.co/ventas@mazaguahelada.com.mx"
+        action="https://getform.io/f/azynqrdb"
         method="POST"
         className="grid grid-cols-1 md:grid-cols-2 gap-6"
       >
