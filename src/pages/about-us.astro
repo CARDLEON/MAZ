@@ -11,9 +11,21 @@ import { fetchHeroSectionById } from "@/src/utils/queries/fetchHeroSection";
 const heroData = await fetchHeroSectionById(288);
 ---
 
-<MainLayout title="MAZ - Sobre nosotros">
+<MainLayout
+  title="MAZ - Sobre nosotros"
+  description="Conoce al equipo de MAZ y nuestra experiencia en mantenimiento y proyectos HVAC"
+>
   <HeroSection {...heroData} />
   <HeaderAbout />
   <AboutGrid />
   <ServicesGrid services={services} />
 </MainLayout>
+
+<!-- Invitación a contacto -->
+<section class="text-center py-8">
+  <p class="text-lg">
+    ¿Tienes un proyecto en puerta?&nbsp;
+    <a href="/contact" class="text-[#24408d] font-semibold underline">Contáctanos</a>
+    para recibir atención especializada.
+  </p>
+</section>

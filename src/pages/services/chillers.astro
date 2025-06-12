@@ -8,7 +8,10 @@ import { fetchHeroSectionById } from "@/src/utils/queries/fetchHeroSection";
 const heroData = await fetchHeroSectionById(290);
 ---
 
-<ServiceLayout title="MAZ - Servicios para Chillers">
+<ServiceLayout
+  title="MAZ - Servicios para Chillers"
+  description="Instalación, mantenimiento y reparación especializada de chillers industriales"
+>
   <HeroSection {...heroData} />
   <ChillersLanding />
 </ServiceLayout>
