@@ -51,5 +51,5 @@ jobs:
           server: ${{ secrets.FTP_STAGING_HOST }}
           username: ${{ secrets.FTP_STAGING_USERNAME }}
           password: ${{ secrets.FTP_STAGING_PASSWORD }}
-          server-dir: ${{ secrets.FTP_STAGING_PATH }}
+          server-dir: ./
           local-dir: ./dist/
