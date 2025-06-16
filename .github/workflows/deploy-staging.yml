@@ -1,0 +1,55 @@
+name: Deploy to staging
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.pnpm-store
+            node_modules
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build project
+        run: pnpm run build
+        env:
+          VITE_JWT_USER: ${{ secrets.VITE_JWT_USER }}
+          VITE_JWT_PASS: ${{ secrets.VITE_JWT_PASS }}
+          VITE_WP_REST_ENDPOINT: ${{ secrets.VITE_WP_REST_ENDPOINT }}
+          VITE_WP_REST_ENDPOINT_ACF: ${{ secrets.VITE_WP_REST_ENDPOINT_ACF }}
+          VITE_JWT_SECRET: ${{ secrets.VITE_WP_PREVIEW_SECRET }}
+
+      - name: Deploy via FTP
+        id: deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_STAGING_HOST }}
+          username: ${{ secrets.FTP_STAGING_USERNAME }}
+          password: ${{ secrets.FTP_STAGING_PASSWORD }}
+          server-dir: ${{ secrets.FTP_STAGING_PATH }}
+          local-dir: ./dist/
