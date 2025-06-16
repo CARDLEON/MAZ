@@ -1,4 +1,4 @@
-name: Deploy to production
+name: Deploy to production 🚀
 
 on:
   push:
@@ -9,20 +9,20 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: ⚙️ Checkout Code
+      - name: ⚙️ Chheckout Code
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
+      - name: 📦 Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
 
-      - name: Install pnpm
+      - name: ⚒️ Install pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 8
 
-      - name: Setup pnpm cache
+      - name: 📦 Setup pnpm cache
         uses: actions/cache@v3
         with:
           path: |
@@ -32,10 +32,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 
-      - name: Install dependencies
+      - name: ⬇️ Install dependencies
         run: pnpm install
 
-      - name: Build project
+      - name: 🔨 Build project
         run: pnpm run build
         env:
           VITE_JWT_USER: ${{ secrets.VITE_JWT_USER }}
@@ -44,7 +44,7 @@ jobs:
           VITE_WP_REST_ENDPOINT_ACF: ${{ secrets.VITE_WP_REST_ENDPOINT_ACF }}
           VITE_JWT_SECRET: ${{ secrets.VITE_WP_PREVIEW_SECRET }}
 
-      - name: Deploy via FTP
+      - name: 📤 Deploy via FTP
         id: deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
