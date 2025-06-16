@@ -7,11 +7,15 @@ import Footer from "@/src/components/common/Footer.astro";
 import TopSection from "@/src/components/layout/TopSection.astro";
 import WhatsAppButton from "@/src/components/common/WhatsAppButton.astro";
 import NavWrapper from "@/src/components/navs/NavWrapper";
+import CardleonSign from "@/src/components/layout/CardleonSign";
 import "@/src/styles/global.css";
 
 const navData = await fetchTopSection();
 const footerData = await fetchFooter();
-const { title, description = "Soluciones industriales en chillers, HVAC y mantenimiento" } = Astro.props;
+const {
+  title,
+  description = "Soluciones industriales en chillers, HVAC y mantenimiento",
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -71,6 +75,7 @@ const { title, description = "Soluciones industriales en chillers, HVAC y manten
     <slot />
     <WhatsAppButton />
     <Footer {...footerData} />
+    <CardleonSign client:load />
 
     <!-- Google Tag Manager (noscript) -->
     <noscript
