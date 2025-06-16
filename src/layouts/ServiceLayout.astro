@@ -7,11 +7,13 @@ import WhatsAppButton from "@/src/components/common/WhatsAppButton.astro";
 import ServiceFooter from "@/src/components/common/ServiceFooter.astro";
 import TopSection from "@/src/components/layout/TopSection.astro";
 import NavWrapper from "@/src/components/navs/NavWrapper";
+import CardleonSign from "@/src/components/layout/CardleonSign";
 import "@/src/styles/global.css";
 
 const navData = await fetchTopSection();
 const footerData = await fetchFooter();
-const { title, description = "Servicios industriales en chillers y HVAC" } = Astro.props;
+const { title, description = "Servicios industriales en chillers y HVAC" } =
+  Astro.props;
 ---
 
 <!doctype html>
@@ -21,6 +23,47 @@ const { title, description = "Servicios industriales en chillers y HVAC" } = Ast
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (
+        w: any, // casteamos a any para poder hacer w['dataLayer']
+        d: Document,
+        s: string,
+        l: string,
+        i: string
+      ) {
+        // Inicializa dataLayer
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+
+        // Creamos el <script> correctamente tipado
+        const f = d.getElementsByTagName(s)[0];
+        const j = d.createElement(s) as HTMLScriptElement;
+        const dl = l !== "dataLayer" ? "&l=" + l : "";
+
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode!.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-PPJ4F6RG");
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-17152175582"></script>
+    <script>
+      {
+        `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-17152175582');
+      `;
+      }
+    </script>
+
     <title>{title}</title>
     <ClientRouter />
   </head>
@@ -30,5 +73,16 @@ const { title, description = "Servicios industriales en chillers y HVAC" } = Ast
     <slot />
     <WhatsAppButton />
     <ServiceFooter {...footerData} />
+    <CardleonSign client:load />
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-PPJ4F6RG"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
+    <!-- End Google Tag Manager (noscript) -->
   </body>
 </html>
