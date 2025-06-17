@@ -13,10 +13,8 @@ interface Props {
   alt?: string;
 }
 
-const {
-  faqs = [],
-  alt = "FAQ",
-}: Props = Astro.props;
+const { faqs = [], alt = "Frequently asked questions about chillers" }: Props =
+  Astro.props;
 ---
 
 <section
@@ -27,7 +25,7 @@ const {
     <div class="w-full md:w-1/2 flex justify-center">
       <Image
         format="webp"
-        src="/FAQImage.webp"
+        src="/ChillerRepair.webp"
         alt={alt}
         class="rounded-lg w-2/3"
         width={400}
