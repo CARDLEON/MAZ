@@ -1,16 +1,29 @@
 import { useState, useEffect, useRef } from "react";
 import Nav from "@/src/components/navs/Nav";
 
-export default function NavWrapper() {
-  const [variant, setVariant] = useState<"default" | "white">("default");
+interface NavWrapperProps {
+  fixedVariant?: "default" | "white";
+  textColor?: string;
+}
+
+export default function NavWrapper({
+  fixedVariant,
+  textColor = "#24408d",
+}: NavWrapperProps) {
+  const [variant, setVariant] = useState<"default" | "white">(
+    fixedVariant ?? "default",
+  );
   const sentinelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // No checar scroll si se pasa prop fixedVariant
+    if (fixedVariant) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         setVariant(entry.isIntersecting ? "default" : "white");
       },
-      { threshold: 0 }
+      { threshold: 0 },
     );
 
     if (sentinelRef.current) {
@@ -24,9 +37,11 @@ export default function NavWrapper() {
 
   return (
     <>
-      <div ref={sentinelRef} className="absolute top-0 w-full" />
+      {!fixedVariant && (
+        <div ref={sentinelRef} className="absolute top-0 w-full" />
+      )}
 
-      <Nav variant={variant} />
+      <Nav variant={fixedVariant ?? variant} textColor={textColor} />
     </>
   );
 }
