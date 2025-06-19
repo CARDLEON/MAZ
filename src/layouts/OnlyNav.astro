@@ -38,9 +38,9 @@ const { title } = Astro.props;
     <ClientRouter />
   </head>
   <body>
-    <!-- Google Tag Manager (noscript) -->
+   <!-- Google Tag Manager (noscript) -->
     <noscript
-      ><iframe
+     ><iframe
         src="https://www.googletagmanager.com/ns.html?id=GTM-PPJ4F6RG"
         height="0"
         width="0"
@@ -48,7 +48,7 @@ const { title } = Astro.props;
     >
     <!-- End Google Tag Manager (noscript) -->
 
-    <NavWrapper client:load />
+    <NavWrapper client:load fixedVariant="white" textColor="#24408d" />
     <slot />
     <WhatsAppButton />
     <Footer {...footerData} />
