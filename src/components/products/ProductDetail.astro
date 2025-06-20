@@ -32,52 +32,21 @@ const {
 
   <!-- Detalles del producto -->
   <div class="space-y-6">
-    <!-- Categoría badge -->
     <span
       class="inline-block bg-[#24408D] text-white text-sm px-4 py-1 rounded-full font-medium"
     >
       {product_category || "No info yet!"}
     </span>
 
-    <!-- Título -->
     <h1 class="text-3xl font-bold text-[#0c0c0c]">
       {product_title || "No title yet!"}
     </h1>
 
-    <!-- Descripción -->
     <p
       class="text-gray-700 font-medium leading-relaxed"
       set:html={product_description || "No description yet!"}
     />
 
-    <!-- Destacado -->
     <p class="text-gray-600" set:html={product_highlights || "No highlights"} />
-
-    <!-- Capacidades -->
-    <div>
-      <h2 class="text-lg font-semibold mb-3">
-        Elije la capacidad que necesites
-      </h2>
-      <div class="flex flex-wrap gap-4">
-        <button
-          type="button"
-          class="bg-[#e9f1fb] cursor-pointer text-[#0c0c0c] font-bold py-3 px-6 rounded-md hover:bg-[#d0e2f9] transition"
-        >
-          1 unidad
-        </button>
-        <button
-          type="button"
-          class="bg-[#e9f1fb] cursor-pointer text-[#0c0c0c] font-bold py-3 px-6 rounded-md hover:bg-[#d0e2f9] transition"
-        >
-          2 unidades
-        </button>
-        <button
-          type="button"
-          class="bg-[#e9f1fb] cursor-pointer text-[#0c0c0c] font-bold py-3 px-6 rounded-md hover:bg-[#d0e2f9] transition"
-        >
-          Más unidades
-        </button>
-      </div>
-    </div>
   </div>
 </section>
