@@ -7,26 +7,26 @@ export type NavLink = {
 export const navLinks: NavLink[] = [
   {
     link: "Servicios",
-    href: "/services",
+    href: "/servicios",
     submenu: [
-      { name: "Todos los Servicios", href: "/services" },
-      { name: "Chillers", href: "/services/chillers" },
-      { name: "HVAC", href: "/services/hvac" },
-      { name: "Instalaciones Eléctricas", href: "/services/electric" },
-      { name: "Eficacia Energética", href: "/services/efficiency" },
-      { name: "Refacciones", href: "/services/refac" },
-      { name: "Pintura Electroestática", href: "/services/paint" },
-      { name: "Ingeniería a Detalle", href: "/services/engineering" },
+      { name: "Todos los Servicios", href: "/servicios" },
+      { name: "Chillers", href: "/servicios/chillers" },
+      { name: "HVAC", href: "/servicios/hvac" },
+      { name: "Instalaciones Eléctricas", href: "/servicios/electrico" },
+      { name: "Eficacia Energética", href: "/servicios/eficiencia" },
+      { name: "Refacciones", href: "/servicios/refacciones" },
+      { name: "Pintura Electroestática", href: "/servicios/pintura" },
+      { name: "Ingeniería a Detalle", href: "/servicios/ingenieria" },
     ],
   },
   {
     link: "Chillers",
-    href: "/products/chillers",
-    submenu: [{ name: "Todos los Chillers", href: "/products/chillers" }],
+    href: "/productos/chillers",
+    submenu: [{ name: "Todos los Chillers", href: "/productos/chillers" }],
   },
-  { link: "Nosotros", href: "/about-us" },
-  { link: "Proyectos", href: "/projects" },
-  { link: "Contacto", href: "/contact" },
+  { link: "Nosotros", href: "/nosotros" },
+  // { link: "Proyectos", href: "/proyectos" },
+  { link: "Contacto", href: "/contacto" },
 ];
 
 export type ProjectType = {
@@ -39,7 +39,7 @@ export const gridProjects: ProjectType[] = [
   {
     img: "/PaperHvac.webp",
     title: "HVAC para Industria de Papel y la Higiene",
-    link: "/projects/paper",
+    link: "/proyectos/paper",
   },
   {
     img: "/OfficeHvac.webp",
@@ -122,19 +122,19 @@ export const services: ServicesType[] = [
     img: "/Serv-1.webp",
     title: "Instalación y Mantenimiento de Chillers",
     description: "Para aplicaciones industriales y comerciales",
-    link: "/services/chillers",
+    link: "/servicios/chillers",
   },
   {
     img: "/Serv-2.webp",
     title: "Instalaciones Eléctricas",
     description: "Soluciones eléctricas confiables y seguras para tu proyecto.",
-    link: "/services/electric",
+    link: "/servicios/electrico",
   },
   {
     img: "/Serv-3.webp",
     title: "Trabajos de Pintura Industrial",
     description: "Acabado profesional y protección avanzada para tus equipos.",
-    link: "/services/engineering",
+    link: "/servicios/ingenieria",
   },
 ];
 
