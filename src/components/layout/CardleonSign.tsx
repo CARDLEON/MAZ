@@ -1,7 +1,7 @@
 export default function CardleonSign() {
   return (
     <footer className="w-full bg-[#5B348B] text-white border-t border-[#24408d]">
-      <div className="max-w-full mx-auto px-6 sm:px-12 md:px-20 lg:px-[8rem] py-12 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm sm:text-base">
+      <div className="max-w-full mx-auto px-6 sm:px-12 md:px-20 lg:px-[8rem] py-4 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm sm:text-base">
         {/* Lado izquierdo */}
         <div className="text-center sm:text-left font-semibold">
           © 2025 Todos los derechos Reservados
@@ -19,7 +19,7 @@ export default function CardleonSign() {
             <img
               src="/CardleonLogo.png"
               alt="Agencia de marketing CARDLEON enfocados en el rubro industrial."
-              className="h-8 sm:h-10 w-auto"
+              className="h-10 sm:h-10 w-auto"
             />
           </a>
         </div>

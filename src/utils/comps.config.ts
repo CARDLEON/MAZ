@@ -13,7 +13,7 @@ export const navLinks: NavLink[] = [
       { name: "Chillers", href: "/servicios/chillers" },
       { name: "HVAC", href: "/servicios/hvac" },
       { name: "Instalaciones Eléctricas", href: "/servicios/electrico" },
-      { name: "Eficacia Energética", href: "/servicios/eficiencia" },
+      { name: "Eficiencia Energética", href: "/servicios/eficiencia" },
       { name: "Refacciones", href: "/servicios/refacciones" },
       { name: "Pintura Electroestática", href: "/servicios/pintura" },
       { name: "Ingeniería a Detalle", href: "/servicios/ingenieria" },
@@ -382,7 +382,6 @@ export const servicesHvac = [
         text: "Instalación, mantenimiento y refacciones para asegurar la operación continua de tus equipos de enfriamiento.",
       },
     ],
-    brands: brandsHvac,
   },
   {
     id: "tvr",
@@ -398,7 +397,6 @@ export const servicesHvac = [
         text: "Automatización y monitoreo para máxima comodidad y ahorro energético.",
       },
     ],
-    brands: brandsHvac,
   },
   {
     id: "cooling",
@@ -414,7 +412,6 @@ export const servicesHvac = [
         text: "Servicios de limpieza, reparación y optimización para máxima eficiencia.",
       },
     ],
-    brands: brandsHvac,
   },
   {
     id: "package",
@@ -430,7 +427,6 @@ export const servicesHvac = [
         text: "Montaje eficiente y soporte técnico especializado.",
       },
     ],
-    brands: brandsHvac,
   },
   {
     id: "centbomb",
@@ -446,7 +442,6 @@ export const servicesHvac = [
         text: "Equipos robustos y de bajo mantenimiento para operación continua.",
       },
     ],
-    brands: brandsHvac,
   },
   {
     id: "hydraulic",
@@ -462,7 +457,6 @@ export const servicesHvac = [
         text: "Cumplimiento de normativas y máxima seguridad en cada proyecto.",
       },
     ],
-    brands: brandsHvac,
   },
   {
     id: "hvac-key-hand",
@@ -478,7 +472,6 @@ export const servicesHvac = [
         text: "Soporte técnico y asesoría personalizada en cada etapa del proyecto.",
       },
     ],
-    brands: brandsHvac,
   },
   {
     id: "air-duct",
@@ -494,7 +487,6 @@ export const servicesHvac = [
         text: "Materiales de alta calidad para evitar pérdidas térmicas y garantizar la seguridad del sistema.",
       },
     ],
-    brands: brandsHvac,
   },
   {
     id: "hydraulic-pipe",
@@ -510,7 +502,6 @@ export const servicesHvac = [
         text: "Personal capacitado y materiales certificados para máxima confiabilidad.",
       },
     ],
-    brands: brandsHvac,
   },
   {
     id: "cold-rooms",
@@ -526,26 +517,123 @@ export const servicesHvac = [
         text: "Sistemas de aislamiento y control para minimizar el consumo energético.",
       },
     ],
-    brands: brandsHvac,
   },
 ];
 
 export const servicesEff = [
   {
-    id: "panels",
-    label: "Paneles Solares",
-    image: "/SolarPanels.webp",
+    id: "structures",
+    label: "Paneles y Estructuras Solares",
     highlights: [
       {
-        title: "Energía Renovable",
-        text: "Aprovecha la energía solar para reducir costos y contribuir al medio ambiente con sistemas de paneles solares de alta eficiencia.",
+        title: "Estructura para Suelo",
+        text: "Soporte fijo para paneles solares instalados directamente sobre el suelo, ideal para proyectos solares a escala comercial o industrial.",
+        img: "/estructuras-suelos.webp",
+        alt: "Estructura de panel solar para suelo",
       },
       {
-        title: "Integración Total",
-        text: "Soluciones llave en mano que se adaptan a tus necesidades energéticas y de espacio.",
+        title: "Estructura para Tejado",
+        text: "Diseñada para instalaciones fotovoltaicas en cubiertas, con variantes según tipo de techo.",
+        img: "/estructuras-techos.webp",
+        alt: "Estructura de panel solar para tejado",
+      },
+      {
+        title: "Estructura para Estacionamiento",
+        text: "Se trata de una estructura elevada, tipo carport, para soportar paneles solares sobre áreas de estacionamiento.",
+        img: "/estructuras-estacionamiento.webp",
+        alt: "Estructura de panel solar para estacionamiento",
       },
     ],
-    brands: brandsHvac,
+  },
+  {
+    id: "modules",
+    label: "Módulos Fotovoltaicos",
+    highlights: [
+      {
+        title: "CanadianSolar",
+        text: "<ul><li>Potencia: 600-650W.</li><li>Características: Alta eficiencia, tamaño compacto y ligero, apto para instalación residencial y comercial, estética moderna.</li><li>Aplicación: Residencial, Comercial e Industrial.</li></ul>",
+        img: "/Astronergy.webp",
+        alt: "Estructura de panel solar para estacionamiento",
+      },
+      {
+        title: "LONGi Solar",
+        text: "<ul><li>Potencia: 600-660W.</li><li>Características: Tecnología monocristalina, alta eficiencia en condiciones de poca luz, larga vida útil.</li><li>Aplicación: Todo tipo de instalaciones.</li></ul>",
+        img: "/LongiSolar.webp",
+        alt: "Estructura de panel solar para estacionamiento",
+      },
+      {
+        title: "ASTRONERGY",
+        text: "<ul><li>Potencia: 605-665W.</li><li>Características: Alta tolerancia a sombra, células M10 tipo PERC o TOPCon, certificaciones internacionales de calidad.</li><li>Aplicación: Industrial, comercial y granjas solares.</li></ul>",
+        img: "/Astronergy.webp",
+        alt: "Estructura de panel solar para estacionamiento",
+      },
+    ],
+  },
+  {
+    id: "inversor",
+    label: "Inversores para Sistemas Aislados e Híbridos",
+    highlights: [
+      {
+        title: "Modelos Híbridos para Zonas Rurales",
+        text: "<ul><li>Características: Conexión solar directa, compatibles con baterías de litio y plomo-ácido, opción de respaldo con red o generador.</li></ul>",
+        img: "/VoltronicPower.webp",
+        alt: "Inverter marca Voltronic Power",
+      },
+      {
+        title: "Modelos Híbridos para Zonas Rurales",
+        text: "<ul><li>Características: Interfaz de usuario amigable, control inteligente de carga y energía.</li><li>Aplicación: Agroindustria, granjas y sitios sin red eléctrica.</li></ul>",
+        img: "/Must.webp",
+        alt: "Inverter marca Must",
+      },
+    ],
+  },
+  {
+    id: "inversor-interconecado",
+    label: "Inversores para Sistemas Fotovoltaicos Interconectados",
+    highlights: [
+      {
+        title: "Growatt",
+        text: "<ul><li>Potencia: 1kW - 125kW.</li><li>Voltaje nominal: 220V/480V.</li><li>Protección: IP65.</li><li>Características: Alta eficiencia, Compatible con sistemas de conexión en red, bajo costo y alta confiabilidad.</li></ul>",
+        img: "/growatt-inv.webp",
+        alt: "Inverter marca Voltronic Power",
+      },
+      {
+        title: "Sofar",
+        text: "<ul><li>Potencia: 3kW - 110kW.</li><li>Protección: IP66.</li><li>Características: Amplio rango de voltaje de entrada, Sistema de monitoreo inteligente, Diseño compacto y robusto.</li></ul>",
+        img: "/Sofar.webp",
+        alt: "Inverter marca Must",
+      },
+      {
+        title: "Solis",
+        text: "<ul><li>Potencia: 1kW - 125kW.</li><li>Protección: IP66.</li><li>Características: Control remoto vía app/web, Apt para todo tipo de techos y suelo, Alta confiabilidad en ambientes.</li></ul>",
+        img: "/Solis.webp",
+        alt: "Inverter marca Must",
+      },
+      {
+        title: "WEQ",
+        text: "<ul><li>Potencia nominal de salida AC de: 1kW - 125kW.</li><li>Voltaje nominal: 220V / 480V</li><li>Protección: IP65 - IP66</li></ul>",
+        img: "/Weq.webp",
+        alt: "Inverter marca Must",
+      },
+    ],
+  },
+  {
+    id: "bombeo-solar",
+    label: "Sistema de Bombeo Solar",
+    highlights: [
+      {
+        title: "Bomba sumergible",
+        text: "<ul><li>Disponible en version centrifuga o rotor heliocoidal.</li><li>Construcción de acero inoxidable.</li><li>Motor de imanes permanentes de alta eficiencia (PM/BLDC).</li><ul><li>Compatible con:</li><li>Compatible con:</li><li>Paneles solares (DC: 30-300 VDC)</li><li>Red eléctrica o generador (AC: 90-240 VAC)</li><li>Protección IP68: para uso continuo bajo agua.</li></ul></ul>",
+        img: "/GrundosBomb-1.avif",
+        alt: "Inverter marca Voltronic Power",
+      },
+      {
+        title: "Corriente Alterna / Corriente Directa",
+        text: "<ul><li><b>Cálculo de Paneles Solares</b></li><li>Conexión directamente a la bomba de DC sin inversores.</li><li>No requieren inversor externo (el sistema tiene convertidor integrado).</li><li>Inversor uso bomba de corriente alterna.</li></ul>",
+        img: "/GrundosBomb-2.avif",
+        alt: "Inverter marca Must",
+      },
+    ],
   },
   {
     id: "calculations",
@@ -561,7 +649,6 @@ export const servicesEff = [
         text: "Todos nuestros proyectos cumplen con las normas nacionales e internacionales vigentes.",
       },
     ],
-    brands: brandsHvac,
   },
   {
     id: "physical",
@@ -577,7 +664,6 @@ export const servicesEff = [
         text: "Ofrecemos servicios de diagnóstico y mantenimiento preventivo para asegurar la continuidad operativa.",
       },
     ],
-    brands: brandsHvac,
   },
   {
     id: "quality",
@@ -593,6 +679,5 @@ export const servicesEff = [
         text: "Adaptamos nuestras soluciones a las necesidades específicas de tu industria o negocio.",
       },
     ],
-    brands: brandsHvac,
   },
 ];
