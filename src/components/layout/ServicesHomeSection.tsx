@@ -41,6 +41,12 @@ const ServicesHomeSection: React.FC<ServicesHomeSectionProps> = ({
   // Buscamos el objeto del servicio activo
   const activeService = services.find((s) => s.id === activeTab);
 
+  const handleContactClick = () => {
+    if (typeof window !== "undefined" && window.openContactModal) {
+      window.openContactModal();
+    }
+  };
+
   return (
     <section className="grid grid-cols-1 lg:grid-cols-3 gap-10 px-4 md:px-10 lg:px-[12rem] py-12">
       {/* Columna de pestañas */}
@@ -118,7 +124,7 @@ const ServicesHomeSection: React.FC<ServicesHomeSectionProps> = ({
                       >
                         {img && (
                           <>
-                            <section className="flex flex-col justify-center gap-2">
+                            <section className="flex flex-col justify-center items-start gap-2">
                               <h4 className="text-xl md:text-3xl font-bold text-[#24408D]">
                                 {title}
                               </h4>
@@ -126,6 +132,12 @@ const ServicesHomeSection: React.FC<ServicesHomeSectionProps> = ({
                                 className="text-gray-700 font-medium"
                                 dangerouslySetInnerHTML={{ __html: text }}
                               />
+                              <button
+                                onClick={handleContactClick}
+                                className="mt-4 bg-[#24408D] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#1a3170] transition-colors duration-300 self-start"
+                              >
+                                Cotizar
+                              </button>
                             </section>
                             <img
                               src={img}
