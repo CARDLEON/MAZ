@@ -15,7 +15,9 @@ export default function ContactForm() {
         <div className="space-y-4">
           <div className="w-full border border-gray-300 rounded px-4 py-2 bg-gray-50 text-gray-700 flex items-center gap-2">
             <img src={Phone.src} alt="Phone icon" />
-            <span className="font-semibold">(81) 2211 8054</span>
+            <span className="font-semibold">
+              (81) 2211 8054 - Disponibilidad 24/7
+            </span>
           </div>
           <div className="w-full border border-gray-300 rounded px-4 py-2 bg-gray-50 text-gray-700 flex items-center gap-2">
             <img src={Phone.src} alt="Phone icon" />
