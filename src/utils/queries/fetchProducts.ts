@@ -1,5 +1,5 @@
-import { fetchACF } from "@/src/utils/api/fetchACF";
-import type { Product } from "@/src/utils/types";
+import { fetchACF } from "~/src/utils/api/fetchACF";
+import type { Product } from "~/src/utils/types";
 
 export async function fetchProductById(productId: number): Promise<Product> {
   try {

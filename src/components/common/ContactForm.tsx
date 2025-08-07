@@ -1,4 +1,4 @@
-import Phone from "@/public/phone.svg";
+import Phone from "~/public/phone.svg";
 
 export default function ContactForm() {
   return (

@@ -1,5 +1,5 @@
-import { fetchACF } from "@/src/utils/api/fetchACF";
-import type { HeroSection } from "@/src/utils/types";
+import { fetchACF } from "~/src/utils/api/fetchACF";
+import type { HeroSection } from "~/src/utils/types";
 
 export async function fetchHeroSectionById(
   sectionId: number

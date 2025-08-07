@@ -1,6 +1,6 @@
 "use client";
 
-import ContactModal from "@/src/components/common/ContactModal";
+import ContactModal from "~/src/components/common/ContactModal";
 import type { ReactNode } from "react";
 
 interface NavHeaderProps {

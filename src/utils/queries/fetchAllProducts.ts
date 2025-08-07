@@ -1,5 +1,5 @@
-import { fetchProtected } from "@/src/utils/api/fetchProtected";
-import type { Product, ProductPost } from "@/src/utils/types";
+import { fetchProtected } from "~/src/utils/api/fetchProtected";
+import type { Product, ProductPost } from "~/src/utils/types";
 
 export async function fetchAllProducts(): Promise<Product[]> {
   try {

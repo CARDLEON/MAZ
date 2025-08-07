@@ -1,12 +1,12 @@
 ---
-import Footer from "@/src/components/common/Footer.astro";
-import NavWrapper from "@/src/components/navs/NavWrapper";
-import WhatsAppButton from "@/src/components/common/WhatsAppButton.astro";
-import CardleonSign from "@/src/components/layout/CardleonSign";
-import "@/src/styles/global.css";
+import Footer from "~/src/components/common/Footer.astro";
+import NavWrapper from "~/src/components/navs/NavWrapper";
+import WhatsAppButton from "~/src/components/common/WhatsAppButton.astro";
+import CardleonSign from "~/src/components/layout/CardleonSign";
+import "~/src/styles/global.css";
 
 import { ClientRouter } from "astro:transitions";
-import { fetchFooter } from "@/src/utils/queries/fetchFooter";
+import { fetchFooter } from "~/src/utils/queries/fetchFooter";
 
 const footerData = await fetchFooter();
 

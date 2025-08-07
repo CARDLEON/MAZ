@@ -1,4 +1,4 @@
-import { getToken } from "@/src/utils/api/auth";
+import { getToken } from "~/src/utils/api/auth";
 
 // Control interno de caché con vida útil
 const cache = new Map<string, { data: any; timestamp: number }>();

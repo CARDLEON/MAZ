@@ -1,4 +1,4 @@
-import type { NavLink } from "@/src/utils/comps.config";
+import type { NavLink } from "~/src/utils/comps.config";
 import clsx from "clsx";
 
 interface NavDesktopProps {

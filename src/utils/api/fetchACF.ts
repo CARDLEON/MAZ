@@ -1,4 +1,4 @@
-import { fetchProtected } from "@/src/utils/api/fetchProtected";
+import { fetchProtected } from "~/src/utils/api/fetchProtected";
 
 export async function fetchACF<T>(slug: string, id: number): Promise<T> {
   // Fetch via page ID -> ACF
