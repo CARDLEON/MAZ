@@ -18,7 +18,6 @@ export interface Service {
   description?: string;
   image?: string;
   highlights?: Highlight[];
-  brands?: Brand[];
 }
 
 interface ServicesHomeSectionProps {
