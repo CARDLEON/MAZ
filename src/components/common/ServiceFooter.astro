@@ -54,7 +54,7 @@ const {
   </div>
 
   <a
-    href="https://wa.me/5218122118054"
+    href="https://wa.me/5218144911774"
     target="_blank"
     class="bg-[#3ad0fd] hover:bg-[#1bbbe9] text-[#0c0c0c] font-semibold px-6 py-2 rounded-md transition text-sm sm:text-base"
   >
@@ -103,25 +103,41 @@ const {
 
     <!-- Columna Derecha -->
     <div class="grid gap-4 text-sm">
-      <div class="flex items-start gap-3">
-        <Mail width={34} />
-        <span>{mail_footer}</span>
-      </div>
+      {
+        mail_footer && (
+          <div class="flex items-start gap-3">
+            <Mail width={34} />
+            <span>{mail_footer}</span>
+          </div>
+        )
+      }
 
-      <div class="flex items-start gap-3">
-        <Location width={34} />
-        <span set:html={location_footer} />
-      </div>
+      {
+        location_footer && (
+          <div class="flex items-start gap-3">
+            <Location width={34} />
+            <span set:html={location_footer} />
+          </div>
+        )
+      }
 
-      <div class="flex items-start gap-3">
-        <Phone width={34} />
-        <span>{phone_footer}</span>
-      </div>
+      {
+        phone_footer && (
+          <div class="flex items-start gap-3">
+            <Phone width={34} />
+            <span>{phone_footer}</span>
+          </div>
+        )
+      }
 
-      <div class="flex items-start gap-3">
-        <Whatsapp width={34} />
-        <span>{whatsapp_footer}</span>
-      </div>
+      {
+        whatsapp_footer && (
+          <div class="flex items-start gap-3">
+            <Whatsapp width={34} />
+            <span>{whatsapp_footer}</span>
+          </div>
+        )
+      }
     </div>
   </div>
 </footer>

@@ -15,10 +15,5 @@ const description = `En <b class="text-[#24408d]">MAZ Soluciones de Agua Helada<
 
 <MainLayout title="MAZ - Servicios para instalaciones eléctricas">
   <HeroSection {...heroData} />
-  <ServicesHomeSection
-    client:visible
-    title={title}
-    description={description}
-    services={servicesElec}
-  />
+  <ServicesHomeSection client:visible services={servicesElec} />
 </MainLayout>
