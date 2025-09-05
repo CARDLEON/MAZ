@@ -9,6 +9,7 @@ import TopSection from "~/src/components/layout/TopSection.astro";
 import NavWrapper from "~/src/components/navs/NavWrapper";
 import CardleonSign from "~/src/components/layout/CardleonSign";
 import "~/src/styles/global.css";
+import ContactModal from "../components/common/ContactModal";
 
 const navData = await fetchTopSection();
 const footerData = await fetchFooter();
@@ -33,24 +34,43 @@ const { title, description = "Servicios industriales en chillers y HVAC" } =
       })(window, document, "script", "dataLayer", "GTM-PPJ4F6RG");
     </script>
     <!-- End Google Tag Manager -->
-    
+
     <!-- Meta Pixel Code -->
     <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '775462291505669');
-      fbq('track', 'PageView');
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+      );
+      fbq("init", "775462291505669");
+      fbq("track", "PageView");
     </script>
     <noscript>
-      <img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=775462291505669&ev=PageView&noscript=1"
-    /></noscript>
+      <img
+        height="1"
+        width="1"
+        style="display:none"
+        src="https://www.facebook.com/tr?id=775462291505669&ev=PageView&noscript=1"
+      /></noscript
+    >
     <!-- End Meta Pixel Code -->
 
     <meta charset="UTF-8" />
@@ -75,6 +95,7 @@ const { title, description = "Servicios industriales en chillers y HVAC" } =
     <NavWrapper client:load />
     <slot />
     <WhatsAppButton />
+    <ContactModal client:load />
     <ServiceFooter {...footerData} />
     <CardleonSign client:load />
   </body>
