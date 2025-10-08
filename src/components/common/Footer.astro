@@ -62,15 +62,19 @@ const {
     <div
       class="text-sm gap-2 md:gap-3 grid sm:grid-cols-2 gap-y-2 sm:gap-y-3 md:flex md:flex-row md:items-start"
     >
-      <a href="/servicios" class="hover:underline font-semibold">Servicios</a>
-      <a href="/productos" class="hover:underline font-semibold">Productos</a>
-      <a href="/nosotros" class="hover:underline font-semibold">Nosotros</a>
-      <a href="/proyectos" class="hover:underline font-semibold">Proyectos</a>
-      <a href="/contacto" class="hover:underline font-semibold">Contacto</a>
+      <div class="gap-3">
+        <a href="/servicios" class="hover:underline font-semibold">Servicios</a>
+        <a href="/productos" class="hover:underline font-semibold">Productos</a>
+      </div>
+      <div class="gap-3">
+        <a href="/nosotros" class="hover:underline font-semibold">Nosotros</a>
+        <a href="/proyectos" class="hover:underline font-semibold">Proyectos</a>
+        <a href="/contacto" class="hover:underline font-semibold">Contacto</a>
+      </div>
     </div>
 
     <!-- Columna Derecha -->
-    <div class="grid gap-4 text-sm">
+    <div class="grid gap-4 text-sm lg:text-base">
       <div class="flex items-start gap-3">
         <Mail width={34} />
         <span>{mail_footer}</span>
