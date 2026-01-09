@@ -1,4 +1,4 @@
-import { fetchACF } from "@/src/utils/api/fetchACF";
+import { fetchACF } from "~/src/utils/api/fetchACF";
 
 export async function fetchHomeData() {
   try {

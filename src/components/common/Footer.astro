@@ -1,10 +1,10 @@
 ---
-import LinkedIn from "@/public/linkedin.svg";
-import Facebook from "@/public/facebook.svg";
-import Phone from "@/public/phone.svg";
-import Mail from "@/public/mail.svg";
-import Location from "@/public/location.svg";
-import Whatsapp from "@/public/whatsapp.svg";
+import LinkedIn from "~/public/linkedin.svg";
+import Facebook from "~/public/facebook.svg";
+import Phone from "~/public/phone.svg";
+import Mail from "~/public/mail.svg";
+import Location from "~/public/location.svg";
+import Whatsapp from "~/public/whatsapp.svg";
 
 import Image from "astro/components/Image.astro";
 
@@ -74,26 +74,42 @@ const {
     </div>
 
     <!-- Columna Derecha -->
-    <div class="grid gap-4 text-sm lg:text-base">
-      <div class="flex items-start gap-3">
-        <Mail width={34} />
-        <span>{mail_footer}</span>
-      </div>
+    <div class="grid gap-4 text-sm">
+      {
+        mail_footer && (
+          <div class="flex items-start gap-3">
+            <Mail width={34} />
+            <span>{mail_footer}</span>
+          </div>
+        )
+      }
 
-      <div class="flex items-start gap-3">
-        <Location width={34} />
-        <span set:html={location_footer} />
-      </div>
+      {
+        location_footer && (
+          <div class="flex items-start gap-3">
+            <Location width={34} />
+            <span set:html={location_footer} />
+          </div>
+        )
+      }
 
-      <div class="flex items-start gap-3">
-        <Phone width={34} />
-        <span>{phone_footer}</span>
-      </div>
+      {
+        phone_footer && (
+          <div class="flex items-start gap-3">
+            <Phone width={34} />
+            <span>{phone_footer}</span>
+          </div>
+        )
+      }
 
-      <div class="flex items-start gap-3">
-        <Whatsapp width={34} />
-        <span>{whatsapp_footer}</span>
-      </div>
+      {
+        whatsapp_footer && (
+          <div class="flex items-start gap-3">
+            <Whatsapp width={34} />
+            <span>{whatsapp_footer}</span>
+          </div>
+        )
+      }
     </div>
   </div>
 </footer>

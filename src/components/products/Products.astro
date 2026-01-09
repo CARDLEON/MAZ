@@ -1,7 +1,7 @@
 ---
-import ProductGrid from "@/src/components/products/ProductGrid.astro";
+import ProductGrid from "~/src/components/products/ProductGrid.astro";
 
-import { fetchAllProducts } from "@/src/utils/queries/fetchAllProducts";
+import { fetchAllProducts } from "~/src/utils/queries/fetchAllProducts";
 
 const allProducts = await fetchAllProducts();
 ---

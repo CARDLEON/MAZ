@@ -1,10 +1,10 @@
 ---
-import MainLayout from "@/src/layouts/MainLayout.astro";
-import HeroSection from "@/src/components/hero/HeroSection.astro";
-import ProjectsGrid from "@/src/components/grids/ProjectsGrid.astro";
+import MainLayout from "~/src/layouts/MainLayout.astro";
+import HeroSection from "~/src/components/hero/HeroSection.astro";
+import ProjectsGrid from "~/src/components/grids/ProjectsGrid.astro";
 
-import { gridProjects } from "@/src/utils/comps.config";
-import { fetchHeroSectionById } from "@/src/utils/queries/fetchHeroSection";
+import { gridProjects } from "~/src/utils/comps.config";
+import { fetchHeroSectionById } from "~/src/utils/queries/fetchHeroSection";
 
 const heroData = await fetchHeroSectionById(280);
 ---

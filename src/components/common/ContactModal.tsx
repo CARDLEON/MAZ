@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import ContactForm from "@/src/components/common/ContactForm";
+import ContactForm from "~/src/components/common/ContactForm";
 
 declare global {
   interface Window {

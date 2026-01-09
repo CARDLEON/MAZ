@@ -48,34 +48,10 @@ export const gridProjects: ProjectType[] = [
   },
 ];
 
-export type BrandsType = {
-  name: string;
-  logo: string;
-};
-
 export type HighlightType = {
   title: string;
   text: string;
 };
-
-export const brandsHvac: BrandsType[] = [
-  {
-    name: "Carrier",
-    logo: "https://placehold.co/100x40?text=Carrier",
-  },
-  {
-    name: "Trane",
-    logo: "https://placehold.co/100x40?text=Trane",
-  },
-  {
-    name: "Honeywell",
-    logo: "https://placehold.co/100x40?text=Honeywell",
-  },
-  {
-    name: "Daikin",
-    logo: "https://placehold.co/100x40?text=Daikin",
-  },
-];
 
 export const highlightsHvac: HighlightType[] = [
   {
@@ -142,7 +118,7 @@ export const servicesElec = [
   {
     id: "armado",
     label: "Armado de tableros",
-    image: "/Tableros.webp",
+    image: "/serv-electricos/elec5.webp",
     highlights: [
       {
         title: "Infraestructura Confiable",
@@ -153,18 +129,11 @@ export const servicesElec = [
         text: "Adaptamos cada tablero a tu layout y sistema eléctrico, para una instalación rápida y sin contratiempos.",
       },
     ],
-    brands: [
-      {
-        name: "Schneider Electric",
-        logo: "https://placehold.co/100x40?text=Schneider+Electric",
-      },
-      { name: "Siemens", logo: "https://placehold.co/100x40?text=Siemens" },
-    ],
   },
   {
     id: "cableado",
     label: "Cableado",
-    image: "/Wiring.webp",
+    image: "/serv-electricos/elec2.webp",
     highlights: [
       {
         title: "Cableado Estructurado",
@@ -175,15 +144,11 @@ export const servicesElec = [
         text: "Instalamos rutas y acometidas de potencia con canalizaciones metálicas y aislantes de alta resistencia.",
       },
     ],
-    brands: [
-      { name: "Panduit", logo: "https://placehold.co/100x40?text=Panduit" },
-      { name: "Legrand", logo: "https://placehold.co/100x40?text=Legrand" },
-    ],
   },
   {
     id: "charola",
     label: "Instalación de charola",
-    image: "/Charola.webp",
+    image: "/serv-electricos/elec4.webp",
     highlights: [
       {
         title: "Soporte Robusto",
@@ -194,18 +159,11 @@ export const servicesElec = [
         text: "Cortamos y doblamos en sitio según tu diseño, optimizando espacio y facilitando futuras ampliaciones.",
       },
     ],
-    brands: [
-      { name: "Erico", logo: "https://placehold.co/100x40?text=Erico" },
-      {
-        name: "OBO Bettermann",
-        logo: "https://placehold.co/100x40?text=OBO+Bettermann",
-      },
-    ],
   },
   {
     id: "conduit",
     label: "Tubería conduit",
-    image: "/Conduit.webp",
+    image: "/serv-electricos/elec1.webp",
     highlights: [
       {
         title: "Instalación Segura",
@@ -216,21 +174,11 @@ export const servicesElec = [
         text: "Aseguramos sellado y fijación correctos para prevenir humedad y vibraciones en entornos industriales.",
       },
     ],
-    brands: [
-      {
-        name: "Example Co",
-        logo: "https://placehold.co/100x40?text=Example+Co",
-      },
-      {
-        name: "Sample Inc",
-        logo: "https://placehold.co/100x40?text=Sample+Inc",
-      },
-    ],
   },
   {
     id: "neumatica",
     label: "Tubería neumática",
-    image: "/Pneumatic.webp",
+    image: "/serv-electricos/elec4.webp",
     highlights: [
       {
         title: "Flujo Óptimo",
@@ -240,10 +188,6 @@ export const servicesElec = [
         title: "Montaje Preciso",
         text: "Diseñamos rutas sin fugas y con un enrutamiento eficiente para facilitar mantenimiento y futuras ampliaciones.",
       },
-    ],
-    brands: [
-      { name: "AirTech", logo: "https://placehold.co/100x40?text=AirTech" },
-      { name: "PneuCorp", logo: "https://placehold.co/100x40?text=PneuCorp" },
     ],
   },
 ];
@@ -263,10 +207,6 @@ export const servicesRefac = [
         text: "Kits de refacciones recomendados según horas de operación, para maximizar la vida útil del equipo.",
       },
     ],
-    brands: [
-      { name: "Marca A", logo: "https://placehold.co/100x40?text=Marca+A" },
-      { name: "Marca B", logo: "https://placehold.co/100x40?text=Marca+B" },
-    ],
   },
   {
     id: "equipo-electrico",
@@ -282,10 +222,6 @@ export const servicesRefac = [
         text: "Terminales, conectores y canalizaciones certificados que cumplen normas eléctricas internacionales.",
       },
     ],
-    brands: [
-      { name: "Marca C", logo: "https://placehold.co/100x40?text=Marca+C" },
-      { name: "Marca D", logo: "https://placehold.co/100x40?text=Marca+D" },
-    ],
   },
 ];
 
@@ -300,10 +236,6 @@ export const servicesEng = [
         text: "Diseño y cálculo de instalaciones eléctricas e hidrosanitarias, asegurando cumplimiento de normativas y eficiencia operativa.",
       },
     ],
-    brands: [
-      { name: "Autodesk", logo: "https://placehold.co/100x40?text=Autodesk" },
-      { name: "Trimble", logo: "https://placehold.co/100x40?text=Trimble" },
-    ],
   },
   {
     id: "planos-catalogos-de-conceptos",
@@ -314,10 +246,6 @@ export const servicesEng = [
         title: "",
         text: "Elaboración de planos detallados y catálogos de conceptos para facilitar la comprensión y aprobación de proyectos.",
       },
-    ],
-    brands: [
-      { name: "Autodesk", logo: "https://placehold.co/100x40?text=Autodesk" },
-      { name: "Trimble", logo: "https://placehold.co/100x40?text=Trimble" },
     ],
   },
   {
@@ -330,10 +258,6 @@ export const servicesEng = [
         text: "Desarrollo de hojas de cálculo personalizadas para dimensionamiento, presupuestos y análisis de costos, minimizando errores.",
       },
     ],
-    brands: [
-      { name: "Autodesk", logo: "https://placehold.co/100x40?text=Autodesk" },
-      { name: "Trimble", logo: "https://placehold.co/100x40?text=Trimble" },
-    ],
   },
   {
     id: "seleccion-de-equipos",
@@ -345,10 +269,6 @@ export const servicesEng = [
         text: "Asesoría en selección de equipos y materiales, eligiendo las mejores opciones según carga, eficiencia energética y presupuesto.",
       },
     ],
-    brands: [
-      { name: "Autodesk", logo: "https://placehold.co/100x40?text=Autodesk" },
-      { name: "Trimble", logo: "https://placehold.co/100x40?text=Trimble" },
-    ],
   },
   {
     id: "distribucion",
@@ -359,10 +279,6 @@ export const servicesEng = [
         title: "",
         text: "Diagramas de distribución de sistemas y rutas de instalación para optimizar espacio y garantizar seguridad y accesibilidad.",
       },
-    ],
-    brands: [
-      { name: "Autodesk", logo: "https://placehold.co/100x40?text=Autodesk" },
-      { name: "Trimble", logo: "https://placehold.co/100x40?text=Trimble" },
     ],
   },
 ];

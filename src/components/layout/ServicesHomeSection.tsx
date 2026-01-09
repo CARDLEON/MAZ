@@ -18,21 +18,14 @@ export interface Service {
   description?: string;
   image?: string;
   highlights?: Highlight[];
-  brands?: Brand[];
 }
 
 interface ServicesHomeSectionProps {
-  /** Título principal de la sección */
-  title: string;
-  /** Descripción en HTML (renderizado con dangerousSetInnerHTML) */
-  description: string;
   /** Array de servicios, cada uno con su id, etiqueta, puntos destacados y marcas */
   services: Service[];
 }
 
 const ServicesHomeSection: React.FC<ServicesHomeSectionProps> = ({
-  title,
-  description,
   services,
 }) => {
   // Estado para controlar la pestaña activa (iniciamos en el primer servicio)
@@ -72,15 +65,6 @@ const ServicesHomeSection: React.FC<ServicesHomeSectionProps> = ({
 
       {/* Contenido de la pestaña activa */}
       <div className="lg:col-span-2 flex flex-col gap-5">
-        {/* Título y descripción generales */}
-        {/* <h2 className="text-2xl md:text-3xl font-bold text-[#24408d] mb-4">
-          {title}
-        </h2>
-        <div
-          className="text-base text-gray-800 space-y-6 mb-6"
-          dangerouslySetInnerHTML={{ __html: description }}
-        /> */}
-
         {activeService && (
           <>
             {/* Título del servicio activo */}
@@ -120,45 +104,53 @@ const ServicesHomeSection: React.FC<ServicesHomeSectionProps> = ({
                     ({ title, img, text, alt }, idx) => (
                       <div
                         key={idx}
-                        className="space-y-2 grid grid-cols-1 md:grid-cols-2 gap-4"
+                        className={`space-y-2 ${
+                          img
+                            ? "grid grid-cols-1 md:grid-cols-2 gap-4"
+                            : "flex flex-col"
+                        }`}
                       >
+                        <section className="flex flex-col justify-center items-start gap-2">
+                          <h4 className="text-xl md:text-3xl font-bold text-[#24408D]">
+                            {title}
+                          </h4>
+                          <div
+                            className="text-gray-700 font-medium"
+                            dangerouslySetInnerHTML={{ __html: text }}
+                          />
+                          {/* Solo mostrar botón cuando hay imagen */}
+                          {img && (
+                            <button
+                              onClick={handleContactClick}
+                              className="mt-4 bg-[#24408D] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#1a3170] transition-colors duration-300 self-start"
+                            >
+                              Cotizar
+                            </button>
+                          )}
+                        </section>
+
+                        {/* Imagen solo si existe */}
                         {img && (
-                          <>
-                            <section className="flex flex-col justify-center items-start gap-2">
-                              <h4 className="text-xl md:text-3xl font-bold text-[#24408D]">
-                                {title}
-                              </h4>
-                              <div
-                                className="text-gray-700 font-medium"
-                                dangerouslySetInnerHTML={{ __html: text }}
-                              />
-                              <button
-                                onClick={handleContactClick}
-                                className="mt-4 bg-[#24408D] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#1a3170] transition-colors duration-300 self-start"
-                              >
-                                Cotizar
-                              </button>
-                            </section>
-                            <img
-                              src={img}
-                              alt={alt}
-                              className="w-full h-[500px] rounded-md object-cover"
-                            />
-                          </>
-                        )}
-                        {!img && (
-                          <section className="flex flex-col justify-center gap-2">
-                            <h4 className="text-xl md:text-3xl font-bold text-[#24408D]">
-                              {title}
-                            </h4>
-                            <div
-                              className="text-gray-700 font-medium"
-                              dangerouslySetInnerHTML={{ __html: text }}
-                            />
-                          </section>
+                          <img
+                            src={img}
+                            alt={alt}
+                            className="w-full h-[500px] rounded-md object-cover"
+                          />
                         )}
                       </div>
                     )
+                  )}
+
+                  {/* Botón único al final cuando no hay imágenes en ningún highlight */}
+                  {!activeService.highlights.some(
+                    (highlight) => highlight.img
+                  ) && (
+                    <button
+                      onClick={handleContactClick}
+                      className="bg-[#24408D] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#1a3170] transition-colors duration-300 self-start"
+                    >
+                      Cotizar
+                    </button>
                   )}
                 </div>
               )}

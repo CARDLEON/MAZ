@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import Nav from "@/src/components/navs/Nav";
+import Nav from "~/src/components/navs/Nav";
 
 interface NavWrapperProps {
   fixedVariant?: "default" | "white";
@@ -11,7 +11,7 @@ export default function NavWrapper({
   textColor = "#24408d",
 }: NavWrapperProps) {
   const [variant, setVariant] = useState<"default" | "white">(
-    fixedVariant ?? "default",
+    fixedVariant ?? "default"
   );
   const sentinelRef = useRef<HTMLDivElement>(null);
 
@@ -23,7 +23,7 @@ export default function NavWrapper({
       ([entry]) => {
         setVariant(entry.isIntersecting ? "default" : "white");
       },
-      { threshold: 0 },
+      { threshold: 0 }
     );
 
     if (sentinelRef.current) {

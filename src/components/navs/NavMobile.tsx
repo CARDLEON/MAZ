@@ -1,4 +1,4 @@
-import type { NavLink } from "@/src/utils/comps.config";
+import type { NavLink } from "~/src/utils/comps.config";
 import clsx from "clsx";
 
 interface NavMobileProps {
@@ -19,14 +19,14 @@ export default function NavMobile({
       id="mobile-menu"
       className={clsx(
         "fixed left-0 w-full z-40 transition-all duration-500 ease-in-out overflow-hidden md:hidden",
-        menuOpen ? "max-h-[800px] opacity-100 bg-white" : "max-h-0 opacity-0",
+        menuOpen ? "max-h-[800px] opacity-100 bg-white" : "max-h-0 opacity-0"
       )}
       style={menuOpen && variant == "white" ? { color: textColor } : undefined}
     >
       <ul
         className={clsx(
           "flex flex-col text-lg transition-all duration-300",
-          variant === "white" ? "mt-0" : "mt-[15dvh]",
+          variant === "white" ? "mt-0" : "mt-[15dvh]"
         )}
       >
         {links.map(({ link, href, submenu }) => (
