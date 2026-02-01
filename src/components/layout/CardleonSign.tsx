@@ -4,7 +4,7 @@ export default function CardleonSign() {
       <div className="max-w-full mx-auto px-6 sm:px-12 md:px-20 lg:px-[8rem] py-4 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm sm:text-base">
         {/* Lado izquierdo */}
         <div className="text-center sm:text-left font-semibold">
-          © 2025 Todos los derechos Reservados
+          © {new Date().getFullYear()} Todos los derechos Reservados
         </div>
 
         {/* Lado derecho */}

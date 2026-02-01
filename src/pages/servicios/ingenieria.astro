@@ -1,24 +1,34 @@
 ---
 import MainLayout from "~/src/layouts/MainLayout.astro";
 import HeroSection from "~/src/components/hero/HeroSection.astro";
-import ServicesHomeSection from "~/src/components/layout/ServicesHomeSection.tsx";
+import BrandsShowcase from "~/src/components/common/BrandsShowcase.astro";
+import IngenieriaLanding from "~/src/components/landings/IngenieriaLanding.astro";
 
-import { servicesEng } from "~/src/utils/comps.config";
 import { fetchHeroSectionById } from "~/src/utils/queries/fetchHeroSection";
 
-const heroData = await fetchHeroSectionById(308);
+const brands = [
+  { id: '1', name: 'Plesma', logo: 'https://plemsa.com/wp-content/uploads/2019/05/logo.png' },
+  { id: '2', name: 'Nidec', logo: 'https://www.nidec.com/files/user/www-nidec-com/cmn/img/c_logo_ci_en_new.png?width=338&height=47' },
+  { id: '3', name: 'Pisa', logo: 'https://www.pisa.com.mx/wp-content/uploads/2024/05/cropped-Logo-PiSA-01-1109x800.png' },
+  { id: '4', name: 'Sigma', logo: 'https://sigmafoodservice.com/medias/logosigma.svg?context=bWFzdGVyfGltYWdlc3wxMjI3OHxpbWFnZS9zdmcreG1sfGFERmhMMmcwTUM4NU9EZzFNVE01TVRRd05qTTRMMnh2WjI5emFXZHRZUzV6ZG1jfDBlYTBkYTA1MGI1YzY1OTk0ZWE2M2YxYTM2ODNlZWVkYTQxNjdiOWFiMzU4MzA0ODJjZDZkZjQzNTk3MzY0NzQ' },
+  { id: '5', name: 'Ureblock', logo: 'https://www.ureblock.com.mx/wp-content/uploads/2024/01/logo-ureblock.svg' },
+  { id: '6', name: 'Langston companies', logo: 'https://www.langstonbag.com.mx/img/langton_logo_v1.png' },
+  { id: '7', name: 'Rovivsa', logo: 'https://static.wixstatic.com/media/4ca0d9_f3e42d9d193a43bdb535ab27df01dc55~mv2.png/v1/fill/w_696,h_328,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ROVIVSA%20SA%20DE%20CV.png' },
+  { id: '8', name: 'Ragasa', logo: 'https://www.ragasa.com.mx/wp-content/uploads/2016/12/ragasa_logo-big.png' },
+  { id: '9', name: 'Mergon', logo: 'https://imgs.search.brave.com/K6jDp5r15gjhlFkUnMzhXPildOJONk2hJm-0PGaPS1k/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly93ZWx0/b25odXJzdC5jby51/ay93cC1jb250ZW50/L3VwbG9hZHMvMjAy/Mi8wMy9tZXJnb24t/bGFyZ2UucG5n' },
+  { id: '10', name: 'Essity', logo: 'https://assets.www.essity.com/essity/1.129.0-release.1/img/logo-essity.svg' },
+  { id: '11', name: 'Polaris', logo: 'https://www.polarismexico.com/fileadmin/templates/pol_MY18/img/logo-polaris-black.svg' },
+  { id: '12', name: 'Alen', logo: 'https://imgs.search.brave.com/VNIJxyCT4a8JSQdl1xZuLbtA0x44PqPrLH0VDxbxdAc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zZWVr/bG9nby5jb20vaW1h/Z2VzL0EvYWxlbi1s/b2dvLTgyNDYxRkEx/RTAtc2Vla2xvZ28u/Y29tLnBuZw' },
+  { id: '13', name: 'Airepsa', logo: 'https://www.airepsa.com.mx/wp-content/uploads/2023/10/logotipo.png' },
+  { id: '14', name: 'Ecochillers', logo: 'https://ecochillers.com/wp-content/uploads/2022/11/ecogreen.png.webp' },
+  { id: '15', name: 'Quifa', logo: 'https://www.quifa.com.mx/images/Recurso%201.png' },
+];
 
-const title =
-  "Servicios de ingeniería a detalle para sistemas de refrigeración y eléctricos";
-const description = `En <b class="text-[#24408d]">MAZ Soluciones de Agua Helada</b>, comprendemos la importancia de una infraestructura eléctrica confiable. Por eso, <b class="text-[#24408d]">ofrecemos soluciones integrales en instalaciones eléctricas</b>, <b class="text-[#24408d]">garantizando</b> una integración precisa, operación <b class="text-[#24408d]">segura</b> y desempeño <b class="text-[#24408d]">óptimo</b> de todos tus sistemas.`;
+const heroData = await fetchHeroSectionById(308);
 ---
 
 <MainLayout title="MAZ - Servicios para instalaciones eléctricas">
   <HeroSection {...heroData} />
-  <ServicesHomeSection
-    client:visible
-    title={title}
-    description={description}
-    services={servicesEng}
-  />
+  <IngenieriaLanding />
+  <BrandsShowcase brands={brands} title="Confían en nosotros" description="" />
 </MainLayout>
