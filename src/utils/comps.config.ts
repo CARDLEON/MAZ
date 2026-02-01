@@ -10,9 +10,7 @@ export const navLinks: NavLink[] = [
     href: "/servicios",
     submenu: [
       { name: "Todos los Servicios", href: "/servicios" },
-      { name: "Chillers", href: "/servicios/chillers" },
       { name: "HVAC", href: "/servicios/hvac" },
-      { name: "Instalaciones Eléctricas", href: "/servicios/electrico" },
       { name: "Eficiencia Energética", href: "/servicios/eficiencia" },
       { name: "Refacciones", href: "/servicios/refacciones" },
       { name: "Pintura Electroestática", href: "/servicios/pintura" },
@@ -24,8 +22,8 @@ export const navLinks: NavLink[] = [
     href: "/productos/chillers",
     submenu: [{ name: "Todos los Chillers", href: "/productos/chillers" }],
   },
+  { link: "Instalaciones Eléctricas", href: "/servicios/electrico" },
   { link: "Nosotros", href: "/nosotros" },
-  // { link: "Proyectos", href: "/proyectos" },
   { link: "Contacto", href: "/contacto" },
 ];
 
