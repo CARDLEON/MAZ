@@ -138,12 +138,12 @@ const ServicesHomeSection: React.FC<ServicesHomeSectionProps> = ({
                           />
                         )}
                       </div>
-                    )
+                    ),
                   )}
 
                   {/* Botón único al final cuando no hay imágenes en ningún highlight */}
                   {!activeService.highlights.some(
-                    (highlight) => highlight.img
+                    (highlight) => highlight.img,
                   ) && (
                     <button
                       onClick={handleContactClick}

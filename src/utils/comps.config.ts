@@ -12,17 +12,22 @@ export const navLinks: NavLink[] = [
       { name: "Todos los Servicios", href: "/servicios" },
       { name: "HVAC", href: "/servicios/hvac" },
       { name: "Eficiencia Energética", href: "/servicios/eficiencia" },
-      { name: "Refacciones", href: "/servicios/refacciones" },
-      { name: "Pintura Electroestática", href: "/servicios/pintura" },
+      {
+        name: "Pintura Electroestática",
+        href: "/servicios/servicio/electrostatica",
+      },
       { name: "Ingeniería a Detalle", href: "/servicios/ingenieria" },
     ],
   },
   {
     link: "Chillers",
     href: "/productos/chillers",
-    submenu: [{ name: "Todos los Chillers", href: "/productos/chillers" }],
   },
-  { link: "Instalaciones Eléctricas", href: "/servicios/electrico" },
+  {
+    link: "Instalaciones Eléctricas",
+    href: "/servicios/electrico",
+    submenu: [{ name: "Refacciones", href: "/servicios/refacciones" }],
+  },
   { link: "Nosotros", href: "/nosotros" },
   { link: "Contacto", href: "/contacto" },
 ];
@@ -108,7 +113,7 @@ export const services: ServicesType[] = [
     img: "/Serv-3.webp",
     title: "Trabajos de Pintura Industrial",
     description: "Acabado profesional y protección avanzada para tus equipos.",
-    link: "/servicios/ingenieria",
+    link: "/servicios/pintura",
   },
 ];
 
